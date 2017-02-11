@@ -19,7 +19,7 @@ NEWSPIDER_MODULE = 'scrap_eclipse_jdt.spiders'
 #USER_AGENT = 'scrap_eclipse_jdt (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
