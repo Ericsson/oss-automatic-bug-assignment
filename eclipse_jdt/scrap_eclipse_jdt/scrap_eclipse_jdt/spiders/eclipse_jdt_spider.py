@@ -3,11 +3,11 @@ from scrapy.shell import inspect_response
 
 """Scrap some data of some Eclipse JDT bug reports
 
-Save the product, component, version, priority, 
-assigned-to, description, title and bug id data of 
-all 'resolved' (bug status), 'verified' (bug status), 
-'closed' (bug status) and 'fixed' (resolution) 
-Eclipse JDT bug reports.
+Save the product, component, version, priority, assigned-to,
+description, title, reported date, status, platform, target milestone,
+author, modified date and bug id data of all 'resolved' (bug status),
+'verified' (bug status), 'closed' (bug status) and 'fixed'
+(resolution) Eclipse JDT bug reports. 
 """
 
 class EcplipseJDTSpider(scrapy.Spider):
@@ -70,6 +70,24 @@ class EcplipseJDTSpider(scrapy.Spider):
         bug_id =  response.xpath("//div[@class='bz_alias_short_" + \
             "desc_container edit_form']/a/b/text()") \
         .extract_first()
+        bug_status =  response.xpath("//span" + \
+            "[@id='static_bug_status']/text()") \
+        .extract_first()
+        platform =  response.xpath("//th" + \
+            "[@id='field_label_rep_platform']/../td/text()") \
+        .extract_first()
+        target_milestone =  response.xpath("//label" + \
+            "[@for='target_milestone']/../../td/text()") \
+        .extract_first()
+        reported_date =  response.xpath("//td" + \
+            "[@id='bz_show_bug_column_2']//tr[1]/td/text()") \
+        .extract_first()
+        reported_by =  response.xpath("//td[@id='bz_show_" + \
+            "bug_column_2']//tr[1]/td/span/span/text()") \
+        .extract_first()
+        modified_date =  response.xpath("//td" + \
+            "[@id='bz_show_bug_column_2']//tr[2]/td/text()") \
+        .extract_first()
         # Then, we yield the relevant data
         yield {
             'product': product,
@@ -79,5 +97,11 @@ class EcplipseJDTSpider(scrapy.Spider):
             'assigned_to': assigned_to,
             'description': description,
             'title': title,
-            'bug_id': bug_id
+            'bug_id': bug_id,
+            'bug_status': bug_status,
+            'platform': platform,
+            'target_milestone': target_milestone,
+            'reported_date': reported_date,
+            'reported_by': reported_by,
+            'modified_date': modified_date
         }
