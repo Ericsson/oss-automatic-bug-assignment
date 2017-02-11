@@ -24,7 +24,7 @@ Below, there are some useful command lines to get started with Scrapy:
 
   * `cd eclipse_jdt/scrap_eclipse_jdt/`: move to the relevant folder;
 
-  * `crapy crawl eclipse_jdt -o brs.json`: run the Eclipse JDT spider 
+  * `scrapy crawl eclipse_jdt -o brs.json`: run the Eclipse JDT spider 
   and store the scrapped data into a JSON file.
 
 ## Mozilla Firefox
@@ -36,5 +36,5 @@ Below, there are some useful command lines to get started with Scrapy:
   * `cd mozilla_firefox/scrap_mozilla_firefox/`: move to the relevant 
   folder;
 
-  * `crapy crawl mozilla_firefox -o brs.json`: run the Mozilla 
+  * `scrapy crawl mozilla_firefox -o brs.json`: run the Mozilla 
   Firefox spider and store the scrapped data into a JSON file.
