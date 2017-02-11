@@ -17,17 +17,17 @@ class EcplipseJDTSpider(scrapy.Spider):
     start_urls = [
         "https://bugs.eclipse.org/bugs/buglist.cgi?" + \
         "bug_status=RESOLVED&bug_status=VERIFIED&" + \
-        "bug_status=CLOSED&limit=100&offset=0&" + \
+        "bug_status=CLOSED&limit=10000&offset=0&" + \
         "order=bug_id%20DESC&product=JDT&query_format=advanced&" + \
         "resolution=FIXED", 
         "https://bugs.eclipse.org/bugs/buglist.cgi?" + \
         "bug_status=RESOLVED&bug_status=VERIFIED&" + \
-        "bug_status=CLOSED&limit=100&offset=100&" + \
+        "bug_status=CLOSED&limit=10000&offset=10000&" + \
         "order=bug_id%20DESC&product=JDT&query_format=advanced&" + \
         "resolution=FIXED",
         "https://bugs.eclipse.org/bugs/buglist.cgi?" + \
         "bug_status=RESOLVED&bug_status=VERIFIED&" + \
-        "bug_status=CLOSED&limit=100&offset=200&" + \
+        "bug_status=CLOSED&limit=10000&offset=20000&" + \
         "order=bug_id%20DESC&product=JDT&query_format=advanced&" + \
         "resolution=FIXED"
     ]
