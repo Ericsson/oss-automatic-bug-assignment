@@ -26,6 +26,7 @@ matplotlib.style.use("ggplot")
 if __name__ == "__main__":
     data_file = "./pre_processed_output.json" # The file which
     # contains the pre-processed output
+    np.random.seed(0) # Sets the seed
     with open(data_file) as json_data:
         # Then, we load the JSON contents
         json_data = json.load(json_data)
