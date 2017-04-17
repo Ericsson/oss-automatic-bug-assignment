@@ -2,3 +2,5 @@
 *.log
 *.json
 *.csv
+!eclipse_jdt/scrap_eclipse_jdt/brs.json
+!mozilla_firefox/scrap_mozilla_firefox/brs.json
