@@ -3,4 +3,6 @@
 *.json
 *.csv
 !eclipse_jdt/scrap_eclipse_jdt/brs.json
+!eclipse_jdt/scrap_eclipse_jdt/sorted_brs.json
 !mozilla_firefox/scrap_mozilla_firefox/brs.json
+!mozilla_firefox/scrap_mozilla_firefox/sorted_brs.json
