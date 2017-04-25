@@ -11,6 +11,7 @@ encoding//size_of_data_set_experiments/size_of_data_set_experiments.py=utf-8
 encoding//size_of_data_set_experiments/size_of_data_set_incremental_experiment.py=utf-8
 encoding//size_of_data_set_experiments/size_of_data_set_normal_experiment.py=utf-8
 encoding//tr_representation_experiments/classify_k_folds_time_series_tr_representation.py=utf-8
+encoding//tuning_individual_classifiers_experiments/classify_k_folds_time_series_tuning.py=utf-8
 encoding/classify.py=utf-8
 encoding/classify_k_folds.py=utf-8
 encoding/data_pre_processer.py=utf-8
