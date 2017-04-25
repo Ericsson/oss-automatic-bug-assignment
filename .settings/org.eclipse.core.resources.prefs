@@ -4,5 +4,7 @@ encoding//eclipse_jdt/mine_eclipse_jdt/data_pre_processer.py=utf-8
 encoding//mozilla_firefox/mine_mozilla_firefox/classify.py=utf-8
 encoding//mozilla_firefox/mine_mozilla_firefox/data_pre_processer.py=utf-8
 encoding//scikit_learn/accuracy_mrr_scoring_object.py=utf-8
+encoding/classify.py=utf-8
+encoding/classify_k_folds.py=utf-8
 encoding/data_pre_processer.py=utf-8
 encoding/utilities.py=utf-8
