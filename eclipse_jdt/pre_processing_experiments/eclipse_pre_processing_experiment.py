@@ -21,7 +21,7 @@ class EclipsePreProcessingExperiment(PreProcessingExperiment):
         use_lemmatizer=False, stop_words_removal=False, \
         punctuation_removal=False, numbers_removal=False)
         logging.basicConfig( \
-        filename='pre_processing_experiment.log', filemode='w', \
+        filename="pre_processing_experiment.log", filemode="w", \
         level=logging.DEBUG)
         self._current_dir = os.path.dirname(os.path.abspath( \
         inspect.getfile(inspect.currentframe())))

@@ -24,29 +24,22 @@ current_dir = os.path.dirname(os.path.abspath( \
 inspect.getfile(inspect.currentframe())))
 parent_dir = os.path.dirname(current_dir)
 os.sys.path.insert(0,parent_dir) 
-from utilities import load_data_set, load_developers_mappings, \
-load_distinct_developers_list, build_data_frame, print_log
+from utilities import load_data_set, build_data_frame, print_log
 from scikit_learn._search import GridSearchCV
 from scikit_learn.accuracy_mrr_scoring_object import accuracy_mrr_scoring_object
 
 class TRRepresentationExperiment:
 
-    def __init__(self, data_set_file, developers_dict_file, developers_list_file):
-        self._data_set_file = data_set_file
+    def __init__(self, developers_dict_file=None, \
+        developers_list_file=None):
+        self._current_dir = None
+        self._data_set_file = None
         self._developers_dict_file = developers_dict_file
-        self._developers_list_file = developers_list_file
-        self._current_dir = os.path.dirname(os.path.abspath( \
-        inspect.getfile(inspect.currentframe())))       
-        self.parent_dir = os.path.dirname(self._current_dir)
+        self._developers_list_file = developers_list_file      
         self._tscv = TimeSeriesSplit(n_splits=10)
         self._train_set = None
         self._test_set = None
-        
-        logging.basicConfig(filename="tr_representation_experiment.log", \
-        filemode="w", level=logging.DEBUG)
-        
-        self._build_data_set()
-        
+                
         np.random.seed(0) # We set the seed
         
         # self._boolean_bernouilli = [("count", CountVectorizer( \
@@ -135,9 +128,9 @@ class TRRepresentationExperiment:
             "GridSearch TF IDF NMF SVM": self._tf_idf_nmf_svm[:-1]
         }
     
-        # Below, there is a dictionary to store the names, the classifiers 
-        # used, the parameters sent to the constructor of the classifiers 
-        # and the fitted classifiers
+        # Below, there is a dictionary to store the names, the 
+        # classifiers used, the parameters sent to the constructor of
+        # the classifiers and the fitted classifiers
         self._models = { \
             # "Boolean": [Pipeline, {
             #     "steps": self._boolean_bernouilli
@@ -265,15 +258,22 @@ class TRRepresentationExperiment:
         with open(self._cleaned_results_file_name, 'w') as output_file:
             json.dump(self._results_to_save_to_a_file, output_file)
         
-    def _build_data_set(self):
+    def _build_data_set(self):       
         # First we load the data of the three aforementioned files
         json_data = load_data_set(self._data_set_file)
-        developers_dict_data = load_developers_mappings(self._developers_dict_file)
-        developers_list_data = load_distinct_developers_list(self._developers_list_file)
+        
+        developers_dict_data = None
+#         TO DO
+#         load_developers_mappings(self._developers_dict_file)
+        
+        developers_list_data = None
+#         TO DO
+#         load_distinct_developers_list(self._developers_list_file)
         
         # Then, we build a data frame using the loaded data set, the 
         # loaded developers mappings, the loaded distinct developers.
-        self._df = build_data_frame(json_data, developers_dict_data, developers_list_data)
+        self._df = build_data_frame(json_data, developers_dict_data, \
+                                    developers_list_data)
         
         print_log("Splitting the data set") # Debug
         # self._df = self._df[-30000:]
@@ -289,13 +289,14 @@ class TRRepresentationExperiment:
         print_log(self._test_set.shape) # Debug
         print_log(self._test_set['class'].value_counts(normalize=True))
 
-    def _train_predict(self, models, models_accuracies, models_mrrs, combined=False):
-        start_time = time.time() # We get the time expressed in seconds 
-        # since the epoch
+    def _train_predict(self, models, models_accuracies, models_mrrs, \
+                       combined=False):
+        start_time = time.time() # We get the time expressed in 
+        # seconds since the epoch
         i = 1 # Used to know on each fold we will test the classifier 
         # currently trained 
         for train_indices, val_indices in self._tscv.split(self._train_set):
-            print_log("********* Evaluation on fold {} *********"\
+            print_log("********* Evaluation on fold {} *********" \
             .format(i)) # Debug
 
             X_train = self._train_set.iloc[train_indices]["text"]
@@ -306,7 +307,8 @@ class TRRepresentationExperiment:
                 print_log(key)
                 models[key][-1] = models[key][0](**models[key][1]) \
                 .fit(X_train, y_train)         
-                print_log("--- {} seconds ---".format(time.time() - start_time))
+                print_log("--- {} seconds ---" \
+                .format(time.time() - start_time))
             
             X_val = self._train_set.iloc[val_indices]["text"].values
             y_val = self._train_set.iloc[val_indices]["class"].values
@@ -356,9 +358,10 @@ class TRRepresentationExperiment:
                         found_function = True
                 except AttributeError:
                     pass
-                print_log("Mean Reciprocal Rank:")
-                print_log(models_mrrs[key][-1])    
-                print_log("--- {} seconds ---".format(time.time() - start_time))               
+                print_log("Mean Reciprocal Rank:") # Debug
+                print_log(models_mrrs[key][-1]) # Debug 
+                print_log("--- {} seconds ---" \
+                          .format(time.time() - start_time))               
 
             i += 1
             
@@ -370,6 +373,7 @@ class TRRepresentationExperiment:
             self._results_to_save_to_a_file["not_combined_avg_mrr"] = {}
         
         avg_accuracy = None
+        avg_mrr = None
             
         # Below, we print the average accuracies
         for key, value in models_accuracies.items():
@@ -401,7 +405,8 @@ class TRRepresentationExperiment:
             
             print_log(avg_mrr) # Debug        
 
-        print_log("--- {} seconds ---".format(time.time() - start_time))
+        print_log("--- {} seconds ---" \
+                  .format(time.time() - start_time))
         
     def _train_predict_cv(self):
         print_log("Training of the models") # Debug
@@ -411,9 +416,11 @@ class TRRepresentationExperiment:
             start_time = time.time() # We get the time expressed in 
             # seconds since the epoch
             print_log(key)
-            self._models_cv[key][-1] = self._models_cv[key][0](**self._models_cv[key][1]) \
+            self._models_cv[key][-1] = \
+            self._models_cv[key][0](**self._models_cv[key][1]) \
             .fit(X_train, y_train)         
-            print_log("--- {} seconds ---".format(time.time() - start_time))
+            print_log("--- {} seconds ---" \
+                      .format(time.time() - start_time))
         
         for key in self._models_cv:
             print_log("{}".format(key)) # Debug    
@@ -427,7 +434,8 @@ class TRRepresentationExperiment:
             self._results_to_save_to_a_file["not_combined_avg_mrr"][key] = \
             means[:,1].tolist()
             for mean, std, params in zip(means, stds, self._models_cv[key][-1].cv_results_['params']):
-                print_log("{} (+/-{}) for {!r}".format(mean, std * 2, params))
+                print_log("{} (+/-{}) for {!r}" \
+                          .format(mean, std * 2, params))
             print_log("All results on the training set")
             print_log(self._models_cv[key][-1].cv_results_)
             
@@ -436,11 +444,21 @@ class TRRepresentationExperiment:
             try:
                 self._models_cv[key]
                 if "truncated_svd__n_components" in self._models_cv[key][-1].best_params_:
-                    best_n_components = self._models_cv[key][-1].best_params_["truncated_svd__n_components"]
-                    self._models_names_pipelines_mapping[key][-2] = ("truncated_svd", TruncatedSVD(n_components=best_n_components, random_state=0))  
+                    best_n_components = \
+                    self._models_cv[key][-1]\
+                    .best_params_["truncated_svd__n_components"]
+                    self._models_names_pipelines_mapping[key][-2] = \
+                    ("truncated_svd", \
+                     TruncatedSVD(n_components=best_n_components, \
+                                  random_state=0))  
                 else:
-                    best_n_components = self._models_cv[key][-1].best_params_["nmf__n_components"]
-                    self._models_names_pipelines_mapping[key][-1] = ("nmf", NMF(n_components=best_n_components, random_state=0, alpha=.1, l1_ratio=.5))
+                    best_n_components = \
+                    self._models_cv[key][-1]. \
+                    best_params_["nmf__n_components"]
+                    self._models_names_pipelines_mapping[key][-1] = \
+                    ("nmf", \
+                     NMF(n_components=best_n_components, \
+                         random_state=0, alpha=.1, l1_ratio=.5))
             except KeyError:
                 # We don't need to find the best parameters of the 
                 # model
@@ -485,24 +503,3 @@ class TRRepresentationExperiment:
             self._models[key][2] = None
         for key in self._models_cv:
             self._models_cv[key][2] = None
-
-def main():
-    data_set_file = "../pre_processing_experiments/output_with_" + \
-    "cleaning_without_stemming_without_lemmatizing_with_stop_" + \
-    "words_removal_with_punctuation_removal_with_numbers_" + \
-    "removal.json" # The path of the file which 
-    # contains the pre-processed output
-    # Below, the path of the file which contains a dictionary related 
-    # to the mappings of the developers
-    developers_dict_file = "../../developers_dict.json"
-    # Below, the path of the file which contains a list of the 
-    # relevant distinct developers
-    developers_list_file = "../../developers_list.json"
-    
-    tr_representation_experiment = TRRepresentationExperiment( \
-    data_set_file=data_set_file, developers_dict_file=developers_dict_file, \
-    developers_list_file=developers_list_file)
-    tr_representation_experiment.conduct_experiment()
-
-if __name__ == "__main__":
-    main()
