@@ -235,6 +235,7 @@ class TRRepresentationExperiment:
         "representation_experiment_results.json"
         
     def conduct_experiment(self):
+        """Method used to conduct the experiment"""
         self._train_predict(self._models, \
                             self._configurations_accuracies, \
                             self._configurations_mrr_values, \
@@ -256,7 +257,8 @@ class TRRepresentationExperiment:
         an attribute of the object.
         """
         with open(self._cleaned_results_file_name, 'w') as output_file:
-            json.dump(self._results_to_save_to_a_file, output_file)
+            json.dump(self._results_to_save_to_a_file, output_file, \
+                      indent=4)
         
     def _build_data_set(self):       
         # First we load the data of the three aforementioned files
