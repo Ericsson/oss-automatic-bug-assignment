@@ -10,7 +10,6 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.linear_model import Perceptron
 from sklearn.model_selection import TimeSeriesSplit
 from sklearn.pipeline import Pipeline
-from log_space_uniform import LogSpaceUniform
 from scipy.stats import uniform as uni
 from sklearn.preprocessing import LabelBinarizer
 from sklearn.metrics import label_ranking_average_precision_score
@@ -23,30 +22,34 @@ import json
 
 current_dir = os.path.dirname(os.path.abspath( \
 inspect.getfile(inspect.currentframe())))
+os.sys.path.insert(0, current_dir)
+from log_space_uniform import LogSpaceUniform
 parent_dir = os.path.dirname(current_dir)
-os.sys.path.insert(0,parent_dir) 
-from utilities import load_data_set, load_developers_mappings, \
-load_distinct_developers_list, build_data_frame, print_log
+os.sys.path.insert(0, parent_dir) 
+from utilities import load_data_set, build_data_frame, print_log
 from scikit_learn._search import GridSearchCV, RandomizedSearchCV
-from scikit_learn.accuracy_mrr_scoring_object import accuracy_mrr_scoring_object
+from scikit_learn.accuracy_mrr_scoring_object \
+import accuracy_mrr_scoring_object
 
 class TuningIndividualClassifierGenericExperiment:
     
-    def __init__(self, data_set_file, developers_dict_file, developers_list_file):
-        self._data_set_file = data_set_file
+    def __init__(self, developers_dict_file, developers_list_file):
+        self._data_set_file = None
+
         self._developers_dict_file = developers_dict_file
         self._developers_list_file = developers_list_file
-        self._current_dir = os.path.dirname(os.path.abspath( \
-        inspect.getfile(inspect.currentframe())))       
-        self.parent_dir = os.path.dirname(self._current_dir)
-        self._tscv = TimeSeriesSplit(n_splits=10)
-        self._train_set = None
-        self._test_set = None
         
-        logging.basicConfig( \
-        filename="tuning_individual_classifier_generic_experiment.log", \
-        filemode="w", level=logging.DEBUG)
+        self._current_dir = None  
+           
+        self._tscv = TimeSeriesSplit(n_splits=10) # Used to store a 
+        # reference to the object which will allow us to perform a 
+        # customized version of cross validation
         
+        self._train_set = None # Used to store a reference to the 
+        # training set
+        self._test_set = None # Used to store a reference to the 
+        # test set
+                
         np.random.seed(0) # We set the seed
         
         self._estimators = [("count", CountVectorizer( \
@@ -380,13 +383,16 @@ class TuningIndividualClassifierGenericExperiment:
         self._cleaned_results_file_name = "cleaned_tuning_" + \
         "individual_classifier_generic_experiment_results.json"
         
-        self._build_data_set()
-        
     def _build_data_set(self):
         # First, we load the data of the three aforementioned files
         json_data = load_data_set(self._data_set_file)
-        developers_dict_data = load_developers_mappings(self._developers_dict_file)
-        developers_list_data = load_distinct_developers_list(self._developers_list_file)
+        
+        developers_dict_data = None
+#         TO DO
+#         load_developers_mappings(self._developers_dict_file)
+        developers_list_data = None
+#         TO DO
+#         load_distinct_developers_list(self._developers_list_file)
         
         # Then, we build a data frame using the loaded data set, the 
         # loaded developers mappings, the loaded distinct developers.
@@ -417,7 +423,8 @@ class TuningIndividualClassifierGenericExperiment:
             print_log(key)
             model_cv[key][-1] = model_cv[key][0](**model_cv[key][1]) \
             .fit(X_train, y_train)         
-            print_log("--- {} seconds ---".format(time.time() - start_time))
+            print_log("--- {} seconds ---" \
+                      .format(time.time() - start_time))
 
         if random is True:
             self._results_to_save_to_a_file["random_avg"] = {}
@@ -432,7 +439,8 @@ class TuningIndividualClassifierGenericExperiment:
             stds = model_cv[key][-1].cv_results_['std_test_score']
             params_list = model_cv[key][-1].cv_results_['params']
             if random is True:
-                self._results_to_save_to_a_file["random_avg"][key] = {}
+                self._results_to_save_to_a_file["random_avg"][key] = \
+                {}
                 self._results_to_save_to_a_file["random_avg"][key]["means_accuracy"] = \
                 means[:,0].tolist()
                 self._results_to_save_to_a_file["random_avg"][key]["means_mrr"] = \
@@ -440,7 +448,8 @@ class TuningIndividualClassifierGenericExperiment:
                 self._results_to_save_to_a_file["random_avg"][key]["params"] = \
                 params_list
             else:
-                self._results_to_save_to_a_file["normal_avg"][key] = {}
+                self._results_to_save_to_a_file["normal_avg"][key] = \
+                {}
                 self._results_to_save_to_a_file["normal_avg"][key]["means_accuracy"] = \
                 means[:,0].tolist()
                 self._results_to_save_to_a_file["normal_avg"][key]["means_mrr"] = \
@@ -453,7 +462,8 @@ class TuningIndividualClassifierGenericExperiment:
             print_log("All results on the training set")
             print_log(model_cv[key][-1].cv_results_)
         
-    def _predict_test_set(self, model_cv, models_accuracies, models_mrrs):
+    def _predict_test_set(self, model_cv, models_accuracies, \
+                          models_mrrs):
         print_log("We count the occurrence of each term in the " + \
                   "test set") # Debug
         X_test = self._test_set['text'].values
@@ -507,7 +517,8 @@ class TuningIndividualClassifierGenericExperiment:
             except AttributeError:
                 models_mrrs[key] = -1
             
-            print_log("--- {} seconds ---".format(time.time() - start_time))
+            print_log("--- {} seconds ---" \
+                      .format(time.time() - start_time))
             
         # Below, we print the accuracy of each classifier
         for key, value in models_accuracies.items():
@@ -527,44 +538,20 @@ class TuningIndividualClassifierGenericExperiment:
         an attribute of the object.
         """
         with open(self._cleaned_results_file_name, 'w') as output_file:
-            json.dump(self._results_to_save_to_a_file, output_file)
+            json.dump(self._results_to_save_to_a_file, output_file, \
+                      indent=4)
         
     def conduct_experiment(self):
-        print_log("### Grid Search ###")
+        """Method used to conduct the experiment"""
+        print_log("### Grid Search ###") # Debug
         self._train_predict_cv(self._models_cv, False)
         self._predict_test_set(self._models_cv, \
                                self._configurations_accuracies, \
                                self._configurations_mrr_values)
-        print_log("### Random Search ###")
+        print_log("### Random Search ###") # Debug
         self._train_predict_cv(self._randomized_models_cv, True)
         self._predict_test_set(self._randomized_models_cv, \
                                self._randomized_configurations_accuracies, \
                                self._randomized_configurations_mrr_values)
         self._write_df()
         self._save_cleaned_results()
-
-def main():
-    data_set_file = "../pre_processing_experiments/output_with_" + \
-    "cleaning_without_stemming_without_lemmatizing_with_stop_" + \
-    "words_removal_with_punctuation_removal_with_numbers_removal." + \
-    "json" # The path of the file which contains the pre-processed 
-    # output
-    
-    # Below, the path of the file which contains a dictionary related 
-    # to the mappings of the developers
-    developers_dict_file = "../../developers_dict.json"
-    
-    # Below, the path of the file which contains a list of the 
-    # relevant distinct developers
-    developers_list_file = "../../developers_list.json"
-    
-    tuning_individual_classifier_generic_experiment = \
-    TuningIndividualClassifierGenericExperiment( \
-    data_set_file=data_set_file, \
-    developers_dict_file=developers_dict_file, \
-    developers_list_file=developers_list_file)
-    tuning_individual_classifier_generic_experiment \
-    .conduct_experiment()    
-
-if __name__ == "__main__":
-    main()
