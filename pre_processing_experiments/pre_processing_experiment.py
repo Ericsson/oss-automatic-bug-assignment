@@ -18,51 +18,73 @@ import json
 current_dir = os.path.dirname(os.path.abspath( \
 inspect.getfile(inspect.currentframe())))
 parent_dir = os.path.dirname(current_dir)
-os.sys.path.insert(0,parent_dir) 
+os.sys.path.insert(0, parent_dir) 
 from data_pre_processer import DataPreProcesser
-from utilities import print_log, build_data_frame, load_data_set, \
-load_developers_mappings, load_distinct_developers_list
+from utilities import print_log, build_data_frame, load_data_set
 
 class PreProcessingExperiment:
 
-    def __init__(self, data_file, developers_dict_file, developers_list_file, \
-    clean_trs=False, use_stemmer=False, use_lemmatizer=False, \
-    stop_words_removal=False, punctuation_removal=False, \
-    numbers_removal=False):
-        self.data_file = data_file
+    def __init__(self, developers_dict_file, \
+    developers_list_file, clean_brs=False, use_stemmer=False, \
+    use_lemmatizer=False, stop_words_removal=False, \
+    punctuation_removal=False, numbers_removal=False):
+        """Constructor"""
+        self._current_dir = None
+        
+        # Used to store the path of each data set file
+        self.data_file = None 
+        
+        # TO DO: Modify the class so that it becomes an abstract 
+        # class
+        # TO DO: Management of the reference to the data pre-processer
+
+        # TO DO: Modify the line below later  
         self._developers_dict_file = developers_dict_file
+
+        # TO DO: Modify the line below later
         self._developers_list_file = developers_list_file
-        self._current_dir = os.path.dirname(os.path.abspath( \
-        inspect.getfile(inspect.currentframe())))       
-        self.parent_dir = os.path.dirname(current_dir)
-        self.set_config(clean_trs=clean_trs, \
+        
+        # Below, we set a default configuration
+        self.set_config(clean_brs=clean_brs, \
         use_stemmer=use_stemmer, use_lemmatizer=use_lemmatizer, \
         stop_words_removal=stop_words_removal, \
         punctuation_removal=punctuation_removal, \
         numbers_removal=numbers_removal)
-        self._data_pre_processer = None
-        self._train_set = None
-        self._test_set = None
-        self._tscv = TimeSeriesSplit(n_splits=10)
-        self._data_set_file = None
-        self._model = LinearSVC(random_state=0)
+        
+        self._data_pre_processer = None # Used to store a reference 
+        # to a data pre-processer 
+        self._train_set = None # Used to store a reference to the 
+        # training set
+        self._test_set = None # Used to store a reference to the 
+        # test set
+        
+        self._tscv = TimeSeriesSplit(n_splits=10) # Used to store a 
+        # reference to the object which will allow us to perform a 
+        # customized version of cross validation
+        
+        self._data_set_file = None # Used to store the names of each 
+        # output file when training the models on the different 
+        # configurations
+        
+        self._model = LinearSVC(random_state=0) # The model used
+        
         # Below, there is a dictionary to store the accuracies (per 
         # fold) of each configuration
         self._configurations_accuracies = {}
+        
         # Below, there is a dictionary to store the MRR values (per 
         # fold) of each configuration
         self._configurations_mrr_values = {}
+        
         # Below, there is a dictionary used to save the cleaned 
         # results to a JSON file
         self._results_to_save_to_a_file = {}
-        self._cleaned_results_file_name = "cleaned_pre_processing_" + \
-        "experiment_results.json"
-        logging.basicConfig(filename='pre_processing_experiment.log', \
-        filemode='w', level=logging.DEBUG)
+        self._cleaned_results_file_name = "cleaned_pre_" + \
+        "processing_experiment_results.json"
         
-    def set_config(self, clean_trs, use_stemmer, use_lemmatizer, \
+    def set_config(self, clean_brs, use_stemmer, use_lemmatizer, \
     stop_words_removal, punctuation_removal, numbers_removal):
-        self.clean_trs = clean_trs
+        self.clean_brs = clean_brs
         self.use_stemmer = use_stemmer
         self.use_lemmatizer = use_lemmatizer
         self.stop_words_removal = stop_words_removal
@@ -78,12 +100,12 @@ class PreProcessingExperiment:
         self._data_file = data_file
 
     @property
-    def clean_trs(self):
-        return self._clean_trs 
+    def clean_brs(self):
+        return self._clean_brs 
         
-    @clean_trs.setter
-    def clean_trs(self, clean_trs):
-        self._clean_trs = clean_trs
+    @clean_brs.setter
+    def clean_brs(self, clean_brs):
+        self._clean_brs = clean_brs
 
     @property
     def use_stemmer(self):
@@ -127,18 +149,25 @@ class PreProcessingExperiment:
 
     def get_file_name(self):
         # Below, we are giving a relevant name to the output file
-        clean_trs_string = "" if self.clean_trs else "out" 
+        clean_brs_string = "" if self.clean_brs else "out" 
         use_stemmer_string = "" if self.use_stemmer else "out"
         use_lemmatizer_string = "" if self.use_lemmatizer else "out"
         stop_words_removal_string = "" if self.stop_words_removal else "out"
         punctuation_removal_string = "" if self.punctuation_removal else "out"
         numbers_removal_string = "" if self.numbers_removal else "out"   
-        output_data_file = "output_with{}_cleaning_".format(clean_trs_string) + \
-        "with{}_stemming_".format(use_stemmer_string) + \
-        "with{}_lemmatizing_".format(use_lemmatizer_string) + \
-        "with{}_stop_words_removal_".format(stop_words_removal_string) + \
-        "with{}_punctuation_removal_".format(punctuation_removal_string) + \
-        "with{}_numbers_removal.json".format(numbers_removal_string)    
+        output_data_file = \
+        "output_with{}_cleaning_" \
+        .format(clean_brs_string) + \
+        "with{}_stemming_" \
+        .format(use_stemmer_string) + \
+        "with{}_lemmatizing_" \
+        .format(use_lemmatizer_string) + \
+        "with{}_stop_words_removal_" \
+        .format(stop_words_removal_string) + \
+        "with{}_punctuation_removal_" \
+        .format(punctuation_removal_string) + \
+        "with{}_numbers_removal.json" \
+        .format(numbers_removal_string)    
         return output_data_file
     
     def generate_output_file(self):
@@ -148,7 +177,7 @@ class PreProcessingExperiment:
         print("Generating {}...".format(output_data_file))
         print(self._data_file)
         self._data_pre_processer = DataPreProcesser(self._data_file, \
-        clean_trs=self._clean_trs, use_stemmer=self._use_stemmer, \
+        clean_brs=self._clean_brs, use_stemmer=self._use_stemmer, \
         use_lemmatizer=self._use_lemmatizer, \
         stop_words_removal=self._stop_words_removal, \
         punctuation_removal=self._punctuation_removal, \
@@ -163,13 +192,13 @@ class PreProcessingExperiment:
         print("--- {} seconds ---".format(time.time() - start_time))
     
     def generate_all_output_files(self):
-        for clean_trs in [False, True]:
+        for clean_brs in [False, True]:
             for use_stemmer, use_lemmatizer in [(False, False), \
             (False, True), (True, False)]:
                 for stop_words_removal in [False, True]:
                     for punctuation_removal in [False, True]:
                         for numbers_removal in [False, True]:
-                            self.set_config(clean_trs=clean_trs, \
+                            self.set_config(clean_brs=clean_brs, \
                             use_stemmer=use_stemmer, \
                             use_lemmatizer=use_lemmatizer, \
                             stop_words_removal=stop_words_removal, \
@@ -178,35 +207,49 @@ class PreProcessingExperiment:
                             self.generate_output_file()
                                 
     def train_predict_all_output_files(self):
-        to_lower_case = None
-        j = 1
-        data_set_file_list = None
-        with_lower_case = "_with_to_lower_case."
-        without_lower_case = "_without_to_lower_case."
-        temp = None
+        to_lower_case = None # Used to manage the lower case 
+        # parameter in the various configurations
+        j = 1 # Iterator
+        data_set_file_list = None # Temporary variable used to build 
+        # the name of each configuration
+        with_lower_case = "_with_to_lower_case." # Variable used to 
+        # build the name of each configuration using conversion to 
+        # lower case
+        without_lower_case = "_without_to_lower_case." # Variable used
+        # to build the name of each configuration not using conversion
+        # to lower case
+        temp = None  # Temporary variable used to build the name of 
+        # each configuration
         print(os.listdir(self._current_dir)) # Debug
         print(len(os.listdir(self._current_dir))) # Debug
         for file in os.listdir(self._current_dir):
 #             if j == 2:
 #                 break
             print(file) # Debug
-            if file.endswith(".json") and file != "cleaned_pre_processing_experiment_results.json":
+            if file.endswith(".json") and \
+            file != "cleaned_pre_processing_experiment_results.json":
                 # print(os.path.join(self._current_dir, file)) # Debug
-                start_time = time.time() # We get the time expressed in 
-                # seconds since the epoch
+                start_time = time.time() # We get the time expressed 
+                # in seconds since the epoch
                 self._data_set_file = file
-                self._build_data_set()
-                for to_lower_case in [False, True]:
+                self._build_data_set() # We build the data set
+                for to_lower_case in [False, True]: 
+                    # We iterate to manage the potential conversion 
+                    # to lower case 
                     temp = self._data_set_file
                     data_set_file_list = self._data_set_file.split(".")
                     if to_lower_case:
-                        self._data_set_file = data_set_file_list[0] + \
-                        with_lower_case + data_set_file_list[1] 
+                        self._data_set_file = \
+                        data_set_file_list[0] + with_lower_case + \
+                        data_set_file_list[1] 
                     else:
-                        self._data_set_file = data_set_file_list[0] + \
-                        without_lower_case + data_set_file_list[1]
-                    print_log("##### File name: {} #####".format(self._data_set_file)) # Debug
-                    print_log("--- {} seconds ---".format(time.time() - start_time))
+                        self._data_set_file = \
+                        data_set_file_list[0] + without_lower_case + \
+                        data_set_file_list[1]
+                    print_log("##### File name: {} #####" \
+                              .format(self._data_set_file)) # Debug
+                    print_log("--- {} seconds ---" \
+                              .format(time.time() - start_time))
                     i = 1                    
                     for train_indices, val_indices in self._tscv.split(self._train_set):   
                         print_log("********* Evaluation on fold {} *********"\
@@ -235,14 +278,17 @@ class PreProcessingExperiment:
                         
                         print_log("--- {} seconds ---".format(time.time() - start_time))
                             
-                        print_log("We count the occurrence of each " + \
-                            "term in the val. set") # Debug
+                        print_log("We count the occurrence of " + \
+                                  "each term in the val. set") # Debug
                         X_val_counts = count_vectorizer \
                         .transform(self._train_set.iloc[val_indices]['text'].values)
-                        print_log("Computation of the weights of the TF-IDF " + \
-                        "model for the validation set") # Debug
-                        X_val = tfidf_transformer.transform(X_val_counts)
-                        y_val = self._train_set.iloc[val_indices]['class'].values
+                        print_log("Computation of the weights of " + \
+                                  "the TF-IDF model for the " + \
+                                  "validation set") # Debug
+                        X_val = tfidf_transformer. \
+                        transform(X_val_counts)
+                        y_val = self._train_set. \
+                        iloc[val_indices]['class'].values
                         print_log("Making predictions") # Debug
                         
                         if i == 1:
@@ -337,11 +383,18 @@ class PreProcessingExperiment:
     def _build_data_set(self):
         np.random.seed(0) # We set the seed
 
-        # First we load the data of the three aforementioned files
+        # First we load the data set
         json_data = load_data_set(self._data_set_file)
-        developers_dict_data = load_developers_mappings(self._developers_dict_file)
-        developers_list_data = load_distinct_developers_list(self._developers_list_file)
         
+        developers_dict_data = None
+        # TO DO
+        # load_developers_mappings(self._developers_dict_file)
+        
+        developers_list_data = None
+        # TO DO
+        # load_distinct_developers_list(self._developers_list_file)
+        
+        # TO DO
         # Then, we build a data frame using the loaded data set, the 
         # loaded developers mappings, the loaded distinct developers.
         df = build_data_frame(json_data, developers_dict_data, developers_list_data)
@@ -373,43 +426,3 @@ class PreProcessingExperiment:
         """
         with open(self._cleaned_results_file_name, 'w') as output_file:
             json.dump(self._results_to_save_to_a_file, output_file)
-
-if __name__ == "__main__":
-    maxInt = sys.maxsize
-    decrement = True
-    while decrement:
-        # Decrease the maxInt value by factor 10 
-        # as long as the OverflowError occurs.
-        decrement = False
-        try:
-            csv.field_size_limit(maxInt)
-        except OverflowError:
-            maxInt = int(maxInt/10)
-            decrement = True
-
-    # Below, the path of the file which contains a dictionary related 
-    # to the mappings of the developers
-    developers_dict_file = "../../developers_dict.json" 
-    # Below, the path of the file which contains a list of the 
-    # relevant distinct developers
-    developers_list_file = "../../developers_list.json" 
-    clean_trs = False
-    use_stemmer = False
-    use_lemmatizer = False
-    stop_words_removal = False
-    punctuation_removal = False
-    numbers_removal = False
-    
-    data_file = "X.csv" # Path of the file containing
-    # the data
-    
-    pre_processing_experiment = PreProcessingExperiment( \
-    developers_dict_file=developers_dict_file, developers_list_file=developers_list_file, \
-    data_file=data_file, clean_trs=clean_trs, \
-    use_stemmer=use_stemmer, \
-    use_lemmatizer=use_lemmatizer, \
-    stop_words_removal=stop_words_removal, \
-    punctuation_removal=punctuation_removal, \
-    numbers_removal=numbers_removal)
-    
-    pre_processing_experiment.conduct_experiment()
