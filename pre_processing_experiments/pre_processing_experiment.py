@@ -414,6 +414,7 @@ class PreProcessingExperiment:
         print_log(self._test_set['class'].value_counts(normalize=True))
         
     def conduct_experiment(self):
+        """Method used to conduct the experiment"""
         self.generate_all_output_files()
         self.train_predict_all_output_files()
         self._save_cleaned_results()
@@ -425,4 +426,5 @@ class PreProcessingExperiment:
         an attribute of the object.
         """
         with open(self._cleaned_results_file_name, 'w') as output_file:
-            json.dump(self._results_to_save_to_a_file, output_file)
+            json.dump(self._results_to_save_to_a_file, output_file, \
+                      indent=4)
