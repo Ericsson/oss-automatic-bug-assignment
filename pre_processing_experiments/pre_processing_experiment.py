@@ -16,10 +16,11 @@ import abc
 
 current_dir = os.path.dirname(os.path.abspath( \
 inspect.getfile(inspect.currentframe())))
+os.sys.path.insert(0, current_dir)
+from data_pre_processer import DataPreProcesser
 parent_dir = os.path.dirname(current_dir)
 os.sys.path.insert(0, parent_dir)
 from experiment import Experiment
-from data_pre_processer import DataPreProcesser
 from utilities import print_log
 
 class PreProcessingExperiment(Experiment):
