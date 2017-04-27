@@ -91,7 +91,6 @@ class DataPreProcesser:
         elif use_lemmatizer:
             # Instantiation of a lemmatizer
             self.lemmatizer = WordNetLemmatizer()
-            pass
         if stop_words_removal:
             # Get an English stop word list
             self.en_stop_words = stopwords.words('english') 
@@ -99,8 +98,6 @@ class DataPreProcesser:
         # whether or not punctuation should be removed
         self.numbers_removal = numbers_removal # To know whether or 
         # not numbers should be removed
-        if numbers_removal:
-            self.case_sensitive_elements_to_remove.append(r"\b\d+\b")
 
     def _load_json_file(self):
         """Opens and loads the data from a JSON file."""
@@ -170,9 +167,19 @@ class DataPreProcesser:
                     string_to_clean, flags=re.I)
                 string_to_clean = self \
                 ._replace_newline_char_and_strip(string_to_clean)
-                string_to_clean = re.sub(r"\s+", " ", string_to_clean)
-                string_to_clean = re.sub(r"\r+", " ", string_to_clean)
-                string_to_clean = re.sub(r"\t+", " ", string_to_clean)
+        if numbers_removal:
+            # If we should remove the tokens containing only numbers,
+            # we do it
+            string_to_clean = re.sub(r"\b\d+\b", " ", string_to_clean)
+        # Below, we replace every sequence of space(s) by a single
+        # space
+        string_to_clean = re.sub(r"\s+", " ", string_to_clean)
+        # Below, we replace every sequence of carriage return(s) by a
+        # single space
+        string_to_clean = re.sub(r"\r+", " ", string_to_clean)
+        # Below, we replace every sequence of tab(s) by a single
+        # space
+        string_to_clean = re.sub(r"\t+", " ", string_to_clean)
         tokens = word_tokenize(string_to_clean)
         if self.stemmer is not None:
             # We should stem the string to clean
