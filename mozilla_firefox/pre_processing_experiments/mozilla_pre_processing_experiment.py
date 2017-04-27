@@ -6,6 +6,8 @@ import logging
 
 current_dir = os.path.dirname(os.path.abspath( \
 inspect.getfile(inspect.currentframe())))
+os.sys.path.insert(0, current_dir)
+from mozilla_data_pre_processer import MozillaDataPreProcesser
 parent_dir = os.path.dirname(current_dir)
 grand_parent_dir = os.path.dirname(parent_dir)
 os.sys.path.insert(0, grand_parent_dir) 
@@ -27,7 +29,20 @@ class MozillaPreProcessingExperiment(PreProcessingExperiment):
         level=logging.DEBUG)
         self._current_dir = os.path.dirname(os.path.abspath( \
         inspect.getfile(inspect.currentframe())))
-        self.data_file = os.path.join(self._current_dir, data_file)
+        self._data_file = os.path.join(self._current_dir, data_file)
+        
+    def generate_output_file(self):
+        """Generates a specific pre-processed data set file"""
+        # Instantiation of a specific pre-processor
+        self._data_pre_processer = MozillaDataPreProcesser( \
+        self.data_file, clean_brs=self.clean_brs, \
+        use_stemmer=self.use_stemmer, \
+        use_lemmatizer=self.use_lemmatizer, \
+        stop_words_removal=self.stop_words_removal, \
+        punctuation_removal=self.punctuation_removal, \
+        numbers_removal=self.numbers_removal)
+        # Call of the super-class same method
+        super().generate_output_file()
         
 def main():
     # Below, the path of the file which contains a dictionary related 

@@ -13,6 +13,7 @@ import logging
 import csv
 import sys
 import abc
+from abc import abstractclassmethod, abstractmethod
 
 current_dir = os.path.dirname(os.path.abspath( \
 inspect.getfile(inspect.currentframe())))
@@ -34,7 +35,7 @@ class PreProcessingExperiment(Experiment):
         super().__init__(developers_dict_file, developers_list_file)
         # Used to store the path of the JSON file containing the
         # sorted bug reports
-        self.data_file = None 
+        self._data_file = None 
         
         # TO DO: Management of the reference to the data pre-processer
         
@@ -149,24 +150,19 @@ class PreProcessingExperiment(Experiment):
         .format(numbers_removal_string)    
         return output_data_file
     
+    @abstractmethod
     def generate_output_file(self):
+        """Generates a specific pre-processed data set file"""
         start_time = time.time() # We get the time expressed in 
         # seconds since the epoch
+        print("Raw data set file: {}".format(self.data_file))
         output_data_file = self.get_file_name()
-        print("Generating {}...".format(output_data_file))
-        print(self._data_file)
-        self._data_pre_processer = DataPreProcesser(self._data_file, \
-        clean_brs=self._clean_brs, use_stemmer=self._use_stemmer, \
-        use_lemmatizer=self._use_lemmatizer, \
-        stop_words_removal=self._stop_words_removal, \
-        punctuation_removal=self._punctuation_removal, \
-        numbers_removal=self._numbers_removal) # Instantiation of the 
-        # Pre-processer
         output_data_file = os.path.join(self._current_dir, \
         output_data_file)
+        print("Generating {}...".format(output_data_file))
         self._data_pre_processer.clean_data() # We clean the data
-        self._data_pre_processer.write_data(output_data_file) # We 
-        # write the data into the given output file
+        # We write the data into the given output file
+        self._data_pre_processer.write_data(output_data_file) 
         del self._data_pre_processer
         print("--- {} seconds ---".format(time.time() - start_time))
     

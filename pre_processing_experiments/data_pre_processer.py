@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import json
 from html.parser import HTMLParser
 from nltk.tokenize import word_tokenize
 from nltk import pos_tag
@@ -12,9 +11,10 @@ import re
 import string
 import csv
 import sys
-import time
 import os
 import inspect
+import json
+import abc
 
 """Pre-process bug reports
 
@@ -23,45 +23,8 @@ bug reports.
 """
 
 class DataPreProcesser:
-
-    case_sensitive_elements_to_remove = [
-#         r"\b\b",
-#         r"\b\b",
-#         r"Â",
-#         r"~+",
-#         r"\|+",
-#         r"/+",
-#         r"\{+",
-#         r"\}+",
-#         r"\[+",
-#         r"\]+",
-#         r"\(+",
-#         r"\)+",
-#         r";+",
-#         r"->",
-#         r">+",
-#         r"<+",
-#         r"=+",
-#         r"'+",
-#         r"`+",
-#         r"\"+",
-#         r"\++",
-#         r"#+",
-#         r"\d+:\d+",
-#         r":{2,}",
-#         r"\b\d+(\.\d+)+\.?\b",
-#         r"\.{2,}",
-#         r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}",
-#         r"\d{2}:\d{2}:\d{2}(\.\d{3})?",
-#         r"\d{4}-\d{2}-\d{2}",
-#         r"-+"
-    ]
     
-    case_insensitive_elements_to_remove = [
-#         r"\b\b",
-#         r"\b"
-    ]
-    
+    @abc.abstractmethod
     def __init__(self, data_file, clean_brs=True, use_stemmer=True, \
                  use_lemmatizer= False, stop_words_removal=True, \
                  punctuation_removal=True, numbers_removal=True):
@@ -77,11 +40,10 @@ class DataPreProcesser:
         self.en_stop_words = None # Will contain an english stop word
         # list
         self.output = [] # Will contain the pre-processed data to dump 
-        self._current_dir = os.path.dirname(os.path.abspath( \
-        inspect.getfile(inspect.currentframe())))
+        
         # Will contain the name of the file which contains the bug 
         # reports
-        self.data_file = os.path.join(self._current_dir, data_file) 
+        self.data_file = data_file
         if clean_brs:
             # Instantiation of a HTMLParser
             self.html_parser = HTMLParser() 
@@ -263,60 +225,3 @@ class DataPreProcesser:
             return wordnet.ADV
         else:
             return wordnet.NOUN
-
-def main():
-    """Main program"""
-    maxInt = sys.maxsize
-    decrement = True
-    while decrement:
-        # Decrease the maxInt value by factor 10 as long as the 
-        # OverflowError occurs.
-        decrement = False
-        try:
-            csv.field_size_limit(maxInt)
-        except OverflowError:
-            maxInt = int(maxInt/10)
-            decrement = True
-
-    start_time = time.time() # We get the time expressed in seconds 
-    # since the epoch
-
-    clean_brs = True
-    use_stemmer = False
-    use_lemmatizer = True
-    stop_words_removal = True
-    punctuation_removal = True
-    numbers_removal = True
-
-    data_file = "./eclipse_jdt/scrap_eclipse_jdt/sorted_brs.json" 
-    # Path of the file containing the data
-    
-    # Below, we are giving a relevant name to the output file
-    clean_brs_string = "" if clean_brs else "out" 
-    use_stemmer_string = "" if use_stemmer else "out"
-    use_lemmatizer_string = "" if use_lemmatizer else "out"
-    stop_words_removal_string = "" if stop_words_removal else "out"
-    punctuation_removal_string = "" if punctuation_removal else "out"
-    numbers_removal_string = "" if numbers_removal else "out"   
-    output_data_file = "output_with{}_cleaning_".format(clean_brs_string) + \
-    "with{}_stemming_".format(use_stemmer_string) + \
-    "with{}_lemmatizing_".format(use_lemmatizer_string) + \
-    "with{}_stop_words_removal_".format(stop_words_removal_string) + \
-    "with{}_punctuation_removal_".format(punctuation_removal_string) + \
-    "with{}_numbers_removal.json".format(numbers_removal_string)
-    
-    data_pre_processer = DataPreProcesser(data_file, \
-    clean_brs=clean_brs, use_stemmer=use_stemmer, \
-    use_lemmatizer=use_lemmatizer, \
-    stop_words_removal=stop_words_removal, \
-    punctuation_removal=punctuation_removal, \
-    numbers_removal=numbers_removal) # Instantiation of the 
-    # Pre-processer
-    data_pre_processer.clean_data() # We clean the data
-    data_pre_processer.write_data(output_data_file) # We write the 
-    # data into the given output file
-    
-    print("--- {} seconds ---".format(time.time() - start_time))
-
-if __name__ == "__main__":
-    main()
