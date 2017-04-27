@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from scipy.stats import rv_continuous
 import numpy.random as mtrand
 
