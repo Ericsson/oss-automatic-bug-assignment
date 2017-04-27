@@ -3,7 +3,6 @@
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.svm import LinearSVC
-from sklearn.model_selection import TimeSeriesSplit
 from sklearn.preprocessing import LabelBinarizer
 from sklearn.metrics import label_ranking_average_precision_score
 import time
@@ -13,36 +12,30 @@ import inspect
 import logging
 import csv
 import sys
-import json
+import abc
 
 current_dir = os.path.dirname(os.path.abspath( \
 inspect.getfile(inspect.currentframe())))
 parent_dir = os.path.dirname(current_dir)
-os.sys.path.insert(0, parent_dir) 
+os.sys.path.insert(0, parent_dir)
+from experiment import Experiment
 from data_pre_processer import DataPreProcesser
-from utilities import print_log, build_data_frame, load_data_set
+from utilities import print_log
 
-class PreProcessingExperiment:
+class PreProcessingExperiment(Experiment):
 
+    @abc.abstractmethod
     def __init__(self, developers_dict_file, \
     developers_list_file, clean_brs=False, use_stemmer=False, \
     use_lemmatizer=False, stop_words_removal=False, \
     punctuation_removal=False, numbers_removal=False):
         """Constructor"""
-        self._current_dir = None
-        
-        # Used to store the path of each data set file
+        super().__init__(developers_dict_file, developers_list_file)
+        # Used to store the path of the JSON file containing the
+        # sorted bug reports
         self.data_file = None 
         
-        # TO DO: Modify the class so that it becomes an abstract 
-        # class
         # TO DO: Management of the reference to the data pre-processer
-
-        # TO DO: Modify the line below later  
-        self._developers_dict_file = developers_dict_file
-
-        # TO DO: Modify the line below later
-        self._developers_list_file = developers_list_file
         
         # Below, we set a default configuration
         self.set_config(clean_brs=clean_brs, \
@@ -52,19 +45,7 @@ class PreProcessingExperiment:
         numbers_removal=numbers_removal)
         
         self._data_pre_processer = None # Used to store a reference 
-        # to a data pre-processer 
-        self._train_set = None # Used to store a reference to the 
-        # training set
-        self._test_set = None # Used to store a reference to the 
-        # test set
-        
-        self._tscv = TimeSeriesSplit(n_splits=10) # Used to store a 
-        # reference to the object which will allow us to perform a 
-        # customized version of cross validation
-        
-        self._data_set_file = None # Used to store the names of each 
-        # output file when training the models on the different 
-        # configurations
+        # to a data pre-processer
         
         self._model = LinearSVC(random_state=0) # The model used
         
@@ -76,9 +57,6 @@ class PreProcessingExperiment:
         # fold) of each configuration
         self._configurations_mrr_values = {}
         
-        # Below, there is a dictionary used to save the cleaned 
-        # results to a JSON file
-        self._results_to_save_to_a_file = {}
         self._cleaned_results_file_name = "cleaned_pre_" + \
         "processing_experiment_results.json"
         
@@ -232,6 +210,7 @@ class PreProcessingExperiment:
                 start_time = time.time() # We get the time expressed 
                 # in seconds since the epoch
                 self._data_set_file = file
+                np.random.seed(0) # We set the seed
                 self._build_data_set() # We build the data set
                 for to_lower_case in [False, True]: 
                     # We iterate to manage the potential conversion 
@@ -379,52 +358,9 @@ class PreProcessingExperiment:
         self._test_set = None
         self._configurations_accuracies = {}
         self._configurations_mrr_values = {}
-                
-    def _build_data_set(self):
-        np.random.seed(0) # We set the seed
-
-        # First we load the data set
-        json_data = load_data_set(self._data_set_file)
-        
-        developers_dict_data = None
-        # TO DO
-        # load_developers_mappings(self._developers_dict_file)
-        
-        developers_list_data = None
-        # TO DO
-        # load_distinct_developers_list(self._developers_list_file)
-        
-        # TO DO
-        # Then, we build a data frame using the loaded data set, the 
-        # loaded developers mappings, the loaded distinct developers.
-        df = build_data_frame(json_data, developers_dict_data, developers_list_data)
-        
-        print_log("Splitting the data set") # Debug
-        # df = df[-30000:]
-        self._train_set, self._test_set = np.split(df, \
-        [int(.9*len(df))])
-        print_log("Shape of the initial Data Frame") # Debug
-        print_log(df.shape) # Debug
-        print_log(df['class'].value_counts(normalize=True))
-        print_log("Shape of the training set") # Debug
-        print_log(self._train_set.shape) # Debug
-        print_log(self._train_set['class'].value_counts(normalize=True))
-        print_log("Shape of the test set") # Debug
-        print_log(self._test_set.shape) # Debug
-        print_log(self._test_set['class'].value_counts(normalize=True))
         
     def conduct_experiment(self):
         """Method used to conduct the experiment"""
         self.generate_all_output_files()
         self.train_predict_all_output_files()
-        self._save_cleaned_results()
-        
-    def _save_cleaned_results(self):
-        """Method to write the cleaned results
-
-        It writes the cleaned results into a JSON file which path is 
-        an attribute of the object.
-        """
-        with open(self._cleaned_results_file_name, 'w') as output_file:
-            json.dump(self._results_to_save_to_a_file, output_file, \
-                      indent=4)
+        super().conduct_experiment()

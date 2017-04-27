@@ -35,12 +35,12 @@ def main():
     # Below, the path of the file which contains a list of the 
     # relevant distinct developers
     developers_list_file = None
-    
+
     feature_selection_experiment = EclipseFeatureSelectionExperiment( \
     data_set_file=data_set_file, \
     developers_dict_file=developers_dict_file, \
     developers_list_file=developers_list_file)
     feature_selection_experiment.conduct_experiment()
-    
+
 if __name__ == "__main__":
     main() 

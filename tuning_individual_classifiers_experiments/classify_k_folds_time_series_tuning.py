@@ -8,7 +8,6 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors.nearest_centroid import NearestCentroid
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.linear_model import Perceptron
-from sklearn.model_selection import TimeSeriesSplit
 from sklearn.pipeline import Pipeline
 from scipy.stats import uniform as uni
 from sklearn.preprocessing import LabelBinarizer
@@ -18,38 +17,25 @@ import numpy as np
 import os
 import inspect
 import logging
-import json
+import abc
 
 current_dir = os.path.dirname(os.path.abspath( \
 inspect.getfile(inspect.currentframe())))
 os.sys.path.insert(0, current_dir)
 from log_space_uniform import LogSpaceUniform
 parent_dir = os.path.dirname(current_dir)
-os.sys.path.insert(0, parent_dir) 
-from utilities import load_data_set, build_data_frame, print_log
+os.sys.path.insert(0, parent_dir)
+from experiment import Experiment
+from utilities import print_log
 from scikit_learn._search import GridSearchCV, RandomizedSearchCV
 from scikit_learn.accuracy_mrr_scoring_object \
 import accuracy_mrr_scoring_object
 
-class TuningIndividualClassifierGenericExperiment:
+class TuningIndividualClassifierGenericExperiment(Experiment):
     
+    @abc.abstractmethod
     def __init__(self, developers_dict_file, developers_list_file):
-        self._data_set_file = None
-
-        self._developers_dict_file = developers_dict_file
-        self._developers_list_file = developers_list_file
-        
-        self._current_dir = None  
-           
-        self._tscv = TimeSeriesSplit(n_splits=10) # Used to store a 
-        # reference to the object which will allow us to perform a 
-        # customized version of cross validation
-        
-        self._train_set = None # Used to store a reference to the 
-        # training set
-        self._test_set = None # Used to store a reference to the 
-        # test set
-                
+        super().__init__(developers_dict_file, developers_list_file)
         np.random.seed(0) # We set the seed
         
         self._estimators = [("count", CountVectorizer( \
@@ -375,44 +361,10 @@ class TuningIndividualClassifierGenericExperiment:
         # Below, there is a dictionary to store the MRR value of each
         # configuration on the test set (random search)
         self._randomized_configurations_mrr_values = {}
-
-        # Below, there is a dictionary used to save the cleaned 
-        # results to a JSON file
-        self._results_to_save_to_a_file = {}
         
         self._cleaned_results_file_name = "cleaned_tuning_" + \
         "individual_classifier_generic_experiment_results.json"
-        
-    def _build_data_set(self):
-        # First, we load the data of the three aforementioned files
-        json_data = load_data_set(self._data_set_file)
-        
-        developers_dict_data = None
-#         TO DO
-#         load_developers_mappings(self._developers_dict_file)
-        developers_list_data = None
-#         TO DO
-#         load_distinct_developers_list(self._developers_list_file)
-        
-        # Then, we build a data frame using the loaded data set, the 
-        # loaded developers mappings, the loaded distinct developers.
-        self._df = build_data_frame(json_data, developers_dict_data, \
-                                    developers_list_data)
-        
-        print_log("Splitting the data set") # Debug
-        # self._df = self._df[-30000:]
-        self._train_set, self._test_set = np.split(self._df, \
-        [int(.9*len(self._df))])
-        print_log("Shape of the initial Data Frame") # Debug
-        print_log(self._df.shape) # Debug
-        print_log(self._df['class'].value_counts(normalize=True))
-        print_log("Shape of the training set") # Debug
-        print_log(self._train_set.shape) # Debug
-        print_log(self._train_set['class'].value_counts(normalize=True))
-        print_log("Shape of the test set") # Debug
-        print_log(self._test_set.shape) # Debug
-        print_log(self._test_set['class'].value_counts(normalize=True))
-        
+               
     def _train_predict_cv(self, model_cv, random=False):
         print_log("Training of the models") # Debug
         X_train = self._train_set['text']
@@ -527,20 +479,6 @@ class TuningIndividualClassifierGenericExperiment:
             print_log("MRR of {}".format(key)) # Debug
             print_log(models_mrrs[key]) # Debug
         
-    def _write_df(self):
-        # We dump the data frame
-        self._df.to_csv("pre_processed_data.csv")
-        
-    def _save_cleaned_results(self):
-        """Method to write the cleaned results
-
-        It writes the cleaned results into a JSON file which path is 
-        an attribute of the object.
-        """
-        with open(self._cleaned_results_file_name, 'w') as output_file:
-            json.dump(self._results_to_save_to_a_file, output_file, \
-                      indent=4)
-        
     def conduct_experiment(self):
         """Method used to conduct the experiment"""
         print_log("### Grid Search ###") # Debug
@@ -554,4 +492,4 @@ class TuningIndividualClassifierGenericExperiment:
                                self._randomized_configurations_accuracies, \
                                self._randomized_configurations_mrr_values)
         self._write_df()
-        self._save_cleaned_results()
+        super().conduct_experiment()

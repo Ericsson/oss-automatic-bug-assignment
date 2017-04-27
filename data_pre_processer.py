@@ -167,7 +167,7 @@ class DataPreProcesser:
                     string_to_clean, flags=re.I)
                 string_to_clean = self \
                 ._replace_newline_char_and_strip(string_to_clean)
-        if numbers_removal:
+        if self.numbers_removal:
             # If we should remove the tokens containing only numbers,
             # we do it
             string_to_clean = re.sub(r"\b\d+\b", " ", string_to_clean)

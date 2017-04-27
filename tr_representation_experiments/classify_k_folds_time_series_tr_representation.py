@@ -5,7 +5,6 @@ from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.svm import LinearSVC
 from sklearn.decomposition import TruncatedSVD
 from sklearn.decomposition import NMF
-from sklearn.model_selection import TimeSeriesSplit
 from sklearn.pipeline import Pipeline
 # from sklearn.decomposition import LatentDirichletAllocation
 from sklearn.preprocessing import Normalizer
@@ -18,28 +17,23 @@ import os
 import inspect
 import math
 import logging
-import json
+import abc
 
 current_dir = os.path.dirname(os.path.abspath( \
 inspect.getfile(inspect.currentframe())))
 parent_dir = os.path.dirname(current_dir)
-os.sys.path.insert(0,parent_dir) 
-from utilities import load_data_set, build_data_frame, print_log
+os.sys.path.insert(0,parent_dir)
+from experiment import Experiment
+from utilities import print_log
 from scikit_learn._search import GridSearchCV
 from scikit_learn.accuracy_mrr_scoring_object import accuracy_mrr_scoring_object
 
-class TRRepresentationExperiment:
+class TRRepresentationExperiment(Experiment):
 
+    @abc.abstractmethod
     def __init__(self, developers_dict_file=None, \
-        developers_list_file=None):
-        self._current_dir = None
-        self._data_set_file = None
-        self._developers_dict_file = developers_dict_file
-        self._developers_list_file = developers_list_file      
-        self._tscv = TimeSeriesSplit(n_splits=10)
-        self._train_set = None
-        self._test_set = None
-                
+        developers_list_file=None):  
+        super().__init__(developers_dict_file, developers_list_file)   
         np.random.seed(0) # We set the seed
         
         # self._boolean_bernouilli = [("count", CountVectorizer( \
@@ -228,9 +222,6 @@ class TRRepresentationExperiment:
         # fold) of each combined configuration
         self._combined_configurations_mrr_values = {}
         
-        # Below, there is a dictionary used to save the cleaned 
-        # results to a JSON file
-        self._results_to_save_to_a_file = {}
         self._cleaned_results_file_name = "cleaned_tr_" + \
         "representation_experiment_results.json"
         
@@ -248,48 +239,7 @@ class TRRepresentationExperiment:
                             self._combined_configurations_mrr_values, \
                             True)
         self._write_df()
-        self._save_cleaned_results()
-        
-    def _save_cleaned_results(self):
-        """Method to write the cleaned results
-
-        It writes the cleaned results into a JSON file which path is 
-        an attribute of the object.
-        """
-        with open(self._cleaned_results_file_name, 'w') as output_file:
-            json.dump(self._results_to_save_to_a_file, output_file, \
-                      indent=4)
-        
-    def _build_data_set(self):       
-        # First we load the data of the three aforementioned files
-        json_data = load_data_set(self._data_set_file)
-        
-        developers_dict_data = None
-#         TO DO
-#         load_developers_mappings(self._developers_dict_file)
-        
-        developers_list_data = None
-#         TO DO
-#         load_distinct_developers_list(self._developers_list_file)
-        
-        # Then, we build a data frame using the loaded data set, the 
-        # loaded developers mappings, the loaded distinct developers.
-        self._df = build_data_frame(json_data, developers_dict_data, \
-                                    developers_list_data)
-        
-        print_log("Splitting the data set") # Debug
-        # self._df = self._df[-30000:]
-        self._train_set, self._test_set = np.split(self._df, \
-        [int(.9*len(self._df))])
-        print_log("Shape of the initial Data Frame") # Debug
-        print_log(self._df.shape) # Debug
-        print_log(self._df['class'].value_counts(normalize=True))
-        print_log("Shape of the training set") # Debug
-        print_log(self._train_set.shape) # Debug
-        print_log(self._train_set['class'].value_counts(normalize=True))
-        print_log("Shape of the test set") # Debug
-        print_log(self._test_set.shape) # Debug
-        print_log(self._test_set['class'].value_counts(normalize=True))
+        super().conduct_experiment()
 
     def _train_predict(self, models, models_accuracies, models_mrrs, \
                        combined=False):
@@ -482,8 +432,7 @@ class TRRepresentationExperiment:
                 }, None]
 
     def _write_df(self):
-        # We dump the data frame
-        self._df.to_csv("pre_processed_data.csv")
+        super()._write_df()
         self._models_names_pipelines_mapping = {
             "Boolean SVM": self._boolean_svm[:-1],
             "TF SVM": self._tf_svm[:-1],
