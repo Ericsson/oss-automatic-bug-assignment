@@ -31,7 +31,7 @@ from scikit_learn.accuracy_mrr_scoring_object import accuracy_mrr_scoring_object
 class TRRepresentationExperiment(Experiment):
 
     @abc.abstractmethod
-    def __init__(self, developers_dict_file=None, \
+    def __init__(self, data_set_file, developers_dict_file=None, \
         developers_list_file=None):  
         super().__init__(developers_dict_file, developers_list_file)   
         np.random.seed(0) # We set the seed
@@ -222,8 +222,20 @@ class TRRepresentationExperiment(Experiment):
         # fold) of each combined configuration
         self._combined_configurations_mrr_values = {}
         
-        self._cleaned_results_file_name = "cleaned_tr_" + \
-        "representation_experiment_results.json"
+        cleaned_results_file_name = "cleaned_tr_representation_" + \
+        "experiment_results.json"
+        self._cleaned_results_file_name = os.path.join( \
+        self._current_dir, cleaned_results_file_name)
+        
+        self._data_set_file = os.path.join(self._current_dir, \
+        data_set_file)
+        
+        log_file = os.path.join(self._current_dir, \
+                                "tr_representation_experiment.log")
+        logging.basicConfig(filename=log_file, filemode="w", \
+                            level=logging.DEBUG)
+        
+        self._build_data_set()
         
     def conduct_experiment(self):
         """Method used to conduct the experiment"""

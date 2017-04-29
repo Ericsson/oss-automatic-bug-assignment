@@ -27,17 +27,12 @@ from utilities import print_log
 class PreProcessingExperiment(Experiment):
 
     @abc.abstractmethod
-    def __init__(self, developers_dict_file, \
+    def __init__(self, data_file, developers_dict_file, \
     developers_list_file, clean_brs=False, use_stemmer=False, \
     use_lemmatizer=False, stop_words_removal=False, \
     punctuation_removal=False, numbers_removal=False):
         """Constructor"""
         super().__init__(developers_dict_file, developers_list_file)
-        # Used to store the path of the JSON file containing the
-        # sorted bug reports
-        self._data_file = None 
-        
-        # TO DO: Management of the reference to the data pre-processer
         
         # Below, we set a default configuration
         self.set_config(clean_brs=clean_brs, \
@@ -59,9 +54,20 @@ class PreProcessingExperiment(Experiment):
         # fold) of each configuration
         self._configurations_mrr_values = {}
         
-        self._cleaned_results_file_name = "cleaned_pre_" + \
-        "processing_experiment_results.json"
-        
+        cleaned_results_file_name = "cleaned_pre_processing_" + \
+        "experiment_results.json"
+        self._cleaned_results_file_name = os.path.join( \
+        self._current_dir, cleaned_results_file_name)
+                
+        log_file = os.path.join(self._current_dir, \
+                                "pre_processing_experiment.log")
+        logging.basicConfig(filename=log_file, filemode="w", \
+                            level=logging.DEBUG)
+
+        # Used to store the path of the JSON file containing the
+        # sorted bug reports
+        self._data_file = os.path.join(self._current_dir, data_file)
+    
     def set_config(self, clean_brs, use_stemmer, use_lemmatizer, \
     stop_words_removal, punctuation_removal, numbers_removal):
         self.clean_brs = clean_brs
@@ -206,9 +212,11 @@ class PreProcessingExperiment(Experiment):
                 # print(os.path.join(self._current_dir, file)) # Debug
                 start_time = time.time() # We get the time expressed 
                 # in seconds since the epoch
-                self._data_set_file = file
+                self._data_set_file = os.path.join( \
+                self._current_dir, file)
                 np.random.seed(0) # We set the seed
                 self._build_data_set() # We build the data set
+                self._data_set_file = file
                 for to_lower_case in [False, True]: 
                     # We iterate to manage the potential conversion 
                     # to lower case 

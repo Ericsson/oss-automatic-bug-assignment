@@ -20,16 +20,12 @@ class EclipsePreProcessingExperiment(PreProcessingExperiment):
     developers_list_file, clean_brs=False, use_stemmer=False, \
     use_lemmatizer=False, stop_words_removal=False, \
     punctuation_removal=False, numbers_removal=False):
-        super().__init__(developers_dict_file, \
+        self._current_dir = os.path.dirname(os.path.abspath( \
+        inspect.getfile(inspect.currentframe())))
+        super().__init__(data_file, developers_dict_file, \
         developers_list_file, clean_brs=False, use_stemmer=False, \
         use_lemmatizer=False, stop_words_removal=False, \
         punctuation_removal=False, numbers_removal=False)
-        logging.basicConfig( \
-        filename="pre_processing_experiment.log", filemode="w", \
-        level=logging.DEBUG)
-        self._current_dir = os.path.dirname(os.path.abspath( \
-        inspect.getfile(inspect.currentframe())))
-        self._data_file = os.path.join(self._current_dir, data_file)
         
     def generate_output_file(self):
         """Generates a specific pre-processed data set file"""

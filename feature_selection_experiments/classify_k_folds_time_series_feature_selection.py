@@ -27,7 +27,7 @@ from scikit_learn.accuracy_mrr_scoring_object import accuracy_mrr_scoring_object
 class FeatureSelectionExperiment(Experiment):
     
     @abc.abstractmethod
-    def __init__(self, developers_dict_file=None, \
+    def __init__(self, data_set_file, developers_dict_file=None, \
                 developers_list_file=None):
         super().__init__(developers_dict_file, developers_list_file)
         np.random.seed(0) # We set the seed
@@ -82,9 +82,6 @@ class FeatureSelectionExperiment(Experiment):
             # }, None]   
         }
         
-        self._cleaned_results_file_name = "cleaned_feature_" + \
-        "selection_experiment_results.json"
-        
         for key, classifier_estimator in self._classifiers_estimators.items():
             for i, feature_selection_method in enumerate(self._feature_selection_methods):
                 self._models_cv["GridSearch " + feature_selection_method[0] + " " + key] = [GridSearchCV, { \
@@ -97,6 +94,21 @@ class FeatureSelectionExperiment(Experiment):
                     "error_score": np.array([-1, -1]), \
                     "scoring": accuracy_mrr_scoring_object
                 }, None]
+                
+        cleaned_results_file_name = "cleaned_feature_selection_" + \
+        "experiment_results.json"
+        self._cleaned_results_file_name = os.path.join( \
+        self._current_dir, cleaned_results_file_name)
+                
+        self._data_set_file = os.path.join(self._current_dir, \
+        data_set_file)
+        
+        log_file = os.path.join(self._current_dir, \
+                                "feature_selection_experiment.log")
+        logging.basicConfig(filename=log_file, filemode="w", \
+                            level=logging.DEBUG)
+        
+        self._build_data_set()
        
     def conduct_experiment(self):
         """Method used to conduct the experiment"""

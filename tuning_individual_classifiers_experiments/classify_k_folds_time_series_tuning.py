@@ -34,7 +34,8 @@ import accuracy_mrr_scoring_object
 class TuningIndividualClassifierGenericExperiment(Experiment):
     
     @abc.abstractmethod
-    def __init__(self, developers_dict_file, developers_list_file):
+    def __init__(self, data_set_file, developers_dict_file, \
+                 developers_list_file):
         super().__init__(developers_dict_file, developers_list_file)
         np.random.seed(0) # We set the seed
         
@@ -362,8 +363,20 @@ class TuningIndividualClassifierGenericExperiment(Experiment):
         # configuration on the test set (random search)
         self._randomized_configurations_mrr_values = {}
         
-        self._cleaned_results_file_name = "cleaned_tuning_" + \
+        cleaned_results_file_name = "cleaned_tuning_" + \
         "individual_classifier_generic_experiment_results.json"
+        self._cleaned_results_file_name = os.path.join( \
+        self._current_dir, cleaned_results_file_name)
+        
+        self._data_set_file = os.path.join(self._current_dir, \
+        data_set_file)
+        
+        log_file = os.path.join(self._current_dir, \
+        "tuning_individual_classifier_generic_experiment.log")
+        logging.basicConfig(filename=log_file, filemode="w", \
+                            level=logging.DEBUG)
+        
+        self._build_data_set()
                
     def _train_predict_cv(self, model_cv, random=False):
         print_log("Training of the models") # Debug

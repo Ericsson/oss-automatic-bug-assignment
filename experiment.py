@@ -28,8 +28,6 @@ class Experiment(abc.ABC):
         # training set
         self._test_set = None # Used to store a reference to the 
         # test set
-    
-        self._current_dir = None
         
         self._df = None
         

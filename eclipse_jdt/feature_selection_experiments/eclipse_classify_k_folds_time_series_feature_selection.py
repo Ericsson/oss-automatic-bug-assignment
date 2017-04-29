@@ -15,15 +15,10 @@ import FeatureSelectionExperiment
 class EclipseFeatureSelectionExperiment(FeatureSelectionExperiment):
     def __init__(self, data_set_file, developers_dict_file=None, \
                  developers_list_file=None):
-        super().__init__(developers_dict_file, developers_list_file)
-        logging.basicConfig( \
-        filename='feature_selection_experiment.log', \
-        filemode='w', level=logging.DEBUG)
         self._current_dir = os.path.dirname(os.path.abspath( \
         inspect.getfile(inspect.currentframe())))
-        self._data_set_file = os.path.join(self._current_dir, \
-        data_set_file)
-        self._build_data_set()
+        super().__init__(data_set_file, developers_dict_file, \
+                         developers_list_file)
 
 def main():
     data_set_file = "../pre_processing_experiments/output_with_" + \
