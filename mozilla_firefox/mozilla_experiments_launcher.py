@@ -35,32 +35,44 @@ class MozillaExperimentsLauncher(ExperimentsLauncher):
                          pre_processed_data_set_file_path, \
                          developers_dict_file_path, \
                          developers_list_file_path)
-
+            
+    def conduct_experiment_1(self):
+        """This method runs the experiment 1"""
         # Instantiation of the class related to the first experiment
         self.experiment_1 = MozillaPreProcessingExperiment( \
         data_file=self.raw_data_set_file_path, \
         developers_dict_file=self.developers_dict_file_path, \
         developers_list_file=self.developers_list_file_path
         )
-        
+        super().conduct_experiment_1()
+    
+    def conduct_experiment_2(self):
+        """This method runs the experiment 2"""
         # Instantiation of the class related to the second experiment
         self.experiment_2 = MozillaTRRepresentationExperiment( \
         data_set_file=self.pre_processed_data_set_file_path, \
         developers_dict_file=self.developers_dict_file_path, \
         developers_list_file=self.developers_list_file_path)
-        
+        super().conduct_experiment_2()
+    
+    def conduct_experiment_3(self):
+        """This method runs the experiment 3"""
         # Instantiation of the class related to the third experiment
         self.experiment_3 = MozillaFeatureSelectionExperiment( \
         data_set_file=self.pre_processed_data_set_file_path, \
         developers_dict_file=self.developers_dict_file_path, \
         developers_list_file=self.developers_list_file_path)
+        super().conduct_experiment_3()
         
+    def conduct_experiment_4(self):
+        """This method runs the experiment 4"""
         # Instantiation of the class related to the forth experiment
         self.experiment_4 = \
         MozillaTuningIndividualClassifierGenericExperiment( \
         data_set_file=self.pre_processed_data_set_file_path, \
         developers_dict_file=self.developers_dict_file_path, \
         developers_list_file=self.developers_list_file_path)
+        super().conduct_experiment_4()
         
 def main():
     """The main function of this module

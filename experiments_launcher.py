@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import abc
+import logging
 
 class ExperimentsLauncher(abc.ABC):
     
@@ -26,6 +27,43 @@ class ExperimentsLauncher(abc.ABC):
         # Below, the path of the file which contains a list of the 
         # relevant distinct developers
         self.developers_list_file_path = developers_list_file_path
+        
+        # Will contain an instance of the class related to the first 
+        # experiment
+        self.experiment_1 = None
+
+        # Will contain an instance of the class related to the second 
+        # experiment        
+        self.experiment_2 = None
+        
+        # Will contain an instance of the class related to the third 
+        # experiment
+        self.experiment_3 = None
+        
+        # Will contain an instance of the class related to the forth 
+        # experiment
+        self.experiment_4 = None
+        
+
+    @abc.abstractmethod
+    def conduct_experiment_1(self):
+        """This method runs the experiment 1"""
+        self.experiment_1.conduct_experiment()
+    
+    @abc.abstractmethod
+    def conduct_experiment_2(self):
+        """This method runs the experiment 2"""
+        self.experiment_2.conduct_experiment()
+    
+    @abc.abstractmethod    
+    def conduct_experiment_3(self):
+        """This method runs the experiment 3"""
+        self.experiment_3.conduct_experiment()
+        
+    @abc.abstractmethod
+    def conduct_experiment_4(self):
+        """This method runs the experiment 4"""
+        self.experiment_4.conduct_experiment()
 
     def conduct_experiments(self):
         """This method runs all the experiments
@@ -33,7 +71,16 @@ class ExperimentsLauncher(abc.ABC):
         Only the experiments related to the current instance will be
         launched.
         """
-        self.experiment_1.conduct_experiment()
-        self.experiment_2.conduct_experiment()
-        self.experiment_3.conduct_experiment()
-        self.experiment_4.conduct_experiment()        
+        self.conduct_experiment_1()
+        self.remove_handlers_root_logger_object()
+        self.conduct_experiment_2()
+        self.remove_handlers_root_logger_object()
+        self.conduct_experiment_3()
+        self.remove_handlers_root_logger_object()
+        self.conduct_experiment_4()
+    
+    @staticmethod
+    def remove_handlers_root_logger_object():
+        """Removes all handlers related to the root logger object"""
+        for handler in logging.root.handlers[:]:
+            logging.root.removeHandler(handler)
