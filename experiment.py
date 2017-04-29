@@ -5,6 +5,7 @@ from utilities import load_data_set, build_data_frame, print_log
 import numpy as np
 import abc
 import json
+import os
 
 class Experiment(abc.ABC):
 
@@ -68,7 +69,9 @@ class Experiment(abc.ABC):
                 
     def _write_df(self):
         # We dump the data frame
-        self._df.to_csv("pre_processed_data.csv")
+        pre_processed_data_file_name = os.path.join( \
+        self._current_dir, "pre_processed_data.csv")
+        self._df.to_csv(pre_processed_data_file_name)
         
     @abc.abstractmethod
     def conduct_experiment(self):
