@@ -21,41 +21,43 @@ aforementioned bug reports.
 class MozillaDataPreProcesser(DataPreProcesser):
     
     case_sensitive_elements_to_remove = [
-#         r"\b\b",
-#         r"\b\b",
-#         r"Â",
-#         r"~+",
-#         r"\|+",
-#         r"/+",
-#         r"\{+",
-#         r"\}+",
-#         r"\[+",
-#         r"\]+",
-#         r"\(+",
-#         r"\)+",
-#         r";+",
-#         r"->",
-#         r">+",
-#         r"<+",
-#         r"=+",
-#         r"'+",
-#         r"`+",
-#         r"\"+",
-#         r"\++",
-#         r"#+",
-#         r"\d+:\d+",
-#         r":{2,}",
-#         r"\b\d+(\.\d+)+\.?\b",
-#         r"\.{2,}",
-#         r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}",
-#         r"\d{2}:\d{2}:\d{2}(\.\d{3})?",
-#         r"\d{4}-\d{2}-\d{2}",
-#         r"-+"
+#         r"\bPM\b", # NO 2
+#         r"n't\b", # NO 3
+        r"'ll\b", # OK 4
+#         r"'s\b", # NO 5
+#         r"/\*", # NO 6
+        r"\*/", # OK 7
+        r"->", # OK 8
+#         r"\|+", # NO 9
+        r"\{+", # OK 10
+        r"\}+", # OK 11
+#         r"\[+", # NO 12
+        r"\]+", # OK 13
+#         r"\(+", # NO 14
+#         r"\)+", # NO 15
+        r";+", # OK 16
+        r">+", # OK 17
+        r"<+", # OK 18
+        r"=+", # OK 19
+#         r"'+", # NO 20
+#         r"`+", # NO 21
+        r"\"+", # OK 22
+#         r"\++", # NO 23
+#         r"\*+", # NO 24
+        r"#+", # OK 25
+#         r":+", # NO 26
+#         r"\.{2,}", # NO 27
+        r"\.+", # OK 28
+#         r"/{2,}", # NO 29
+        r"/+", # OK 30
+#         r"-+", # NO 31
+        r"\b\w\b" # OK 32
     ]
     
     case_insensitive_elements_to_remove = [
-#         r"\b\b",
-#         r"\b"
+#         r"\bok\b", # NO 33
+        r"\bsth\b" # OK 34
+#         r"\bnotes?\b" # NO 35
     ]
     
     def __init__(self, data_file, clean_brs=True, use_stemmer=True, \
