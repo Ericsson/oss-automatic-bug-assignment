@@ -21,41 +21,47 @@ aforementioned bug reports.
 class EclipseDataPreProcesser(DataPreProcesser):
     
     case_sensitive_elements_to_remove = [
-#         r"\b\b",
-#         r"\b\b",
-#         r"Â",
-#         r"~+",
-#         r"\|+",
-#         r"/+",
-#         r"\{+",
-#         r"\}+",
-#         r"\[+",
-#         r"\]+",
-#         r"\(+",
-#         r"\)+",
-#         r";+",
-#         r"->",
-#         r">+",
-#         r"<+",
-#         r"=+",
-#         r"'+",
-#         r"`+",
-#         r"\"+",
-#         r"\++",
-#         r"#+",
-#         r"\d+:\d+",
-#         r":{2,}",
-#         r"\b\d+(\.\d+)+\.?\b",
-#         r"\.{2,}",
-#         r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}",
-#         r"\d{2}:\d{2}:\d{2}(\.\d{3})?",
-#         r"\d{4}-\d{2}-\d{2}",
-#         r"-+"
+        r"\bPM\b", # OK 2
+        r"n't\b", # OK 3
+#         r"'ll\b", # NO 4
+#         r"'s\b", # NO 5
+#         r"/\*", # NO 6
+#         r"\*/", # NO 7
+        r"\.java\b", # OK 8
+        r"\bx+\b", # OK 9
+        r"->", # OK 10
+#         r"\|+", # NO 11
+        r"\{+", # OK 12
+        r"\}+", # OK 13
+        r"\[+", # OK 14
+        r"\]+", # OK 15
+#         r"\(+", # NO 16
+#         r"\)+", # NO 17
+        r";+", # OK 18
+        r">+", # OK 19
+        r"<+", # OK 20
+#         r"=+", # NO 21
+        r"'+", # OK 22
+#         r"`+", # NO 23
+        r"\"+", # OK 24
+        r"\++", # OK 25
+        r"\*+", # OK 26
+        r"#+", # OK 27
+#         r":+", # NO 28
+        r"\.{2,}", # OK 29
+        r"\.+", # OK 30
+        r"/{2,}", # OK 31
+        r"/+", # OK 32
+#         r"-+", # NO 33
+        r"\b\w\b" # OK 34
+#         r"\b[A-Z0-9]{7}\b", # NO 35
+#         r"\b[A-Z]{2,4}\b" # NO 36
     ]
     
     case_insensitive_elements_to_remove = [
-#         r"\b\b",
-#         r"\b"
+#         r"\bok\b", # NO 37
+#         r"\bsth\b", # NO 38
+#         r"\bnotes?\b" # NO 39
     ]
     
     def __init__(self, data_file, clean_brs=True, use_stemmer=True, \
