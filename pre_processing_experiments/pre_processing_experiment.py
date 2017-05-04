@@ -10,7 +10,6 @@ import numpy as np
 import os
 import inspect
 import logging
-import csv
 import sys
 import abc
 from abc import abstractclassmethod, abstractmethod

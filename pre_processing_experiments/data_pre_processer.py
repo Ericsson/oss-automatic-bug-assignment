@@ -97,7 +97,7 @@ class DataPreProcesser:
                     br["assigned_to"] \
                     )
             })
-#             if i == 10000:
+#             if i == 100:
 #                 break
 
     def write_data(self, data_file):
