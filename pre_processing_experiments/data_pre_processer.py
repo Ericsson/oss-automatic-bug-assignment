@@ -80,8 +80,8 @@ class DataPreProcesser:
         for br in self.content:
             # print(row["W"]) # Debug
             i += 1
-            print(br)
-            print(i)
+            # print(br) # Debug
+            print(i) # Debug
             # Then, we clean them and add them to a list
             self.output.append({
                 "bug_id": self \
@@ -174,7 +174,7 @@ class DataPreProcesser:
         """Method to clean a given bug_id"""
         bug_id = self._escape_html_char(bug_id)
 #         print(bug_id) # Debug
-        return bug_id.replace(u"Bug\u00a0", " ")
+        return bug_id.replace(u"Bug\u00a0", "")
 
     def _escape_html_char(self, data):
         """Method to escape HTML chars and remove spaces"""
@@ -190,7 +190,7 @@ class DataPreProcesser:
         data = "" if data is None else data
         if self.html_parser is not None:
             data = self.html_parser.unescape(data)
-            return data.replace("\u00a0", "")
+            return data.replace("\u00a0", " ")
         else:
             return data
 
