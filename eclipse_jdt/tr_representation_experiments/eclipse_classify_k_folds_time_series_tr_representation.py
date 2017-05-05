@@ -13,17 +13,18 @@ from tr_representation_experiments.classify_k_folds_time_series_tr_representatio
 import TRRepresentationExperiment
 
 class EclipseTRRepresentationExperiment(TRRepresentationExperiment):
-    def __init__(self, data_set_file, developers_dict_file=None, \
-        developers_list_file=None):
+    def __init__(self, data_set_file, lowercase=False, \
+                 developers_dict_file=None, \
+                 developers_list_file=None):
         self._current_dir = os.path.dirname(os.path.abspath( \
         inspect.getfile(inspect.currentframe())))
-        super().__init__(data_set_file, developers_dict_file, \
-                         developers_list_file)
+        super().__init__(data_set_file, lowercase, \
+                         developers_dict_file, developers_list_file)
 
-def main():
+def main():    
     data_set_file = "../pre_processing_experiments/output_with_" + \
     "cleaning_without_stemming_without_lemmatizing_with_stop_" + \
-    "words_removal_with_punctuation_removal_with_numbers_" + \
+    "words_removal_without_punctuation_removal_without_numbers_" + \
     "removal.json" # The path of the file which contains the 
     # pre-processed output
     # Below, the path of the file which contains a dictionary related 
@@ -35,6 +36,7 @@ def main():
     
     tr_representation_experiment = EclipseTRRepresentationExperiment( \
     data_set_file=data_set_file, \
+    lowercase=True,
     developers_dict_file=developers_dict_file, \
     developers_list_file=developers_list_file)
     tr_representation_experiment.conduct_experiment()

@@ -31,42 +31,43 @@ from scikit_learn.accuracy_mrr_scoring_object import accuracy_mrr_scoring_object
 class TRRepresentationExperiment(Experiment):
 
     @abc.abstractmethod
-    def __init__(self, data_set_file, developers_dict_file=None, \
-        developers_list_file=None):  
+    def __init__(self, data_set_file, lowercase=False, \
+                 developers_dict_file=None, \
+                 developers_list_file=None):  
         super().__init__(developers_dict_file, developers_list_file)   
         np.random.seed(0) # We set the seed
         
         # self._boolean_bernouilli = [("count", CountVectorizer( \
-        # lowercase=False, token_pattern=u"(?u)\S+", binary=True)), \
+        # lowercase=lowercase, token_pattern=u"(?u)\S+", binary=True)), \
         # ("clf", BernoulliNB()) \
         # ]
     
         self._boolean_svm = [("count", CountVectorizer( \
-        lowercase=False, token_pattern=u"(?u)\S+", binary=True)), \
+        lowercase=lowercase, token_pattern=u"(?u)\S+", binary=True)), \
         ("clf", LinearSVC(random_state=0))
         ]
         
         self._tf_svm = [("count", CountVectorizer( \
-        lowercase=False, token_pattern=u"(?u)\S+")), \
+        lowercase=lowercase, token_pattern=u"(?u)\S+")), \
         ("tf_idf", TfidfTransformer(use_idf=False, smooth_idf=False)), \
         ("clf", LinearSVC(random_state=0)) \
         ]
     
         self._tf_idf_svm = [("count", CountVectorizer( \
-        lowercase=False, token_pattern=u"(?u)\S+")), \
+        lowercase=lowercase, token_pattern=u"(?u)\S+")), \
         ("tf_idf", TfidfTransformer(use_idf=True, smooth_idf=False)), \
         ("clf", LinearSVC(random_state=0)) \
         ]
             
         self._boolean_truncated_svd_svm = [("count", CountVectorizer( \
-        lowercase=False, token_pattern=u"(?u)\S+", binary=True)), \
+        lowercase=lowercase, token_pattern=u"(?u)\S+", binary=True)), \
         ("truncated_svd", TruncatedSVD(n_components=100, random_state=0)), \
         ("normalizer", Normalizer(copy=False)), \
         ("clf", LinearSVC(random_state=0))
         ]
     
         self._tf_truncated_svd_svm = [("count", CountVectorizer( \
-        lowercase=False, token_pattern=u"(?u)\S+")), \
+        lowercase=lowercase, token_pattern=u"(?u)\S+")), \
         ("tf_idf", TfidfTransformer(use_idf=False, smooth_idf=False)), \
         ("truncated_svd", TruncatedSVD(n_components=100, random_state=0)), \
         ("normalizer", Normalizer(copy=False)), \
@@ -74,7 +75,7 @@ class TRRepresentationExperiment(Experiment):
         ]
     
         self._tf_idf_truncated_svd_svm = [("count", CountVectorizer( \
-        lowercase=False, token_pattern=u"(?u)\S+")), \
+        lowercase=lowercase, token_pattern=u"(?u)\S+")), \
         ("tf_idf", TfidfTransformer(use_idf=True, smooth_idf=False)), \
         ("truncated_svd", TruncatedSVD(n_components=100, random_state=0)), \
         ("normalizer", Normalizer(copy=False)), \
@@ -85,14 +86,14 @@ class TRRepresentationExperiment(Experiment):
         [math.floor(i/10*100) for i in range(1, 10, 2)])    
     
         self._boolean_nmf_svm = [("count", CountVectorizer( \
-        lowercase=False, token_pattern=u"(?u)\S+", binary=True)), \
+        lowercase=lowercase, token_pattern=u"(?u)\S+", binary=True)), \
         ("nmf", NMF(n_components=100, random_state=0, alpha=.1, \
         l1_ratio=.5)), \
         ("clf", LinearSVC(random_state=0)) \
         ]
 
         self._tf_nmf_svm = [("count", CountVectorizer( \
-        lowercase=False, token_pattern=u"(?u)\S+")), \
+        lowercase=lowercase, token_pattern=u"(?u)\S+")), \
         ("tf_idf", TfidfTransformer(use_idf=False, smooth_idf=False)), \
         ("nmf", NMF(n_components=100, random_state=0, alpha=.1, \
         l1_ratio=.5)), \
@@ -100,7 +101,7 @@ class TRRepresentationExperiment(Experiment):
         ]
     
         self._tf_idf_nmf_svm = [("count", CountVectorizer( \
-        lowercase=False, token_pattern=u"(?u)\S+")), \
+        lowercase=lowercase, token_pattern=u"(?u)\S+")), \
         ("tf_idf", TfidfTransformer(use_idf=True, smooth_idf=False)), \
         ("nmf", NMF(n_components=100, random_state=0, alpha=.1, \
         l1_ratio=.5)), \
