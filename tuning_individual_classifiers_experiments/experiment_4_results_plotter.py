@@ -32,32 +32,77 @@ class Experiment4ResultsPlotter(ResultsPlotter):
     def get_cleaned_list_from_dict(cls, dict_content):
         """Returns two cleaned lists from a dictionary
     
-        The aforementioned dictionary should contain some sub-dictionaries
-        containing the parameters, the MRR values and the accuracies 
-        related to the different configurations.
+        The aforementioned dictionary should contain some 
+        sub-dictionaries containing the parameters, the MRR values 
+        and the accuracies related to the different configurations.
         """
         generated_accuracy_list = []
         generated_mrr_list = []
+        means_accuracy = None
+        means_mrr = None
+        params_list = None
+        zipped_accuracy = None
+        zipped_mrr = None
+        
         # Below, we iterate over each ML algorithm
         for key, value in dict_content.items():
             means_accuracy = value["means_accuracy"]
             means_mrr = value["means_mrr"]
             params_list = value["params"]
-            # Below, we iterate over each ML algorithm's configuration
-            for i, params in enumerate(params_list):
-                accuracy = means_accuracy[i]
-                mrr = means_mrr[i]
+            
+            # We zip the list of parameters and its related list of 
+            # accuracies
+            zipped_accuracy = list(zip(params_list, means_accuracy))
+            # We sort the above mentioned zipeed list
+            zipped_accuracy.sort(key=lambda x: x[1], reverse=True)
+            # We store the accuracy of the best configuration
+            accuracy = zipped_accuracy[0][1]
+            
+            cleaned_key = cls.get_small_key(key)
+            # Below, we iterate to build a unique key based on the 
+            # parameters of the best configuration (in terms of 
+            # accuracy)
+            for param_key, param_value in zipped_accuracy[0][0].items():
+                param_key_list = param_key.split("__")
+                cleaned_key += ("_" + param_key_list[1] + "=" + \
+                                str(param_value)) 
+            generated_accuracy_list.append((cleaned_key, accuracy))
+            
+            if key != "NearestCentroid":   
+                # We zip the list of parameters and its related list 
+                # of MRR values   
+                zipped_mrr = list(zip(params_list, means_mrr))
+                # We sort the above mentioned zipped list 
+                zipped_mrr.sort(key=lambda x: x[1], reverse=True)
+                # We store the MRR value of the best configuration
+                mrr = zipped_mrr[0][1]
                 cleaned_key = cls.get_small_key(key)
-                temp = cleaned_key
                 # Below, we iterate to build a unique key based on the 
-                # parameters of the current configuration
-                for param_key, param_value in params.items():
+                # parameters of the best configuration (in terms of 
+                # MRR)
+                for param_key, param_value in zipped_mrr[0][0].items():
                     param_key_list = param_key.split("__")
                     cleaned_key += ("_" + param_key_list[1] + "=" + \
                                     str(param_value)) 
-                generated_accuracy_list.append((cleaned_key, accuracy))
-                if temp != "NC":
-                    generated_mrr_list.append((cleaned_key, mrr))
+                generated_mrr_list.append((cleaned_key, mrr))
+
+#             TO DO: To remove later if not needed
+#             # Below, we iterate over each ML algorithm's configuration
+#             for i, params in enumerate(params_list):
+#                 accuracy = means_accuracy[i]
+#                 mrr = means_mrr[i]
+#                 cleaned_key = cls.get_small_key(key)
+#                 temp = cleaned_key
+#                 # Below, we iterate to build a unique key based on the 
+#                 # parameters of the current configuration
+#                 for param_key, param_value in params.items():
+#                     param_key_list = param_key.split("__")
+#                     cleaned_key += ("_" + param_key_list[1] + "=" + \
+#                                     str(param_value)) 
+#                 generated_accuracy_list.append((cleaned_key, accuracy))
+#                 if temp != "NC":
+#                     generated_mrr_list.append((cleaned_key, mrr))
+
         return generated_accuracy_list, generated_mrr_list
     
     @classmethod
@@ -71,8 +116,8 @@ class Experiment4ResultsPlotter(ResultsPlotter):
         plot_parameters = [
             {
                 "key": "normal_avg",
-                "x_lim_min": [0, 0],
-                "x_lim_max": [1, 1],
+                "x_lim_min": [0.63, 0.78],
+                "x_lim_max": [0.77, 0.86],
                 "x_label": ["Accuracy", "MRR"],
                 "y_label": ["Configurations", "Configurations"],
                 "labels_font_size": [35, 35], 
@@ -89,8 +134,8 @@ class Experiment4ResultsPlotter(ResultsPlotter):
             },
             {
                 "key": "random_avg",
-                "x_lim_min": [0, 0],
-                "x_lim_max": [1, 1],
+                "x_lim_min": [0.63, 0.78],
+                "x_lim_max": [0.77, 0.86],
                 "x_label": ["Accuracy", "MRR"],
                 "y_label": ["Configurations", "Configurations"],
                 "labels_font_size": [35, 35], 
