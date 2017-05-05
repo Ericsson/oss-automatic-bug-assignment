@@ -51,41 +51,11 @@ class Experiment1ResultsPlotter(ResultsPlotter):
             small_name += acronym if name_of_file_parts[index] ==  "with" else "NOT({})".format(acronym)
         return small_name
     
+    @abc.abstractmethod
     def plot_results(self):
         """This method plots the results in chart(s)"""
         super().plot_results()
-        plot_parameters = [
-            {
-                "key": "avg_accuracy",
-                "x_lim_min": 0.59,
-                "x_lim_max": 0.76,
-                "x_label": "Accuracy",
-                "y_label": "Configurations",
-                "labels_font_size": 35, 
-                "y_tick_labels_font_size": 20,
-                "title": "Accuracy of the different pre-processing " \
-                "configurations",
-                "file_name" : "experiment_11.png",
-                "debug_title": "Average Accuracy",
-                "bars_labels_space": 0.0005                
-            },
-            {
-                "key": "avg_mrr",
-                "x_lim_min": 0.725,
-                "x_lim_max": 0.845,
-                "x_label": "MRR",
-                "y_label": "Configurations",
-                "labels_font_size": 35,
-                "y_tick_labels_font_size": 20,
-                "title": "MRR of the different pre-processing " \
-                "configurations",
-                "file_name": "experiment_12.png",
-                "debug_title": "Average MRR",
-                "bars_labels_space": 0.0005
-            }       
-        ]
-        
-        for plot_parameter in plot_parameters:
+        for plot_parameter in self.plot_parameters:
             list_of_metric_values = []
             for key, value in self \
             ._cleaned_results[plot_parameter["key"]].items():
