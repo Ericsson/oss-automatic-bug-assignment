@@ -53,42 +53,12 @@ class Experiment3ResultsPlotter(ResultsPlotter):
         """Return the reduced form of a key"""
         return cls.KEY_MAPPING[key]
     
+    @abc.abstractmethod
     def plot_results(self):
         """This method plots the results in chart(s)"""
         super().plot_results()
-        plot_parameters = [
-            {
-                "key": "avg_accuracy",
-                "x_lim_min": 0.7435,
-                "x_lim_max": 0.758,
-                "x_label": "Accuracy",
-                "y_label": "Configurations",
-                "labels_font_size": 35, 
-                "y_tick_labels_font_size": 30,
-                "title": "Accuracy of the different feature " + \
-                "selection techniques",
-                "file_name" : "experiment_31.png",
-                "debug_title": "Average Accuracy",
-                "bars_labels_space": 0.0002
         
-            },
-            {
-                "key": "avg_mrr",
-                "x_lim_min": 0.832,
-                "x_lim_max": 0.842,
-                "x_label": "MRR",
-                "y_label": "Configurations",
-                "labels_font_size": 35, 
-                "y_tick_labels_font_size": 30,
-                "title": "MRR of the different feature selection " + \
-                "techniques",
-                "file_name" : "experiment_32.png",
-                "debug_title": "Average MRR",
-                "bars_labels_space": 0.0002
-            }
-        ]
-        
-        for plot_parameter in plot_parameters:
+        for plot_parameter in self.plot_parameters:
             # The dictionary below contains the values of a metric 
             # related to the different configurations
             dict_of_metric_values = self. \
