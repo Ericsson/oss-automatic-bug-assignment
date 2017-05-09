@@ -27,14 +27,15 @@ from scikit_learn.accuracy_mrr_scoring_object import accuracy_mrr_scoring_object
 class FeatureSelectionExperiment(Experiment):
     
     @abc.abstractmethod
-    def __init__(self, data_set_file, developers_dict_file=None, \
-                developers_list_file=None):
+    def __init__(self, data_set_file, lowercase=False, use_idf=False,
+                 developers_dict_file=None, 
+                 developers_list_file=None):
         super().__init__(developers_dict_file, developers_list_file)
         np.random.seed(0) # We set the seed
                 
         self._pre_processing_steps = [("count", CountVectorizer( \
-        lowercase=False, token_pattern=u"(?u)\S+")), \
-        ("tf_idf", TfidfTransformer(use_idf=True, smooth_idf=False))]
+        lowercase=lowercase, token_pattern=u"(?u)\S+")), \
+        ("tf_idf", TfidfTransformer(use_idf=use_idf, smooth_idf=False))]
                 
         self._feature_selection_methods = [
             ("var_threshold", VarianceThreshold()),
@@ -155,12 +156,12 @@ class FeatureSelectionExperiment(Experiment):
 
         print_log("We count the occurrence of each term") # Debug
         count_vectorizer = CountVectorizer( \
-        lowercase=False, token_pattern=u"(?u)\S+")
+        lowercase=lowercase, token_pattern=u"(?u)\S+")
         X_train_counts = count_vectorizer \
         .fit_transform(X_train)
         print_log(X_train_counts.shape)
         print_log("Use of the TF-IDF model") # Debug
-        tfidf_transformer = TfidfTransformer(use_idf=True, smooth_idf=False) 
+        tfidf_transformer = TfidfTransformer(use_idf=use_idf, smooth_idf=False) 
         print_log("Computation of the weights of the TF-IDF model")
         X_train = tfidf_transformer.fit_transform(X_train_counts)
         

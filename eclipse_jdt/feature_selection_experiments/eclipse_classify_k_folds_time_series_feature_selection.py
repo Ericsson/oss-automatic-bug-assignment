@@ -17,13 +17,13 @@ class EclipseFeatureSelectionExperiment(FeatureSelectionExperiment):
                  developers_list_file=None):
         self._current_dir = os.path.dirname(os.path.abspath( \
         inspect.getfile(inspect.currentframe())))
-        super().__init__(data_set_file, developers_dict_file, \
-                         developers_list_file)
+        super().__init__(data_set_file, True, True, \
+                         developers_dict_file, developers_list_file)
 
 def main():
     data_set_file = "../pre_processing_experiments/output_with_" + \
     "cleaning_without_stemming_without_lemmatizing_with_stop_" + \
-    "words_removal_with_punctuation_removal_with_numbers_" + \
+    "words_removal_without_punctuation_removal_without_numbers_" + \
     "removal.json" # The path of the file which contains the 
     # pre-processed output
     # Below, the path of the file which contains a dictionary related 
@@ -40,4 +40,4 @@ def main():
     feature_selection_experiment.conduct_experiment()
 
 if __name__ == "__main__":
-    main() 
+    main()
