@@ -168,7 +168,7 @@ class Experiment4ResultsPlotter(ResultsPlotter):
             # We sort the aforementioned cleaned list in the reverse 
             # order
             list_of_accuracy_values.sort(key=lambda x: x[1], \
-                                       reverse=True)
+                                         reverse=True)
             
             self.print_dict(plot_parameter["debug_title"][0], \
                             list_of_accuracy_values) # Debug
@@ -192,6 +192,11 @@ class Experiment4ResultsPlotter(ResultsPlotter):
                           x_label, y_label, title, file_name, \
                           labels_font_size, y_tick_labels_font_size, \
                           bars_labels_space)
+            
+            # We sort the aforementioned cleaned list in the reverse 
+            # order
+            list_of_mrr_values.sort(key=lambda x: x[1], \
+                                    reverse=True)
             
             self.print_dict(plot_parameter["debug_title"][1], \
                             list_of_mrr_values) # Debug
