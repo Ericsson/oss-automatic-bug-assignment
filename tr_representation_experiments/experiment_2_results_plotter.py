@@ -72,77 +72,12 @@ class Experiment2ResultsPlotter(ResultsPlotter):
         """Return the reduced form of a key"""
         return cls.KEY_MAPPING[key]
 
+    @abc.abstractmethod
     def plot_results(self):
         """This method plots the results in chart(s)"""
         super().plot_results()
-        plot_parameters = [
-            {
-                "key": "not_combined_avg_accuracy",
-                "x_lim_min": 0.34,
-                "x_lim_max": 0.79,
-                "x_label": "Accuracy",
-                "y_label": "Configurations",
-                "labels_font_size": 35, 
-                "y_tick_labels_font_size": 30,
-                "title": "Accuracy of the different feature " + \
-                "extraction techniques (without combination of " + \
-                "features)",
-                "file_name" : "experiment_21.png",
-                "debug_title": "Average Accuracy (Without Combination)",
-                "combined": False,
-                "bars_labels_space": 0.0005
-            },
-            {
-                "key": "combined_avg_accuracy",
-                "x_lim_min": 0.56,
-                "x_lim_max": 0.78,
-                "x_label": "Accuracy",
-                "y_label": "Configurations",
-                "labels_font_size": 35, 
-                "y_tick_labels_font_size": 30,
-                "title": "Accuracy of the different feature " + \
-                "extraction techniques (with combination of " + \
-                "features)",
-                "file_name": "experiment_22.png",
-                "debug_title": "Average Accuracy (With Combination)",
-                "combined": True,
-                "bars_labels_space": 0.0005
-            },
-            {
-                "key": "not_combined_avg_mrr",
-                "x_lim_min": 0.52,
-                "x_lim_max": 0.8675,
-                "x_label": "MRR",
-                "y_label": "Configurations",
-                "labels_font_size": 35, 
-                "y_tick_labels_font_size": 30,
-                "title": "MRR of the different feature " + \
-                "extraction techniques (without combination of " + \
-                "features)",
-                "file_name" : "experiment_23.png",
-                "debug_title": "Average MRR (Without Combination)",
-                "combined": False,
-                "bars_labels_space": 0.0005
-            },
-            {
-                "key": "combined_avg_mrr",
-                "x_lim_min": 0.70,
-                "x_lim_max": 0.86,
-                "x_label": "MRR",
-                "y_label": "Configurations",
-                "labels_font_size": 35, 
-                "y_tick_labels_font_size": 30,
-                "title": "MRR of the different feature " + \
-                "extraction techniques (with combination of " + \
-                "features)",
-                "file_name": "experiment_24.png",
-                "debug_title": "Average MRR (With Combination)",
-                "combined": True,
-                "bars_labels_space": 0.0005
-            }   
-        ]
         
-        for plot_parameter in plot_parameters:
+        for plot_parameter in self.plot_parameters:
             # The dictionary below contains the values of a metric 
             # related to the different representations
             dict_of_metric_values = self. \
