@@ -32,7 +32,9 @@ class FeatureSelectionExperiment(Experiment):
                  developers_list_file=None):
         super().__init__(developers_dict_file, developers_list_file)
         np.random.seed(0) # We set the seed
-                
+        self.lowercase = lowercase
+        self.use_idf = use_idf
+        
         self._pre_processing_steps = [("count", CountVectorizer( \
         lowercase=lowercase, token_pattern=u"(?u)\S+")), \
         ("tf_idf", TfidfTransformer(use_idf=use_idf, smooth_idf=False))]
@@ -156,12 +158,12 @@ class FeatureSelectionExperiment(Experiment):
 
         print_log("We count the occurrence of each term") # Debug
         count_vectorizer = CountVectorizer( \
-        lowercase=lowercase, token_pattern=u"(?u)\S+")
+        lowercase=self.lowercase, token_pattern=u"(?u)\S+")
         X_train_counts = count_vectorizer \
         .fit_transform(X_train)
         print_log(X_train_counts.shape)
         print_log("Use of the TF-IDF model") # Debug
-        tfidf_transformer = TfidfTransformer(use_idf=use_idf, smooth_idf=False) 
+        tfidf_transformer = TfidfTransformer(use_idf=self.use_idf, smooth_idf=False) 
         print_log("Computation of the weights of the TF-IDF model")
         X_train = tfidf_transformer.fit_transform(X_train_counts)
         
