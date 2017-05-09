@@ -135,7 +135,7 @@ class FeatureSelectionExperiment(Experiment):
                       .format(time.time() - start_time))
 
         self._results_to_save_to_a_file["avg_accuracy"] = {}
-        self._results_to_save_to_a_file["mrr_accuracy"] = {}
+        self._results_to_save_to_a_file["avg_mrr"] = {}
 
         for key in self._models_cv:
             print_log("{}".format(key)) # Debug
@@ -146,7 +146,7 @@ class FeatureSelectionExperiment(Experiment):
             stds = self._models_cv[key][-1].cv_results_['std_test_score']
             self._results_to_save_to_a_file["avg_accuracy"][key] = \
             means[:,0].tolist()
-            self._results_to_save_to_a_file["mrr_accuracy"][key] = \
+            self._results_to_save_to_a_file["avg_mrr"][key] = \
             means[:,1].tolist()
 #             print(means)
 #             print(stds)
@@ -185,7 +185,7 @@ class FeatureSelectionExperiment(Experiment):
             print_log(self._rfe_cv[key][-1].grid_scores_)
             self._results_to_save_to_a_file["avg_accuracy"][key] = \
             self._rfe_cv[key][-1].grid_scores_[:,0].tolist()
-            self._results_to_save_to_a_file["mrr_accuracy"][key] = \
+            self._results_to_save_to_a_file["avg_mrr"][key] = \
             self._rfe_cv[key][-1].grid_scores_[:,1].tolist()
             print_log("--- {} seconds ---" \
                       .format(time.time() - start_time))
