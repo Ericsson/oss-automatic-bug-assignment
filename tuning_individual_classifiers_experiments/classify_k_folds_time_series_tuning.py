@@ -34,14 +34,17 @@ import accuracy_mrr_scoring_object
 class TuningIndividualClassifierGenericExperiment(Experiment):
     
     @abc.abstractmethod
-    def __init__(self, data_set_file, developers_dict_file, \
-                 developers_list_file):
+    def __init__(self, data_set_file, lowercase=False, use_idf=False, 
+                 developers_dict_file=None, 
+                 developers_list_file=None):
         super().__init__(developers_dict_file, developers_list_file)
         np.random.seed(0) # We set the seed
+        self.lowercase = lowercase
+        self.use_idf = use_idf
         
         self._estimators = [("count", CountVectorizer( \
-        lowercase=False, token_pattern=u"(?u)\S+")), \
-        ("tf_idf", TfidfTransformer(use_idf=True, smooth_idf=False))]
+        lowercase=self.lowercase, token_pattern=u"(?u)\S+")), \
+        ("tf_idf", TfidfTransformer(use_idf=self.use_idf, smooth_idf=False))]
                 
         self._nearest_centroid_estimators = self._estimators + \
         [("clf", NearestCentroid())]
