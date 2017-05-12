@@ -14,21 +14,19 @@ import inspect
 current_dir = os.path.dirname(os.path.abspath( \
 inspect.getfile(inspect.currentframe())))
 parent_dir = os.path.dirname(current_dir)
-os.sys.path.insert(0,parent_dir) 
-from utilities import print_log, load_data_set, load_developers_mappings, \
-load_distinct_developers_list, build_data_frame
+os.sys.path.insert(0, parent_dir)
+from utilities import print_log, load_data_set, build_data_frame
 
 class SizeOfDataExperiment(abc.ABC):
 
     @abc.abstractmethod
-    def __init__(self, data_set_file, developers_dict_file, developers_list_file):
+    def __init__(self, data_set_file, developers_dict_file=None, \
+                 developers_list_file=None):
         """Constructor"""
-        self._data_set_file = data_set_file 
+        self._data_set_file = os.path.join(self._current_dir, \
+        data_set_file)
         self._developers_dict_file = developers_dict_file
         self._developers_list_file = developers_list_file
-        self._current_dir = os.path.dirname(os.path.abspath( \
-        inspect.getfile(inspect.currentframe())))
-        self._parent_dir = os.path.dirname(self._current_dir)
         self._build_data_set()
         self._type = ""
         
@@ -43,9 +41,10 @@ class SizeOfDataExperiment(abc.ABC):
         output.append(stop)
         return output
     
-    def _plot_learning_curve(self, title, computed_score, train_sizes, \
-        train_scores_mean, train_scores_std, test_scores_mean, \
-        test_scores_std, ylim=None):
+    def _plot_learning_curve(self, title, computed_score, \
+                             train_sizes, train_scores_mean, \
+                             train_scores_std, test_scores_mean, \
+                             test_scores_std, ylim=None):
         """Generate a plot of the test and training learning curves.
 
         Parameters
@@ -244,8 +243,9 @@ class SizeOfDataExperiment(abc.ABC):
         # The lines below are used for debugging purpose
         for train, test in self._yield_indices_for_learning_curve(K):
             print_log("*************")
-            print_log("{} - {} / {} - {}".format(train[0], train[-1], \
-            test[0], test[-1]))
+            print_log("{} - {} / {} - {}".format(train[0], \
+                                                 train[-1], test[0], \
+                                                 test[-1]))
         
         # Below, we compute the scores related to each training set
         _, train_scores, test_scores = learning_curve( \
@@ -267,9 +267,12 @@ class SizeOfDataExperiment(abc.ABC):
         title = "Learning Curves (Linear SVM without tuning, " + \
         self._type + \
         " approach, {} folds)".format(K)
-        fig = self._plot_learning_curve(title, "accuracy", train_sizes, \
-            train_scores_mean, train_scores_std, test_scores_mean, \
-            test_scores_std)
+        fig = self._plot_learning_curve(title, "accuracy", \
+                                        train_sizes, \
+                                        train_scores_mean, \
+                                        train_scores_std, \
+                                        test_scores_mean, \
+                                        test_scores_std)
         
         name_file = "{}_learning_curves_{}_folds.png".format( \
         self._type, K)
@@ -287,27 +290,38 @@ class SizeOfDataExperiment(abc.ABC):
           
     def _build_data_set(self):
         np.random.seed(0) # We set the seed
-
-        # First we load the data of the three aforementioned files
+        # First we load the data set
         json_data = load_data_set(self._data_set_file)
-        developers_dict_data = load_developers_mappings(self._developers_dict_file)
-        developers_list_data = load_distinct_developers_list(self._developers_list_file)
         
+        developers_dict_data = None
+#         TO DO
+#         load_developers_mappings(self._developers_dict_file)
+        developers_list_data = None
+#         TO DO
+#         load_distinct_developers_list(self._developers_list_file)
+        
+        # TO DO
         # Then, we build a data frame using the loaded data set, the 
         # loaded developers mappings, the loaded distinct developers.
-        df = build_data_frame(json_data, developers_dict_data, developers_list_data)
+        self._df = build_data_frame(json_data, developers_dict_data, \
+                                    developers_list_data)
         
+        
+        print_log("Shape of the initial Data Frame") # Debug
+        print_log(self._df.shape) # Debug
+        print_log(self._df['class'].value_counts(normalize=True))
+                
         print_log("We count the occurrence of each term") # Debug
         count_vectorizer = CountVectorizer(lowercase=False, \
-        token_pattern=u'(?u)\S+')
+        token_pattern=u"(?u)\S+")
         X_counts = count_vectorizer \
-        .fit_transform(df['text'].values)
+        .fit_transform(self._df['text'].values)
         
-        print_log("Use of the TF-IDF model") # Debug
+        print_log("Use of the TF model") # Debug
         tfidf_transformer = TfidfTransformer(use_idf=False, \
         smooth_idf=False)
         print_log(X_counts.shape) # Debug
         
-        print_log("Computation of the weights of the TF-IDF model")
+        print_log("Computation of the weights of the TF model")
         self._X = tfidf_transformer.fit_transform(X_counts)
         self._y = df['class'].values

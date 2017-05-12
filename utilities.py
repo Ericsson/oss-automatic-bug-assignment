@@ -26,7 +26,8 @@ def load_data_set(data_set_file_path):
 #     """Opens and loads the distinct developers from a JSON file."""
 #     return load_json_file(developers_list_file_path)
     
-def build_data_frame(loaded_data, developers_dict_data=None, developers_list_data=None):
+def build_data_frame(loaded_data, developers_dict_data=None, \
+                     developers_list_data=None):
     """Build a data frame.
     
     It uses the loaded data set.

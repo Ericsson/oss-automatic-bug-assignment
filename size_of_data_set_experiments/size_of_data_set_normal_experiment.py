@@ -2,9 +2,11 @@
 
 from size_of_data_set_experiment import SizeOfDataExperiment
 import numpy as np
-import logging
+import abc
         
 class SizeOfDataNormalExperiment(SizeOfDataExperiment):
+    
+    @abc.abstractmethod
     def __init__(self, data_set_file, developers_dict_file, developers_list_file):
         super().__init__(data_set_file, developers_dict_file, developers_list_file)
         self._type = "normal"
@@ -36,20 +38,3 @@ class SizeOfDataNormalExperiment(SizeOfDataExperiment):
         
     def plot_or_save_learning_curve(self, K=33, save_file=True):
         super().plot_or_save_learning_curve(K, save_file)
-        
-if __name__ == "__main__":
-    logging.basicConfig(filename="size_of_data_set_normal_experiment.log", \
-    filemode="w", level=logging.DEBUG)
-    data_set_file = "../pre_processing_experiments/output_without_cleaning_without_stemming_without_lemmatizing_without_stop_words_removal_without_punctuation_removal_without_numbers_removal.json" # The path of the file which 
-    # contains the pre-processed output
-    # Below, the path of the file which contains a dictionary related 
-    # to the mappings of the developers
-    developers_dict_file = "../../developers_dict.json" 
-    # Below, the path of the file which contains a list of the 
-    # relevant distinct developers
-    developers_list_file = "../../developers_list.json" 
-    size_of_data_normal_experiment = SizeOfDataNormalExperiment(data_set_file, \
-    developers_dict_file, developers_list_file)
-    
-    K = 4 # Number of folds
-    size_of_data_normal_experiment.plot_or_save_learning_curve(K)
