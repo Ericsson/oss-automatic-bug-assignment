@@ -1,8 +1,14 @@
 # -*- coding: utf-8 -*-
 
-from size_of_data_set_experiment import SizeOfDataExperiment
 import numpy as np
 import abc
+import os
+import inspect
+
+current_dir = os.path.dirname(os.path.abspath( \
+inspect.getfile(inspect.currentframe())))
+os.sys.path.insert(0, current_dir)
+from size_of_data_set_experiment import SizeOfDataExperiment
         
 class SizeOfDataIncrementalExperiment(SizeOfDataExperiment):
     

@@ -305,7 +305,7 @@ class SizeOfDataExperiment(abc.ABC):
         # loaded developers mappings, the loaded distinct developers.
         self._df = build_data_frame(json_data, developers_dict_data, \
                                     developers_list_data)
-        
+#         self._df = self._df[-1000:]
         
         print_log("Shape of the initial Data Frame") # Debug
         print_log(self._df.shape) # Debug
@@ -324,4 +324,4 @@ class SizeOfDataExperiment(abc.ABC):
         
         print_log("Computation of the weights of the TF model")
         self._X = tfidf_transformer.fit_transform(X_counts)
-        self._y = df['class'].values
+        self._y = self._df['class'].values
