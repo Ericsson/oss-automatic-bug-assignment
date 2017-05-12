@@ -17,6 +17,48 @@ class MozillaExperiment4ResultsPlotter(Experiment4ResultsPlotter):
         self._current_dir = os.path.dirname(os.path.abspath( \
         inspect.getfile(inspect.currentframe())))
         super().__init__(cleaned_results_file_name)
+        
+    def plot_results(self):
+        """This method plots the results in chart(s)"""
+        self.plot_parameters = [
+            {
+                "key": "normal_avg",
+                "x_lim_min": [0.63, 0.78],
+                "x_lim_max": [0.77, 0.86],
+                "x_label": ["Accuracy", "MRR"],
+                "y_label": ["Configurations", "Configurations"],
+                "labels_font_size": [35, 35], 
+                "y_tick_labels_font_size": [20, 20],
+                "bars_labels_space": [0.0005, 0.0005], 
+                "title": ["Accuracy of the different " + \
+                          "configurations (grid search)",
+                          "MRR of the different configurations " + \
+                          "(grid search)"],
+                "file_name" : ["experiment_41.png", \
+                               "experiment_42.png"],
+                "debug_title": ["Average Accuracy (Grid Search)",
+                                "Average MRR (Grid Search)"] 
+            },
+            {
+                "key": "random_avg",
+                "x_lim_min": [0.63, 0.78],
+                "x_lim_max": [0.77, 0.86],
+                "x_label": ["Accuracy", "MRR"],
+                "y_label": ["Configurations", "Configurations"],
+                "labels_font_size": [35, 35], 
+                "y_tick_labels_font_size": [20, 20],
+                "bars_labels_space": [0.0005, 0.0005],
+                "title": ["Accuracy of the different " + \
+                          "configurations (random search)",
+                          "MRR of the different configurations " + \
+                          "(random search)"],
+                "file_name" : ["experiment_43.png", \
+                               "experiment_44.png"],
+                "debug_title": ["Average Accuracy (Random Search)",
+                                "Average MRR (Random Search)"] 
+            }       
+        ]
+        super().plot_results()
 
 def main():
     """The main function of the script"""
