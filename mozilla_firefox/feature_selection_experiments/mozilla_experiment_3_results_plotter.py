@@ -23,8 +23,8 @@ class MozillaExperiment3ResultsPlotter(Experiment3ResultsPlotter):
         self.plot_parameters = [
             {
                 "key": "avg_accuracy",
-                "x_lim_min": 0.1,
-                "x_lim_max": 0.8,
+                "x_lim_min": 0.135,
+                "x_lim_max": 0.1725,
                 "x_label": "Accuracy",
                 "y_label": "Configurations",
                 "labels_font_size": 35, 
@@ -38,8 +38,8 @@ class MozillaExperiment3ResultsPlotter(Experiment3ResultsPlotter):
             },
             {
                 "key": "avg_mrr",
-                "x_lim_min": 0.1,
-                "x_lim_max": 0.8,
+                "x_lim_min": 0.31,
+                "x_lim_max": 0.3525,
                 "x_label": "MRR",
                 "y_label": "Configurations",
                 "labels_font_size": 35, 
