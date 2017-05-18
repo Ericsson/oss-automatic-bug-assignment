@@ -1,4 +1,14 @@
 # -*- coding: utf-8 -*-
+"""
+.. module:: experiment
+   :platform: Unix, Windows
+   :synopsis: This module contains an abstract class used to model any 
+              experiment conducted in the thesis.
+
+.. moduleauthor:: Daniel Artchounin <daniel.artchounin@ericsson.com>
+
+
+"""
 
 from sklearn.model_selection import TimeSeriesSplit
 from utilities import load_data_set, build_data_frame, print_log

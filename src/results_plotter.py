@@ -1,10 +1,20 @@
 # -*- coding: utf-8 -*-
+"""
+.. module:: results_plotter
+   :platform: Unix, Windows
+   :synopsis: This module contains an abstract class used to plot the 
+              results related to all the experiments of the thesis.
 
-from utilities import load_json_file
+.. moduleauthor:: Daniel Artchounin <daniel.artchounin@ericsson.com>
+
+
+"""
 
 import matplotlib.pyplot as plt
 import abc
 import os
+
+from utilities import load_json_file
 
 class ResultsPlotter(abc.ABC):
     

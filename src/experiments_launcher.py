@@ -1,4 +1,16 @@
 # -*- coding: utf-8 -*-
+"""
+.. module:: experiments_launcher
+   :platform: Unix, Windows
+   :synopsis: This module contains an abstract class used to launch 
+              all the experiments related to a particular software 
+              project (Mozilla Firefox, Eclipse JDT, etc.) 
+              sequentially.
+
+.. moduleauthor:: Daniel Artchounin <daniel.artchounin@ericsson.com>
+
+
+"""
 
 import abc
 import logging

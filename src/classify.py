@@ -1,4 +1,14 @@
 # -*- coding: utf-8 -*-
+"""
+.. module:: classify
+   :platform: Unix, Windows
+   :synopsis: This module is used to conduct some minor random 
+              experiments on any data set used in the thesis.
+
+.. moduleauthor:: Daniel Artchounin <daniel.artchounin@ericsson.com>
+
+
+"""
 
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer

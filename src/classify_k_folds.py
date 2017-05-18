@@ -1,4 +1,15 @@
 # -*- coding: utf-8 -*-
+"""
+.. module:: classify_k_folds
+   :platform: Unix, Windows
+   :synopsis: This module is used to conduct some minor random
+              experiments on any data set used in the thesis. 
+              These experiments should use cross-validation.
+
+.. moduleauthor:: Daniel Artchounin <daniel.artchounin@ericsson.com>
+
+
+"""
 
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer

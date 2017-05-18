@@ -1,4 +1,14 @@
 # -*- coding: utf-8 -*-
+"""
+.. module:: utilities
+   :platform: Unix, Windows
+   :synopsis: This module contains some general purpose utility 
+              functions.
+
+.. moduleauthor:: Daniel Artchounin <daniel.artchounin@ericsson.com>
+
+
+"""
 
 from pandas import DataFrame
 import json
