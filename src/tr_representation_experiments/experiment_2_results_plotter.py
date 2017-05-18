@@ -1,3 +1,18 @@
+# -*- coding: utf-8 -*-
+"""
+.. module:: experiment_2_results_plotter
+   :platform: Unix, Windows
+   :synopsis: This module contains an abstract class used to plot the 
+              results related to the second experiment of the thesis. 
+              The experiment consists mainly of comparing several 
+              feature extraction techniques and selecting the best 
+              one.
+
+.. moduleauthor:: Daniel Artchounin <daniel.artchounin@ericsson.com>
+
+
+"""
+
 import os
 import inspect
 import abc
