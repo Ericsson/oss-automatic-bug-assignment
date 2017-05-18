@@ -38,11 +38,12 @@ class ResultsPlotter(abc.ABC):
         return list_1, list_2
             
     @staticmethod
-    def add_labels_to_bars(x_values, ax, bars_labels_space):
+    def add_labels_to_bars(x_values, ax, bars_labels_space, \
+                           labels_font_size):
         """Add labels (percentage) to some given bars"""
         for i, v in enumerate(x_values):
             ax.text(v + bars_labels_space, i+1, "{:.2%}".format(v), \
-                    color='k', fontsize=25, \
+                    color='k', fontsize=labels_font_size, \
                     verticalalignment='center')
     
     @abc.abstractmethod
@@ -53,13 +54,14 @@ class ResultsPlotter(abc.ABC):
     def plot_bar(self, y_labels, x_values, x_lim_min, x_lim_max, \
                  x_label, y_label, title, file_name=None, \
                  labels_font_size=35, y_tick_labels_font_size=20, 
-                 bars_labels_space=0.005):
+                 bars_labels_space=0.005, fig_width_inches=25, \
+                 fig_height_inches=40):
         """Makes a bar plot"""
         # We get a sub-plot inside a figure and its associated axis
         fig, ax = plt.subplots()
     
         # We set the size of the figure
-        fig.set_size_inches(25, 40)
+        fig.set_size_inches(fig_width_inches, fig_height_inches)
     
         height = 0.9 # Height of each bin
     
@@ -83,12 +85,14 @@ class ResultsPlotter(abc.ABC):
         ax.set_yticks(list(map(lambda y: y, range(1,len(y_labels)+1))))
         ax.set_yticklabels(y_labels, fontsize=y_tick_labels_font_size)
     
-        self.add_labels_to_bars(x_values, ax, bars_labels_space)
+        self.add_labels_to_bars(x_values, ax, bars_labels_space, \
+                                y_tick_labels_font_size)
     
         save_file = None if not file_name \
         else os.path.join(self._current_dir, file_name)  
     
         if save_file:
+            # bbox_inches="tight"
             plt.savefig(save_file, bbox_inches="tight")
             plt.close(fig)
         else:

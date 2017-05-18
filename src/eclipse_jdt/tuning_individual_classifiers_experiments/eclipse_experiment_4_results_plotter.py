@@ -24,11 +24,11 @@ class EclipseExperiment4ResultsPlotter(Experiment4ResultsPlotter):
             {
                 "key": "normal_avg",
                 "x_lim_min": [0.185, 0.3375],
-                "x_lim_max": [0.29, 0.46],
+                "x_lim_max": [0.295, 0.465],
                 "x_label": ["Accuracy", "MRR"],
                 "y_label": ["Configurations", "Configurations"],
                 "labels_font_size": [35, 35], 
-                "y_tick_labels_font_size": [20, 20],
+                "y_tick_labels_font_size": [35, 35],
                 "bars_labels_space": [0.0005, 0.0005], 
                 "title": ["Accuracy of the different " + \
                           "configurations (grid search)",
@@ -42,11 +42,11 @@ class EclipseExperiment4ResultsPlotter(Experiment4ResultsPlotter):
             {
                 "key": "random_avg",
                 "x_lim_min": [0.1825, 0.335],
-                "x_lim_max": [0.2875, 0.4575],
+                "x_lim_max": [0.2925, 0.4625],
                 "x_label": ["Accuracy", "MRR"],
                 "y_label": ["Configurations", "Configurations"],
                 "labels_font_size": [35, 35], 
-                "y_tick_labels_font_size": [20, 20],
+                "y_tick_labels_font_size": [35, 35],
                 "bars_labels_space": [0.0005, 0.0005],
                 "title": ["Accuracy of the different " + \
                           "configurations (random search)",

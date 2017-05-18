@@ -102,7 +102,10 @@ class Experiment1ResultsPlotter(ResultsPlotter):
             title = plot_parameter["title"]
             file_name = plot_parameter["file_name"]
             bars_labels_space = plot_parameter["bars_labels_space"]
+            fig_width_inches = plot_parameter["fig_width_inches"]
+            fig_height_inches = plot_parameter["fig_height_inches"]
             self.plot_bar(y_labels, x_values, x_lim_min, x_lim_max, \
                           x_label, y_label, title, file_name, \
                           labels_font_size, y_tick_labels_font_size, \
-                          bars_labels_space)
+                          bars_labels_space, fig_width_inches, \
+                          fig_height_inches)

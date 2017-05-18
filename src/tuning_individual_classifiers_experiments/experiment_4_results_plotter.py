@@ -64,9 +64,10 @@ class Experiment4ResultsPlotter(ResultsPlotter):
             # accuracy)
             for param_key, param_value in zipped_accuracy[0][0].items():
                 param_key_list = param_key.split("__")
-                cleaned_key += ("_" + param_key_list[1] + "=" + \
-                                str(param_value)) 
-            generated_accuracy_list.append((cleaned_key, accuracy))
+                cleaned_key += ("|" + param_key_list[1] + "=" + \
+                                str(param_value) + "\n") 
+            generated_accuracy_list.append((cleaned_key[:-1], \
+                                            accuracy))
             
             if key != "NearestCentroid":   
                 # We zip the list of parameters and its related list 
@@ -82,9 +83,9 @@ class Experiment4ResultsPlotter(ResultsPlotter):
                 # MRR)
                 for param_key, param_value in zipped_mrr[0][0].items():
                     param_key_list = param_key.split("__")
-                    cleaned_key += ("_" + param_key_list[1] + "=" + \
-                                    str(param_value)) 
-                generated_mrr_list.append((cleaned_key, mrr))
+                    cleaned_key += ("|" + param_key_list[1] + "=" + \
+                                    str(param_value) + "\n") 
+                generated_mrr_list.append((cleaned_key[:-1], mrr))
 
 #             TO DO: To remove later if not needed
 #             # Below, we iterate over each ML algorithm's configuration
