@@ -1,4 +1,17 @@
 # -*- coding: utf-8 -*-
+"""
+.. module:: eclipse_pre_processing_experiment
+   :platform: Unix, Windows
+   :synopsis: This module contains a class used to conduct the first 
+              experiment of the thesis on the bug reports of Eclipse 
+              JDT. The experiment consists mainly of comparing several 
+              combinations of pre-processing techniques and selecting 
+              the best one.
+
+.. moduleauthor:: Daniel Artchounin <daniel.artchounin@ericsson.com>
+
+
+"""
 
 import os
 import inspect
