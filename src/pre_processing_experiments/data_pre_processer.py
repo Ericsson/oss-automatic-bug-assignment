@@ -1,4 +1,17 @@
 # -*- coding: utf-8 -*-
+"""
+.. module:: data_pre_processer
+   :platform: Unix, Windows
+   :synopsis: This module contains an abstract class used to apply 
+              different combinations of pre-processing techniques on 
+              any data set used in the thesis (the data should have 
+              been scrapped via the Scrapy library, in a JSON file and 
+              should have been sorted before).
+
+.. moduleauthor:: Daniel Artchounin <daniel.artchounin@ericsson.com>
+
+
+"""
 
 from html.parser import HTMLParser
 from nltk.tokenize import word_tokenize

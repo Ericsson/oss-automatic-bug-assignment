@@ -1,4 +1,16 @@
 # -*- coding: utf-8 -*-
+"""
+.. module:: pre_processing_experiment
+   :platform: Unix, Windows
+   :synopsis: This module contains an abstract class used to conduct 
+              the first experiment of the thesis. The experiment 
+              consists mainly of comparing several combinations of 
+              pre-processing techniques and selecting the best one.
+
+.. moduleauthor:: Daniel Artchounin <daniel.artchounin@ericsson.com>
+
+
+"""
 
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
