@@ -1,4 +1,15 @@
 # -*- coding: utf-8 -*-
+"""
+.. module:: eclipse_data_set_sorter
+   :platform: Unix, Windows
+   :synopsis: This module is used to sort the Eclipse JDT data set 
+   used in this thesis (the data should have been scrapped via the 
+   Scrapy library and in a JSON file).
+
+.. moduleauthor:: Daniel Artchounin <daniel.artchounin@ericsson.com>
+
+
+"""
 
 import os
 import inspect

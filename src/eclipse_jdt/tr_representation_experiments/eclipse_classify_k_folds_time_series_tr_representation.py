@@ -1,4 +1,17 @@
 # -*- coding: utf-8 -*-
+"""
+.. module:: eclipse_classify_k_folds_time_series_tr_representation
+   :platform: Unix, Windows
+   :synopsis: This module contains a class used to conduct the second 
+              experiment of the thesis on the bug reports of Eclipse 
+              JDT. The experiment consists mainly of comparing several
+              feature extraction techniques and selecting the best 
+              one.
+
+.. moduleauthor:: Daniel Artchounin <daniel.artchounin@ericsson.com>
+
+
+"""
 
 import os
 import inspect

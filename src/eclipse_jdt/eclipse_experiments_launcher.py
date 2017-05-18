@@ -1,4 +1,14 @@
 # -*- coding: utf-8 -*-
+"""
+.. module:: eclipse_experiments_launcher
+   :platform: Unix, Windows
+   :synopsis: This module contains a class used to launch all the 
+              experiments related to Eclipse JDT sequentially.
+
+.. moduleauthor:: Daniel Artchounin <daniel.artchounin@ericsson.com>
+
+
+"""
 
 import os
 import inspect
