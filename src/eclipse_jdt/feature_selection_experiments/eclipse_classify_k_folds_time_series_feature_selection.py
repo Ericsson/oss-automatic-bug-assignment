@@ -1,4 +1,16 @@
 # -*- coding: utf-8 -*-
+"""
+.. module:: eclipse_classify_k_folds_time_series_feature_selection
+   :platform: Unix, Windows
+   :synopsis: This module contains a class used to conduct the third 
+              experiment of the thesis on the bug reports of Eclipse 
+              JDT. The experiment consists mainly of comparing several 
+              feature selection techniques and selecting the best one.
+
+.. moduleauthor:: Daniel Artchounin <daniel.artchounin@ericsson.com>
+
+
+"""
 
 import os
 import inspect
