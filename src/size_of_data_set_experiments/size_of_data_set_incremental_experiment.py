@@ -1,4 +1,20 @@
 # -*- coding: utf-8 -*-
+"""
+.. module:: size_of_data_set_incremental_experiment
+   :platform: Unix, Windows
+   :synopsis: This module contains an abstract class used to conduct 
+              the first sub experiment of the preliminary experiment 
+              of the thesis. The experiment consists mainly of trying 
+              to find the optimal number of bug reports that should 
+              be used to train a classifier. In the context of the 
+              first sub experiment, all the folds, except the oldest 
+              one, are used to evaluate the performance of the 
+              classifier (cf. Master's Thesis). 
+
+.. moduleauthor:: Daniel Artchounin <daniel.artchounin@ericsson.com>
+
+
+"""
 
 import numpy as np
 import abc
