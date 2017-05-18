@@ -1,4 +1,15 @@
 # -*- coding: utf-8 -*-
+"""
+.. module:: data_set_sorter
+   :platform: Unix, Windows
+   :synopsis: This module contains a class used to sort any data set 
+   used in this thesis (the data should have been scrapped via the 
+   Scrapy library and in a JSON file).
+
+.. moduleauthor:: Daniel Artchounin <daniel.artchounin@ericsson.com>
+
+
+"""
 
 import json
 
