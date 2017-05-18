@@ -3,16 +3,16 @@
 import os
 import inspect
 
+current_dir = os.path.dirname(os.path.abspath( \
+inspect.getfile(inspect.currentframe())))
+os.sys.path.insert(0, current_dir)
+parent_dir = os.path.dirname(current_dir)
+grand_parent_dir = os.path.dirname(parent_dir)
+os.sys.path.insert(0, grand_parent_dir)
 from eclipse_size_of_data_set_normal_experiment \
 import EclipseSizeOfDataNormalExperiment
 from eclipse_size_of_data_set_incremental_experiment \
 import EclipseSizeOfDataIncrementalExperiment
-
-current_dir = os.path.dirname(os.path.abspath( \
-inspect.getfile(inspect.currentframe())))
-parent_dir = os.path.dirname(current_dir)
-grand_parent_dir = os.path.dirname(parent_dir)
-os.sys.path.insert(0, grand_parent_dir)
 from size_of_data_set_experiments.size_of_data_set_experiments \
 import SizeOfDataExperiments
 

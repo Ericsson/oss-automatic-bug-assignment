@@ -14,8 +14,8 @@ from sklearn.svm import LinearSVC
 # from sklearn.decomposition import NMF
 # from sklearn.model_selection import train_test_split
 from sklearn.model_selection import KFold
-from utilities import load_data_set, load_developers_mappings, \
-load_distinct_developers_list, build_data_frame, print_log
+from utilities import load_data_set, build_data_frame, print_log
+# load_developers_mappings, load_distinct_developers_list, 
 import time
 import numpy as np
 import logging

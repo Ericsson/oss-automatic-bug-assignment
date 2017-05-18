@@ -42,8 +42,8 @@ from sklearn.metrics import confusion_matrix
 from sklearn.metrics import classification_report
 from sklearn.metrics import label_ranking_average_precision_score
 from sklearn.preprocessing import LabelBinarizer
-from utilities import load_data_set, load_developers_mappings, \
-load_distinct_developers_list, build_data_frame
+from utilities import load_data_set, build_data_frame
+# load_developers_mappings, load_distinct_developers_list,
 from wordcloud import WordCloud
 from utilities import print_log
 # from os import path
