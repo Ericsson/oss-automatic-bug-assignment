@@ -2,6 +2,7 @@
 *.log
 *.json
 *.csv
+doc/build/
 !src/eclipse_jdt/scrap_eclipse_jdt/brs.json
 !src/eclipse_jdt/scrap_eclipse_jdt/sorted_brs.json
 !src/eclipse_jdt/pre_processing_experiments/output_without_cleaning_without_stemming_without_lemmatizing_without_stop_words_removal_without_punctuation_removal_without_numbers_removal.json
