@@ -39,8 +39,8 @@ echo "..."
 printf "oss_automatic_bug_assignment\n"\
 "============================\n"\
 "\n"\
-"Subpackages\n"\
-"-----------\n"\
+"Packages\n"\
+"--------\n"\
 "\n"\
 ".. toctree::\n"\
 "   :maxdepth: 10\n"\
@@ -55,8 +55,8 @@ printf "oss_automatic_bug_assignment\n"\
 "   tr_representation_experiments\n"\
 "   tuning_individual_classifiers_experiments\n"\
 "\n"\
-"Submodules\n"\
-"----------\n"\
+"Modules\n"\
+"-------\n"\
 "\n"\
 ".. toctree::\n"\
 "\n"\
@@ -130,7 +130,7 @@ printf ".. Open-source software automatic bug assignment documentation master fi
 "   You can adapt this file completely to your liking, but it should at least\n"\
 "   contain the root \`toctree\` directive.\n"\
 "\n"\
-"Welcome to Open-source software (OSS) automatic bug assignment's documentation!\n"\
+"Welcome To Open-Source Software (OSS) Automatic Bug Assignment's Documentation!\n"\
 "===============================================================================\n"\
 "\n"\
 ".. toctree::\n"\
