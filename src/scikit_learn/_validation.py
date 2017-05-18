@@ -1,13 +1,24 @@
+# -*- coding: utf-8 -*-
 """
-The :mod:`sklearn.model_selection._validation` module includes classes and
-functions to validate the model.
+.. module:: _validation
+   :platform: Unix, Windows
+   :synopsis: This module has been downloaded (from the GitHub 
+              repository of scikit-learn: 
+              https://github.com/scikit-learn/scikit-learn) to be 
+              used in the forth experiment of the thesis. Original 
+              module documentation: The :mod:`sklearn.model_selection._validation` 
+              module includes classes and functions to validate the 
+              model.
+
+.. moduleauthor:: Daniel Artchounin <daniel.artchounin@ericsson.com>
+
+
 """
 
 # Author: Alexandre Gramfort <alexandre.gramfort@inria.fr>,
 #         Gael Varoquaux <gael.varoquaux@normalesup.org>,
 #         Olivier Grisel <olivier.grisel@ensta.org>
 # License: BSD 3 clause
-
 
 from __future__ import print_function
 from __future__ import division

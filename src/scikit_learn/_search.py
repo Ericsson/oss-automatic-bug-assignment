@@ -1,15 +1,28 @@
+# -*- coding: utf-8 -*-
 """
-The :mod:`sklearn.model_selection._search` includes utilities to fine-tune the
-parameters of an estimator.
+.. module:: _search
+   :platform: Unix, Windows
+   :synopsis: This module has been downloaded (from the GitHub 
+              repository of scikit-learn: 
+              https://github.com/scikit-learn/scikit-learn) to be 
+              used in the forth experiment of the thesis. Original 
+              module documentation: The :mod:`sklearn.model_selection._search` 
+              includes utilities to fine-tune the parameters of an 
+              estimator.
+
+.. moduleauthor:: Daniel Artchounin <daniel.artchounin@ericsson.com>
+
+
 """
-from __future__ import print_function
-from __future__ import division
 
 # Author: Alexandre Gramfort <alexandre.gramfort@inria.fr>,
 #         Gael Varoquaux <gael.varoquaux@normalesup.org>
 #         Andreas Mueller <amueller@ais.uni-bonn.de>
 #         Olivier Grisel <olivier.grisel@ensta.org>
 # License: BSD 3 clause
+
+from __future__ import print_function
+from __future__ import division
 
 from abc import ABCMeta, abstractmethod
 from collections import Mapping, namedtuple, defaultdict, Sequence

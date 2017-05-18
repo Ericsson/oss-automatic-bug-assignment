@@ -1,4 +1,16 @@
 # -*- coding: utf-8 -*-
+"""
+.. module:: accuracy_mrr_scoring_object
+   :platform: Unix, Windows
+   :synopsis: This module contains a scorer callable function used to 
+              compute the values of both the accuracy and MRR metrics.
+              The function is mainly used in the forth experiment of 
+              the thesis.
+
+.. moduleauthor:: Daniel Artchounin <daniel.artchounin@ericsson.com>
+
+
+"""
 
 from sklearn.preprocessing import LabelBinarizer
 from sklearn.metrics import label_ranking_average_precision_score

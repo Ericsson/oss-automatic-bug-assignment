@@ -1,10 +1,24 @@
+# -*- coding: utf-8 -*-
+"""
+.. module:: rfe
+   :platform: Unix, Windows
+   :synopsis: This module has been downloaded (from the GitHub 
+              repository of scikit-learn: 
+              https://github.com/scikit-learn/scikit-learn) to be 
+              used in the forth experiment of the thesis. Original 
+              module documentation: Recursive feature elimination for 
+              feature ranking.
+
+.. moduleauthor:: Daniel Artchounin <daniel.artchounin@ericsson.com>
+
+
+"""
+
 # Authors: Alexandre Gramfort <alexandre.gramfort@inria.fr>
 #          Vincent Michel <vincent.michel@inria.fr>
 #          Gilles Louppe <g.louppe@gmail.com>
 #
 # License: BSD 3 clause
-
-"""Recursive feature elimination for feature ranking"""
 
 import numpy as np
 from sklearn.utils import check_X_y, safe_sqr
