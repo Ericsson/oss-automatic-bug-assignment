@@ -1,0 +1,55 @@
+ namespace
+==========
+
+Submodules
+----------
+
+classify module
+---------------
+
+.. automodule:: classify
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+classify\_k\_folds module
+-------------------------
+
+.. automodule:: classify_k_folds
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+experiment module
+-----------------
+
+.. automodule:: experiment
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+experiments\_launcher module
+----------------------------
+
+.. automodule:: experiments_launcher
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+results\_plotter module
+-----------------------
+
+.. automodule:: results_plotter
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+utilities module
+----------------
+
+.. automodule:: utilities
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
