@@ -1,3 +1,17 @@
+# -*- coding: utf-8 -*-
+"""
+.. module:: experiment_4_results_plotter
+   :platform: Unix, Windows
+   :synopsis: This module contains an abstract class used to plot the 
+              results related to the last experiment of the thesis. 
+              The experiment consists mainly of tuning several 
+              classifiers and selecting the best performing one.
+
+.. moduleauthor:: Daniel Artchounin <daniel.artchounin@ericsson.com>
+
+
+"""
+
 import os
 import inspect
 import abc

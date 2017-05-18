@@ -1,4 +1,16 @@
 # -*- coding: utf-8 -*-
+"""
+.. module:: classify_k_folds_time_series_tuning
+   :platform: Unix, Windows
+   :synopsis: This module contains an abstract class used to conduct 
+              the last experiment of the thesis. The experiment 
+              consists mainly of tuning several classifiers and 
+              selecting the best performing one.
+
+.. moduleauthor:: Daniel Artchounin <daniel.artchounin@ericsson.com>
+
+
+"""
 
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer

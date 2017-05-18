@@ -1,4 +1,14 @@
 # -*- coding: utf-8 -*-
+"""
+.. module:: log_space_uniform
+   :platform: Unix, Windows
+   :synopsis: This module contains a class used to generate random 
+              numbers uniformly distributed in log space.
+
+.. moduleauthor:: Daniel Artchounin <daniel.artchounin@ericsson.com>
+
+
+"""
 
 from scipy.stats import rv_continuous
 import numpy.random as mtrand
