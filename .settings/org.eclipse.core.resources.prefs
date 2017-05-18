@@ -25,6 +25,7 @@ encoding//src/mozilla_firefox/size_of_data_set_experiments/mozilla_size_of_data_
 encoding//src/mozilla_firefox/tr_representation_experiments/mozilla_classify_k_folds_time_series_tr_representation.py=utf-8
 encoding//src/mozilla_firefox/tuning_individual_classifiers_experiments/mozilla_classify_k_folds_time_series_tuning.py=utf-8
 encoding//src/pre_processing_experiments/data_pre_processer.py=utf-8
+encoding//src/pre_processing_experiments/experiment_1_results_plotter.py=utf-8
 encoding//src/pre_processing_experiments/pre_processing_experiment.py=utf-8
 encoding//src/results_plotter.py=utf-8
 encoding//src/scikit_learn/accuracy_mrr_scoring_object.py=utf-8
@@ -34,6 +35,8 @@ encoding//src/size_of_data_set_experiments/size_of_data_set_experiments.py=utf-8
 encoding//src/size_of_data_set_experiments/size_of_data_set_incremental_experiment.py=utf-8
 encoding//src/size_of_data_set_experiments/size_of_data_set_normal_experiment.py=utf-8
 encoding//src/tr_representation_experiments/classify_k_folds_time_series_tr_representation.py=utf-8
+encoding//src/tr_representation_experiments/experiment_2_results_plotter.py=utf-8
 encoding//src/tuning_individual_classifiers_experiments/classify_k_folds_time_series_tuning.py=utf-8
+encoding//src/tuning_individual_classifiers_experiments/experiment_4_results_plotter.py=utf-8
 encoding//src/tuning_individual_classifiers_experiments/log_space_uniform.py=utf-8
 encoding//src/utilities.py=utf-8
