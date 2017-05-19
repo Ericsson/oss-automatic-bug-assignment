@@ -1,4 +1,20 @@
 # -*- coding: utf-8 -*-
+"""
+.. module:: mozilla_size_of_data_set_normal_experiment
+   :platform: Unix, Windows
+   :synopsis: This module contains a class used to conduct the second 
+              sub experiment of the preliminary experiment of the 
+              thesis on the bug reports of Mozilla Firefox. The 
+              experiment consists mainly of trying to find the optimal
+              number of bug reports that should be used to train a
+              classifier. In the context of the second sub experiment,
+              only the latest fold is used to evaluate the performance
+              of the classifier (cf. Master's Thesis). 
+
+.. moduleauthor:: Daniel Artchounin <daniel.artchounin@ericsson.com>
+
+
+"""
 
 import os
 import inspect

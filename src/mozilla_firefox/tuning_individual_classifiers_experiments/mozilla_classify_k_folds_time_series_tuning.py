@@ -1,4 +1,17 @@
 # -*- coding: utf-8 -*-
+"""
+.. module:: mozilla_classify_k_folds_time_series_tuning
+   :platform: Unix, Windows
+   :synopsis: This module contains a class used to conduct the last 
+              experiment of the thesis on the bug reports of Mozilla 
+              Firefox. The experiment consists mainly of tuning 
+              several classifiers and selecting the best performing 
+              one.
+
+.. moduleauthor:: Daniel Artchounin <daniel.artchounin@ericsson.com>
+
+
+"""
 
 import os
 import inspect

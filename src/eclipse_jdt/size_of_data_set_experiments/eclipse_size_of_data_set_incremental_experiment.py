@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-.. module:: size_of_data_set_incremental_experiment
+.. module:: eclipse_size_of_data_set_incremental_experiment
    :platform: Unix, Windows
    :synopsis: This module contains a class used to conduct the first 
               sub experiment of the preliminary experiment of the 

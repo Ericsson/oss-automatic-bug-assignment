@@ -1,3 +1,18 @@
+# -*- coding: utf-8 -*-
+"""
+.. module:: mozilla_experiment_2_results_plotter
+   :platform: Unix, Windows
+   :synopsis: This module contains a class used to plot the results 
+              related to the second experiment of the thesis conducted
+              on the bug reports of Mozilla Firefox. The experiment 
+              consists mainly of comparing several feature extraction
+              techniques and selecting the best one.
+
+.. moduleauthor:: Daniel Artchounin <daniel.artchounin@ericsson.com>
+
+
+"""
+
 import os
 import inspect
 

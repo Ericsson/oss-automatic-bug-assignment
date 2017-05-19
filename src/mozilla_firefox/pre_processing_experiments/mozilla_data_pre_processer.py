@@ -1,4 +1,17 @@
 # -*- coding: utf-8 -*-
+"""
+.. module:: mozilla_data_pre_processer
+   :platform: Unix, Windows
+   :synopsis: This module contains a class used to apply different 
+              combinations of pre-processing techniques on the sorted 
+              bug reports of Mozilla Firefox (the data should have 
+              been scrapped via the Scrapy library, in a JSON file and
+              should have been sorted before).
+
+.. moduleauthor:: Daniel Artchounin <daniel.artchounin@ericsson.com>
+
+
+"""
 
 import os
 import inspect
@@ -12,11 +25,8 @@ os.sys.path.insert(0, grand_parent_dir)
 from pre_processing_experiments.data_pre_processer \
 import DataPreProcesser
 
-"""Pre-process the bug reports of the Mozilla Firefox project
-
-Pre-process the id, title, description and assigned-to fields of the 
-aforementioned bug reports.
-"""
+# Pre-process the id, title, description and assigned-to fields of the 
+# aforementioned bug reports.
 
 class MozillaDataPreProcesser(DataPreProcesser):
     
