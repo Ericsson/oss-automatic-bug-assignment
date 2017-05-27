@@ -38,12 +38,12 @@ class MozillaExperiment4ResultsPlotter(Experiment4ResultsPlotter):
         self.plot_parameters = [
             {
                 "key": "normal_avg",
-                "x_lim_min": [0.63, 0.78],
-                "x_lim_max": [0.77, 0.86],
+                "x_lim_min": [0.04, 0.20],
+                "x_lim_max": [0.155, 0.35],
                 "x_label": ["Accuracy", "MRR"],
                 "y_label": ["Configurations", "Configurations"],
                 "labels_font_size": [35, 35], 
-                "y_tick_labels_font_size": [20, 20],
+                "y_tick_labels_font_size": [35, 35],
                 "bars_labels_space": [0.0005, 0.0005], 
                 "title": ["Accuracy of the different " + \
                           "configurations (grid search)",
@@ -56,12 +56,12 @@ class MozillaExperiment4ResultsPlotter(Experiment4ResultsPlotter):
             },
             {
                 "key": "random_avg",
-                "x_lim_min": [0.63, 0.78],
-                "x_lim_max": [0.77, 0.86],
+                "x_lim_min": [0.04, 0.20],
+                "x_lim_max": [0.155, 0.35],
                 "x_label": ["Accuracy", "MRR"],
                 "y_label": ["Configurations", "Configurations"],
                 "labels_font_size": [35, 35], 
-                "y_tick_labels_font_size": [20, 20],
+                "y_tick_labels_font_size": [35, 35],
                 "bars_labels_space": [0.0005, 0.0005],
                 "title": ["Accuracy of the different " + \
                           "configurations (random search)",
