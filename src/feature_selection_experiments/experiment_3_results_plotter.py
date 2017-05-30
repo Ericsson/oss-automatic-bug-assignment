@@ -41,11 +41,27 @@ class Experiment3ResultsPlotter(ResultsPlotter):
         
     @classmethod
     def get_cleaned_list_from_dict(cls, dict_content):
-        """Returns a cleaned list from a dictionary
+        """Cleans the results related to a specific metric
     
-        The aforementioned dictionary should only contain the 
-        accuracies related to different feature selection 
-        techniques"""
+        A dictionary containing the results related to a specific 
+        metric is given in parameter. The aforementioned dictionary 
+        should only contain the values of a specific metric, related 
+        to the different feature selection configurations which are 
+        compared. A list of tuples is then generated. For each 
+        configuration of each technique, a tuple is added to this 
+        list. This tuple contains both a unique key designating the 
+        configuration and its value for the specific metric. The 
+        generated list is eventually returned.
+        
+        :param dict_content: The values of a metric, related to the
+        different selected feature selection configurations which are
+        compared.
+        :type dict_content: dictionary.
+        :returns:  list -- the list of tuples containing the unique 
+        keys and the metric values related to the different feature 
+        selection configurations.
+        :raises: KeyError        
+        """
         generated_list = []
         for key, value in dict_content.items():
             if key == "GridSearch var_threshold Linear SVM":
@@ -65,12 +81,27 @@ class Experiment3ResultsPlotter(ResultsPlotter):
     
     @classmethod
     def get_small_key(cls, key):
-        """Return the reduced form of a key"""
+        """Maps a key to a smaller one and returns it.
+        
+        The original key was used to store the results related to a 
+        specific technique ("GridSearch chi2 Linear SVM", "GridSearch 
+        f_classif Linear SVM", "GridSearch mutual_info_classif Linear 
+        SVM" or "RFECV SVM"). This key is then mapped to an acronym 
+        for readability purposes. This acronym is eventually returned.
+        
+        :param key: A key used to designate a technique.
+        :type key: string.
+        :returns:  string -- the acronym
+        :raises: KeyError
+        """
         return cls.KEY_MAPPING[key]
     
     @abc.abstractmethod
     def plot_results(self):
-        """This method plots the results in chart(s)"""
+        """Plots the results in horizontal bar chart(s)
+        
+        This method plots the results and saves them into PNG files.
+        """
         super().plot_results()
         
         for plot_parameter in self.plot_parameters:

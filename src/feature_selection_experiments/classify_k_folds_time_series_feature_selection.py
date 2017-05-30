@@ -42,6 +42,30 @@ class FeatureSelectionExperiment(Experiment):
     def __init__(self, data_set_file, lowercase=False, use_idf=False,
                  developers_dict_file=None, 
                  developers_list_file=None):
+        """Constructor
+        
+        The data in the data set file are loaded. The pre-processing 
+        techniques, the feature extraction techniques and the feature 
+        selection techniques to use are selected.
+        
+        :param data_set_file: The absolute path of the data set file.
+        :type data_set_file: string.
+        :param lowercase: To decide whether or not conversion to lower
+        case should be applied.
+        :type lowercase: boolean.
+        :param use_idf: To decide whether or not the inverse document 
+        frequencies of the tf-idf formula should be used.
+        :type use_idf: boolean.
+        :param developers_dict_file: The absolute path of a JSON file 
+        containing a mapping of developers names to other strings. 
+        Not implemented yet: it should be done later if needed.
+        :type developers_dict_file: string.
+        :param developers_list_file: The absolute path of a JSON file 
+        allowing us to filter out the data set based on the names of 
+        the developers. Not implemented yet: it should be done later 
+        if needed.
+        :type developers_list_file: string.
+        """
         super().__init__(developers_dict_file, developers_list_file)
         np.random.seed(0) # We set the seed
         self.lowercase = lowercase
@@ -132,6 +156,12 @@ class FeatureSelectionExperiment(Experiment):
         super().conduct_experiment()
         
     def _train_predict_cv(self):
+        """Method used to train and evaluate the different models
+        
+        The models related to the different configurations are first 
+        trained, then, validated (using an approach close to 10-fold 
+        cross-validation).
+        """
         X_train = self._train_set['text']
         y_train = self._train_set['class'].values
 
