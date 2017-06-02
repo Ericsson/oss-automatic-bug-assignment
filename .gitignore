@@ -2,6 +2,7 @@
 *.log
 *.json
 *.csv
+*.png
 doc/build/
 !src/eclipse_jdt/scrap_eclipse_jdt/brs.json
 !src/eclipse_jdt/scrap_eclipse_jdt/sorted_brs.json
@@ -11,3 +12,4 @@ doc/build/
 !src/mozilla_firefox/pre_processing_experiments/output_without_cleaning_without_stemming_without_lemmatizing_without_stop_words_removal_without_punctuation_removal_without_numbers_removal.json
 !src/mozilla_firefox/tuning_individual_classifiers_experiments/cleaned_tuning_individual_classifier_generic_experiment_results.json
 !src/mozilla_firefox/tuning_individual_classifiers_experiments/tuning_individual_classifier_generic_experiment.log
+!src/final_results/
