@@ -1,0 +1,3270 @@
+INFO:root:Splitting the data set
+INFO:root:Shape of the initial Data Frame
+INFO:root:(24294, 2)
+INFO:root:Martin Aeschlimann          0.080143
+Olivier Thomann             0.064337
+Markus Keller               0.055940
+Dani Megert                 0.047337
+JDT-Text-Inbox              0.046555
+Philipe Mulet               0.044785
+Jerome Lanneluc             0.043838
+Darin Wright                0.043179
+JDT-UI-Inbox                0.037952
+Erich Gamma                 0.036099
+Frederic Fusier             0.031160
+Dirk Baeumer                0.030831
+Benno Baumgartner           0.028855
+David Audel                 0.023257
+Adam Kiezun                 0.023257
+Kent Johnson                0.022475
+Stephan Herrmann            0.022392
+Darin Swanson               0.021651
+Tobias Widmer               0.020869
+Srikanth Sankaran           0.020705
+Kai-Uwe Maetzel             0.016630
+Michael Rennie              0.015354
+Jay Arthanareeswaran        0.014530
+Tom Hofmann                 0.013090
+Jared Burns                 0.011608
+Luc Bourlier                0.010949
+Kevin Barnes                0.010867
+JDT-Debug-Inbox             0.010373
+Joe Szurszewski             0.009879
+Deepak Azad                 0.008150
+                              ...   
+Robert Konigsberg           0.000041
+Platform UI Triaged         0.000041
+Andreas Schmid              0.000041
+Kim Horne                   0.000041
+Nicolaj Hoess               0.000041
+Moshe WAJNBERG              0.000041
+Brian McNamara              0.000041
+Snjezana Peco               0.000041
+Andrej Zachar               0.000041
+Ulrich Grave                0.000041
+Lakshmi Shanmugam           0.000041
+Ievgen Lukash               0.000041
+Christian Plesner Hansen    0.000041
+Kari Halsted                0.000041
+Dirk Olmes                  0.000041
+Ed Merks                    0.000041
+Kim Moir                    0.000041
+John Wiegand                0.000041
+Michael Van Meekeren        0.000041
+Gabor Kovesdan              0.000041
+Xavier Coulon               0.000041
+Kenneth Olson               0.000041
+Gili Mendel                 0.000041
+Christian Georgi            0.000041
+Robert Roth                 0.000041
+Josef Lehner                0.000041
+Sven Strohschein            0.000041
+Mik Kersten                 0.000041
+Stefan Ocke                 0.000041
+John Ryding                 0.000041
+Name: class, dtype: float64
+INFO:root:Shape of the training set
+INFO:root:(21864, 2)
+INFO:root:Martin Aeschlimann          0.089050
+Olivier Thomann             0.070801
+Markus Keller               0.053787
+JDT-Text-Inbox              0.051500
+Philipe Mulet               0.049762
+Dani Megert                 0.049168
+Jerome Lanneluc             0.048710
+Darin Wright                0.047978
+JDT-UI-Inbox                0.041804
+Erich Gamma                 0.040112
+Frederic Fusier             0.034623
+Dirk Baeumer                0.034257
+Benno Baumgartner           0.032062
+Adam Kiezun                 0.025842
+David Audel                 0.025842
+Kent Johnson                0.024973
+Darin Swanson               0.024058
+Tobias Widmer               0.023189
+Kai-Uwe Maetzel             0.018478
+Tom Hofmann                 0.014544
+Michael Rennie              0.014499
+Jared Burns                 0.012898
+Luc Bourlier                0.012166
+Kevin Barnes                0.012075
+JDT-Debug-Inbox             0.011206
+Joe Szurszewski             0.010977
+Srikanth Sankaran           0.009193
+Deepak Azad                 0.008965
+Ayushman Jain               0.007913
+Curtis Windatt              0.007821
+                              ...   
+Cam-Thu Le                  0.000046
+Andrej Zachar               0.000046
+Andrew Clement              0.000046
+Achim Demelt                0.000046
+Gabor Kovesdan              0.000046
+Mik Kersten                 0.000046
+Kim Horne                   0.000046
+Lakshmi Shanmugam           0.000046
+Nicolaj Hoess               0.000046
+Moshe WAJNBERG              0.000046
+John Ryding                 0.000046
+Robert Roth                 0.000046
+Gili Mendel                 0.000046
+Genady Beryozkin            0.000046
+Kenneth Olson               0.000046
+CBI Dummy user              0.000046
+Dorian Birsan               0.000046
+Christian Plesner Hansen    0.000046
+Andreas Schmid              0.000046
+Michael Van Meekeren        0.000046
+Harald Albers               0.000046
+John Wiegand                0.000046
+Kim Moir                    0.000046
+Kari Halsted                0.000046
+Paul Fullbright             0.000046
+Philippe Marschall          0.000046
+Ulrich Grave                0.000046
+Sergey Prigogin             0.000046
+equinox.framework-inbox     0.000046
+Xavier Coulon               0.000046
+Name: class, dtype: float64
+INFO:root:Shape of the test set
+INFO:root:(2430, 2)
+INFO:root:Stephan Herrmann            0.175720
+Srikanth Sankaran           0.124280
+Jay Arthanareeswaran        0.092593
+Markus Keller               0.075309
+Noopur Gupta                0.067490
+Manoj Palat                 0.066255
+Stefan Xenos                0.043210
+Sasikanth Bharadwaj         0.040329
+Till Brychcy                0.031276
+Dani Megert                 0.030864
+Mateusz Matela              0.030453
+Sarika Sinha                0.026337
+shankha banerjee            0.023457
+Michael Rennie              0.023045
+Manju Mathew                0.018107
+Jesper Moller               0.013580
+ANIRBAN CHAKRABORTY         0.009053
+Lars Vogel                  0.009053
+Andrew Clement              0.008642
+JDT-Core-Inbox              0.006996
+Olivier Thomann             0.006173
+Szymon Ptaszkiewicz         0.004527
+David Williams              0.004115
+Sergey Prigogin             0.003704
+Harry Terkelsen             0.003292
+Samrat Dhillon              0.003292
+Matthias Becker             0.003292
+JDT-UI-Inbox                0.003292
+Mickael Istria              0.003292
+Nikolay Metchev             0.002881
+                              ...   
+Alex Blewitt                0.000823
+Tony McCrary                0.000823
+Carmi Grushko               0.000823
+Anton Tanasenko             0.000412
+Josef Lehner                0.000412
+Jeremie Bresson             0.000412
+Jerome Cambon               0.000412
+Brian McNamara              0.000412
+Moritz Eysholdt             0.000412
+Ed Merks                    0.000412
+Snjezana Peco               0.000412
+Stefan Ocke                 0.000412
+Rabea Gransberger           0.000412
+Max L.                      0.000412
+Alex Panchenko              0.000412
+Holger Schill               0.000412
+Platform UI Triaged         0.000412
+Björn Michael               0.000412
+Harald Albers               0.000412
+Ievgen Lukash               0.000412
+Jonah Graham                0.000412
+Lukas Hanke                 0.000412
+Conrad Groth                0.000412
+Kalyan Prasad Tatavarthi    0.000412
+Dirk Olmes                  0.000412
+Jan Rosczak                 0.000412
+Jens Schiebel               0.000412
+Sven Strohschein            0.000412
+Christian Georgi            0.000412
+Andrew Eisenberg            0.000412
+Name: class, dtype: float64
+INFO:root:********* Evaluation on fold 1 *********
+INFO:root:Training of the models
+INFO:root:Boolean SVM
+INFO:root:--- 0.42165255546569824 seconds ---
+INFO:root:TF SVM
+INFO:root:--- 0.8883233070373535 seconds ---
+INFO:root:TF IDF SVM
+INFO:root:--- 1.3282394409179688 seconds ---
+INFO:root:Making predictions
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.448098959656
+INFO:root:--- 1.937753438949585 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.478142300909
+INFO:root:--- 2.5463128089904785 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.481903101154
+INFO:root:--- 3.1619865894317627 seconds ---
+INFO:root:********* Evaluation on fold 2 *********
+INFO:root:Training of the models
+INFO:root:Boolean SVM
+INFO:root:--- 4.358365535736084 seconds ---
+INFO:root:TF SVM
+INFO:root:--- 5.377442359924316 seconds ---
+INFO:root:TF IDF SVM
+INFO:root:--- 6.295830488204956 seconds ---
+INFO:root:Making predictions
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.408656216655
+INFO:root:--- 6.919716119766235 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.470666351047
+INFO:root:--- 7.536110162734985 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.471633992057
+INFO:root:--- 8.1533522605896 seconds ---
+INFO:root:********* Evaluation on fold 3 *********
+INFO:root:Training of the models
+INFO:root:Boolean SVM
+INFO:root:--- 10.03096890449524 seconds ---
+INFO:root:TF SVM
+INFO:root:--- 11.603320598602295 seconds ---
+INFO:root:TF IDF SVM
+INFO:root:--- 13.07215929031372 seconds ---
+INFO:root:Making predictions
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.408425236957
+INFO:root:--- 13.708497524261475 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.457837984951
+INFO:root:--- 14.344900369644165 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.460546437725
+INFO:root:--- 14.987450361251831 seconds ---
+INFO:root:********* Evaluation on fold 4 *********
+INFO:root:Training of the models
+INFO:root:Boolean SVM
+INFO:root:--- 17.7405903339386 seconds ---
+INFO:root:TF SVM
+INFO:root:--- 20.12821078300476 seconds ---
+INFO:root:TF IDF SVM
+INFO:root:--- 22.24857997894287 seconds ---
+INFO:root:Making predictions
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.371880147462
+INFO:root:--- 22.93255639076233 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.45031172752
+INFO:root:--- 23.62229299545288 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.441922521643
+INFO:root:--- 24.321444749832153 seconds ---
+INFO:root:********* Evaluation on fold 5 *********
+INFO:root:Training of the models
+INFO:root:Boolean SVM
+INFO:root:--- 28.09365701675415 seconds ---
+INFO:root:TF SVM
+INFO:root:--- 31.434643507003784 seconds ---
+INFO:root:TF IDF SVM
+INFO:root:--- 34.43010878562927 seconds ---
+INFO:root:Making predictions
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.391267819856
+INFO:root:--- 35.11288619041443 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.47010049567
+INFO:root:--- 35.8040885925293 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.466422752233
+INFO:root:--- 36.49768853187561 seconds ---
+INFO:root:********* Evaluation on fold 6 *********
+INFO:root:Training of the models
+INFO:root:Boolean SVM
+INFO:root:--- 41.636353969573975 seconds ---
+INFO:root:TF SVM
+INFO:root:--- 45.90256190299988 seconds ---
+INFO:root:TF IDF SVM
+INFO:root:--- 49.64063239097595 seconds ---
+INFO:root:Making predictions
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.4169902558
+INFO:root:--- 50.36894869804382 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.493810463881
+INFO:root:--- 51.09603428840637 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.498447483669
+INFO:root:--- 51.83537817001343 seconds ---
+INFO:root:********* Evaluation on fold 7 *********
+INFO:root:Training of the models
+INFO:root:Boolean SVM
+INFO:root:--- 59.468053340911865 seconds ---
+INFO:root:TF SVM
+INFO:root:--- 64.86563611030579 seconds ---
+INFO:root:TF IDF SVM
+INFO:root:--- 69.65591430664062 seconds ---
+INFO:root:Making predictions
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.330239373232
+INFO:root:--- 70.33289527893066 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.387782657631
+INFO:root:--- 71.01091456413269 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.391624726649
+INFO:root:--- 71.69567060470581 seconds ---
+INFO:root:********* Evaluation on fold 8 *********
+INFO:root:Training of the models
+INFO:root:Boolean SVM
+INFO:root:--- 81.17156982421875 seconds ---
+INFO:root:TF SVM
+INFO:root:--- 87.53425455093384 seconds ---
+INFO:root:TF IDF SVM
+INFO:root:--- 93.19441747665405 seconds ---
+INFO:root:Making predictions
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.340347411287
+INFO:root:--- 93.89565634727478 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.408302761676
+INFO:root:--- 94.58044862747192 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.400977137929
+INFO:root:--- 95.27517485618591 seconds ---
+INFO:root:********* Evaluation on fold 9 *********
+INFO:root:Training of the models
+INFO:root:Boolean SVM
+INFO:root:--- 106.84345173835754 seconds ---
+INFO:root:TF SVM
+INFO:root:--- 114.44820070266724 seconds ---
+INFO:root:TF IDF SVM
+INFO:root:--- 121.10708904266357 seconds ---
+INFO:root:Making predictions
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.325295336543
+INFO:root:--- 121.72572469711304 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.387351971367
+INFO:root:--- 122.3525652885437 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.376044496509
+INFO:root:--- 122.98746061325073 seconds ---
+INFO:root:********* Evaluation on fold 10 *********
+INFO:root:Training of the models
+INFO:root:Boolean SVM
+INFO:root:--- 136.43796920776367 seconds ---
+INFO:root:TF SVM
+INFO:root:--- 145.41369199752808 seconds ---
+INFO:root:TF IDF SVM
+INFO:root:--- 153.07344961166382 seconds ---
+INFO:root:Making predictions
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.208731745663
+INFO:root:--- 153.69321036338806 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.251573228639
+INFO:root:--- 154.3086061477661 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.249045056747
+INFO:root:--- 154.92914533615112 seconds ---
+INFO:root:Accuracy of Boolean SVM
+INFO:root:Each fold
+INFO:root:[0.29139406139909413, 0.25817815802717664, 0.2712632108706593, 0.22244589833920483, 0.26069451434323099, 0.27528938097634625, 0.19979869149471566, 0.22596879718168092, 0.21036738802214394, 0.10568696527428284]
+INFO:root:Average
+INFO:root:0.232108706593
+INFO:root:MRR of Boolean SVM
+INFO:root:Each fold
+INFO:root:[0.44809895965583579, 0.40865621665482321, 0.4084252369571777, 0.37188014746246423, 0.39126781985637094, 0.41699025580033822, 0.33023937323184072, 0.34034741128729884, 0.3252953365426689, 0.20873174566328564]
+INFO:root:Average
+INFO:root:0.364993250311
+INFO:root:Accuracy of TF SVM
+INFO:root:Each fold
+INFO:root:[0.31001509813789635, 0.30598892803220934, 0.30447911424257673, 0.28636134876698538, 0.33115249119275292, 0.33920483140412683, 0.24056366381479619, 0.26623049823855061, 0.2435832913940614, 0.11122294916960242]
+INFO:root:Average
+INFO:root:0.273880221439
+INFO:root:MRR of TF SVM
+INFO:root:Each fold
+INFO:root:[0.47814230090918824, 0.47066635104667359, 0.45783798495099598, 0.45031172752046478, 0.47010049566954704, 0.49381046388141053, 0.38778265763129816, 0.40830276167584079, 0.38735197136651278, 0.25157322863900911]
+INFO:root:Average
+INFO:root:0.425587994329
+INFO:root:Accuracy of TF IDF SVM
+INFO:root:Each fold
+INFO:root:[0.31202818319073983, 0.30850528434826369, 0.30699547055863108, 0.2778057372924006, 0.32913940613990939, 0.35078007045797682, 0.24760946149974836, 0.26522395571212881, 0.23351786612984399, 0.11323603422244589]
+INFO:root:Average
+INFO:root:0.274484146955
+INFO:root:MRR of TF IDF SVM
+INFO:root:Each fold
+INFO:root:[0.48190310115422957, 0.47163399205653439, 0.4605464377250934, 0.44192252164300827, 0.46642275223325724, 0.49844748366868896, 0.3916247266491058, 0.40097713792890932, 0.37604449650868732, 0.24904505674705588]
+INFO:root:Average
+INFO:root:0.423856770631
+INFO:root:--- 154.93177461624146 seconds ---
+INFO:root:Training of the models
+INFO:root:GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 264.87332367897034 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM
+INFO:root:--- 268.25782227516174 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 257.22942781448364 seconds ---
+INFO:root:GridSearch Boolean NMF SVM
+INFO:root:--- 1940.3423125743866 seconds ---
+INFO:root:GridSearch TF NMF SVM
+INFO:root:--- 1754.5364427566528 seconds ---
+INFO:root:GridSearch TF IDF NMF SVM
+INFO:root:--- 1186.8032491207123 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM
+INFO:root:Best parameters set found on the training set:
+INFO:root:{'truncated_svd__n_components': 90}
+INFO:root:Grid scores on the training set:
+INFO:root:[ 0.11932562  0.28162099] (+/-[ 0.05981175  0.10044494]) for {'truncated_svd__n_components': 10}
+INFO:root:[ 0.17986915  0.3468994 ] (+/-[ 0.09109649  0.1239327 ]) for {'truncated_svd__n_components': 30}
+INFO:root:[ 0.20342224  0.36962971] (+/-[ 0.09992975  0.127891  ]) for {'truncated_svd__n_components': 50}
+INFO:root:[ 0.22013085  0.38455048] (+/-[ 0.10875523  0.13134397]) for {'truncated_svd__n_components': 70}
+INFO:root:[ 0.22732763  0.39117842] (+/-[ 0.11356285  0.13314584]) for {'truncated_svd__n_components': 90}
+INFO:root:All results on the training set
+INFO:root:{'split0_test_score': array([[ 0.1645697 ,  0.3445257 ],
+       [ 0.21992954,  0.40508623],
+       [ 0.2294917 ,  0.41974737],
+       [ 0.24257675,  0.42850452],
+       [ 0.25515853,  0.43596816]]), 'split1_test_score': array([[ 0.12128837,  0.31364241],
+       [ 0.19879215,  0.39204737],
+       [ 0.23855058,  0.42199151],
+       [ 0.25817816,  0.44201167],
+       [ 0.26472068,  0.44561514]]), 'split2_test_score': array([[ 0.11575239,  0.29714693],
+       [ 0.19023654,  0.37252505],
+       [ 0.21640664,  0.39422798],
+       [ 0.24157021,  0.41375027],
+       [ 0.25113236,  0.42041641]]), 'split3_test_score': array([[ 0.11776548,  0.30034765],
+       [ 0.20332159,  0.38019902],
+       [ 0.22496225,  0.40136651],
+       [ 0.24760946,  0.42050113],
+       [ 0.25113236,  0.42507447]]), 'split4_test_score': array([[ 0.14695521,  0.31093966],
+       [ 0.22798188,  0.39173539],
+       [ 0.25364872,  0.41491087],
+       [ 0.27629592,  0.4304962 ],
+       [ 0.28837443,  0.44415217]]), 'split5_test_score': array([[ 0.14443885,  0.32623756],
+       [ 0.22848515,  0.40417117],
+       [ 0.25968797,  0.42990689],
+       [ 0.27881228,  0.44496375],
+       [ 0.28233518,  0.44947072]]), 'split6_test_score': array([[ 0.11575239,  0.25270547],
+       [ 0.15400101,  0.30425756],
+       [ 0.1751384 ,  0.33061392],
+       [ 0.1857071 ,  0.34400991],
+       [ 0.19728234,  0.35260198]]), 'split7_test_score': array([[ 0.11675893,  0.26103094],
+       [ 0.15551082,  0.31220593],
+       [ 0.17815803,  0.33692645],
+       [ 0.19325617,  0.3500416 ],
+       [ 0.19879215,  0.35594731]]), 'split8_test_score': array([[ 0.10266734,  0.24806491],
+       [ 0.1454454 ,  0.30537274],
+       [ 0.1751384 ,  0.33326623],
+       [ 0.18671364,  0.34716287],
+       [ 0.19677906,  0.35626457]]), 'split9_test_score': array([[ 0.0473075 ,  0.16156868],
+       [ 0.07498742,  0.20139355],
+       [ 0.08303976,  0.21333936],
+       [ 0.09058883,  0.22406289],
+       [ 0.0875692 ,  0.22627331]]), 'mean_test_score': array([[ 0.11932562,  0.28162099],
+       [ 0.17986915,  0.3468994 ],
+       [ 0.20342224,  0.36962971],
+       [ 0.22013085,  0.38455048],
+       [ 0.22732763,  0.39117842]]), 'std_test_score': array([[ 0.02990588,  0.05022247],
+       [ 0.04554825,  0.06196635],
+       [ 0.04996488,  0.0639455 ],
+       [ 0.05437762,  0.06567198],
+       [ 0.05678142,  0.06657292]]), 'rank_test_score': array([5, 4, 3, 2, 1], dtype=int32), 'split0_train_score': array([[ 0.29538616,  0.47422867],
+       [ 0.41725176,  0.59999048],
+       [ 0.48144433,  0.65496048],
+       [ 0.5330993 ,  0.69460857],
+       [ 0.5772317 ,  0.72739612]]), 'split1_train_score': array([[ 0.25094197,  0.43174915],
+       [ 0.34614418,  0.53345414],
+       [ 0.39814117,  0.580457  ],
+       [ 0.44586787,  0.62035518],
+       [ 0.46621452,  0.63833831]]), 'split2_train_score': array([[ 0.22369303,  0.40420166],
+       [ 0.31920241,  0.50440213],
+       [ 0.36729223,  0.54786605],
+       [ 0.40080429,  0.57866823],
+       [ 0.42744638,  0.60041723]]), 'split3_train_score': array([[ 0.20037712,  0.37563278],
+       [ 0.29641735,  0.48121496],
+       [ 0.3345066 ,  0.51858202],
+       [ 0.37837838,  0.55402343],
+       [ 0.40037712,  0.57513864]]), 'split4_train_score': array([[ 0.18678334,  0.35876355],
+       [ 0.27932006,  0.46206955],
+       [ 0.33152283,  0.50826567],
+       [ 0.36028968,  0.53670274],
+       [ 0.38543553,  0.55924687]]), 'split5_train_score': array([[ 0.18425685,  0.35479314],
+       [ 0.28149887,  0.45778213],
+       [ 0.31964121,  0.49592664],
+       [ 0.35493336,  0.5286973 ],
+       [ 0.37630983,  0.55068875]]), 'split6_train_score': array([[ 0.18108652,  0.3507991 ],
+       [ 0.2717735 ,  0.44817156],
+       [ 0.31510492,  0.48947089],
+       [ 0.34133372,  0.51700165],
+       [ 0.3608077 ,  0.53787509]]), 'split7_train_score': array([[ 0.17562724,  0.34100082],
+       [ 0.26032824,  0.43310112],
+       [ 0.29893731,  0.47277912],
+       [ 0.32226624,  0.50017551],
+       [ 0.34301704,  0.52048175]]), 'split8_train_score': array([[ 0.17015092,  0.33449066],
+       [ 0.24572387,  0.41992201],
+       [ 0.28295137,  0.45863896],
+       [ 0.31089994,  0.48842124],
+       [ 0.33208496,  0.50940838]]), 'split9_train_score': array([[ 0.16773155,  0.3305498 ],
+       [ 0.24098204,  0.41249694],
+       [ 0.27514212,  0.44895933],
+       [ 0.3039191 ,  0.4788235 ],
+       [ 0.3210243 ,  0.49788133]]), 'mean_train_score': array([[ 0.20360347,  0.37562093],
+       [ 0.29586423,  0.4752605 ],
+       [ 0.34046841,  0.51759062],
+       [ 0.37517919,  0.54974773],
+       [ 0.39899491,  0.57168725]]), 'std_train_score': array([[ 0.03928327,  0.04466147],
+       [ 0.05065307,  0.05460869],
+       [ 0.05866267,  0.0593977 ],
+       [ 0.06662525,  0.06305469],
+       [ 0.0727632 ,  0.06573574]]), 'mean_fit_time': array([  5.01153111,   5.83616521,   8.67585547,  11.50103993,  12.14672034]), 'std_fit_time': array([ 2.84910741,  3.37889117,  4.8514901 ,  5.82167078,  5.85393353]), 'mean_score_time': array([ 0.96820133,  0.87641625,  1.0305258 ,  0.86075072,  0.77467773]), 'std_score_time': array([ 0.20964137,  0.15718851,  0.28366827,  0.15354892,  0.09185756]), 'param_truncated_svd__n_components': masked_array(data = [10 30 50 70 90],
+             mask = [False False False False False],
+       fill_value = ?)
+, 'params': [{'truncated_svd__n_components': 10}, {'truncated_svd__n_components': 30}, {'truncated_svd__n_components': 50}, {'truncated_svd__n_components': 70}, {'truncated_svd__n_components': 90}]}
+INFO:root:GridSearch TF Truncated SVD SVM
+INFO:root:Best parameters set found on the training set:
+INFO:root:{'truncated_svd__n_components': 90}
+INFO:root:Grid scores on the training set:
+INFO:root:[ 0.09229995  0.24636241] (+/-[ 0.04087653  0.08415956]) for {'truncated_svd__n_components': 10}
+INFO:root:[ 0.16774031  0.33264073] (+/-[ 0.09299609  0.12099016]) for {'truncated_svd__n_components': 30}
+INFO:root:[ 0.19682939  0.36170537] (+/-[ 0.10449196  0.1283631 ]) for {'truncated_svd__n_components': 50}
+INFO:root:[ 0.21217916  0.37702822] (+/-[ 0.11536506  0.13500975]) for {'truncated_svd__n_components': 70}
+INFO:root:[ 0.22199295  0.38447584] (+/-[ 0.12207701  0.13889647]) for {'truncated_svd__n_components': 90}
+INFO:root:All results on the training set
+INFO:root:{'split0_test_score': array([[ 0.13085053,  0.31709127],
+       [ 0.21992954,  0.40879977],
+       [ 0.23804731,  0.42566349],
+       [ 0.25465526,  0.44125322],
+       [ 0.27126321,  0.44857054]]), 'split1_test_score': array([[ 0.07649723,  0.26456781],
+       [ 0.15702063,  0.36148644],
+       [ 0.22345244,  0.41049414],
+       [ 0.25113236,  0.43183306],
+       [ 0.26119779,  0.44158924]]), 'split2_test_score': array([[ 0.07901359,  0.24568524],
+       [ 0.17463513,  0.34778127],
+       [ 0.21841973,  0.38978762],
+       [ 0.24207348,  0.41346196],
+       [ 0.25113236,  0.42371292]]), 'split3_test_score': array([[ 0.10619024,  0.27062495],
+       [ 0.20231505,  0.37194793],
+       [ 0.22043281,  0.39441199],
+       [ 0.24509311,  0.41400448],
+       [ 0.25666834,  0.42229838]]), 'split4_test_score': array([[ 0.11172622,  0.26387543],
+       [ 0.20936085,  0.36941163],
+       [ 0.24308002,  0.40259496],
+       [ 0.25415199,  0.41637627],
+       [ 0.27478611,  0.42897957]]), 'split5_test_score': array([[ 0.10820332,  0.28400174],
+       [ 0.21942627,  0.387023  ],
+       [ 0.24962255,  0.41759634],
+       [ 0.27277302,  0.43658895],
+       [ 0.27881228,  0.44253621]]), 'split6_test_score': array([[ 0.08253649,  0.21321341],
+       [ 0.14896829,  0.29616862],
+       [ 0.17715148,  0.32591863],
+       [ 0.18268747,  0.333778  ],
+       [ 0.18772018,  0.34076871]]), 'split7_test_score': array([[ 0.08152994,  0.22129949],
+       [ 0.14896829,  0.29695524],
+       [ 0.17463513,  0.32554388],
+       [ 0.17463513,  0.33016068],
+       [ 0.18319074,  0.3391592 ]]), 'split8_test_score': array([[ 0.08907901,  0.22585782],
+       [ 0.13588324,  0.29516094],
+       [ 0.15400101,  0.31639312],
+       [ 0.16758933,  0.33269855],
+       [ 0.17614494,  0.33399557]]), 'split9_test_score': array([[ 0.05737292,  0.15740696],
+       [ 0.06089582,  0.19167248],
+       [ 0.06945143,  0.20864954],
+       [ 0.0770005 ,  0.22012704],
+       [ 0.07901359,  0.22314807]]), 'mean_test_score': array([[ 0.09229995,  0.24636241],
+       [ 0.16774031,  0.33264073],
+       [ 0.19682939,  0.36170537],
+       [ 0.21217916,  0.37702822],
+       [ 0.22199295,  0.38447584]]), 'std_test_score': array([[ 0.02043827,  0.04207978],
+       [ 0.04649804,  0.06049508],
+       [ 0.05224598,  0.06418155],
+       [ 0.05768253,  0.06750487],
+       [ 0.06103851,  0.06944823]]), 'rank_test_score': array([5, 4, 3, 2, 1], dtype=int32), 'split0_train_score': array([[ 0.25626881,  0.44009614],
+       [ 0.40421264,  0.58870032],
+       [ 0.46840522,  0.64462944],
+       [ 0.51454363,  0.68367921],
+       [ 0.55215647,  0.71198644]]), 'split1_train_score': array([[ 0.19593067,  0.37726715],
+       [ 0.32604873,  0.51415844],
+       [ 0.38784225,  0.57110372],
+       [ 0.43205225,  0.60975069],
+       [ 0.46495855,  0.63724374]]), 'split2_train_score': array([[ 0.17476542,  0.35134252],
+       [ 0.29624665,  0.48240312],
+       [ 0.35120643,  0.53434911],
+       [ 0.39326408,  0.57312503],
+       [ 0.42107909,  0.59814366]]), 'split3_train_score': array([[ 0.1610308 ,  0.33301115],
+       [ 0.28346952,  0.46597846],
+       [ 0.33023256,  0.51415417],
+       [ 0.37221873,  0.54887093],
+       [ 0.39069767,  0.57014901]]), 'split4_train_score': array([[ 0.15902233,  0.32214161],
+       [ 0.27710722,  0.45251515],
+       [ 0.32096158,  0.49956371],
+       [ 0.35244418,  0.52964983],
+       [ 0.38070811,  0.55665167]]), 'split5_train_score': array([[ 0.14712046,  0.30878942],
+       [ 0.27018191,  0.44433055],
+       [ 0.30798893,  0.4858485 ],
+       [ 0.33506581,  0.51482081],
+       [ 0.35904099,  0.53684096]]), 'split6_train_score': array([[ 0.14824662,  0.30663466],
+       [ 0.26185686,  0.43467835],
+       [ 0.29936763,  0.47689922],
+       [ 0.32811153,  0.50452987],
+       [ 0.34614832,  0.52406575]]), 'split7_train_score': array([[ 0.1392819 ,  0.29454646],
+       [ 0.24819217,  0.41928456],
+       [ 0.28365717,  0.46010482],
+       [ 0.30981576,  0.4869628 ],
+       [ 0.32968622,  0.50624619]]), 'split8_train_score': array([[ 0.13515931,  0.28737873],
+       [ 0.23476803,  0.40513587],
+       [ 0.27607602,  0.45125146],
+       [ 0.30184461,  0.47736228],
+       [ 0.31883734,  0.49426131]]), 'split9_train_score': array([[ 0.12652815,  0.27928649],
+       [ 0.22598984,  0.39558194],
+       [ 0.2627157 ,  0.43823575],
+       [ 0.29093928,  0.46643591],
+       [ 0.30457312,  0.48087162]]), 'mean_train_score': array([[ 0.16433545,  0.33004943],
+       [ 0.28280736,  0.46027668],
+       [ 0.32884535,  0.50761399],
+       [ 0.36302998,  0.53951874],
+       [ 0.38678859,  0.56164603]]), 'std_train_score': array([[ 0.03614064,  0.04639273],
+       [ 0.04914789,  0.05458391],
+       [ 0.05833122,  0.05940611],
+       [ 0.06527237,  0.06389826],
+       [ 0.07193342,  0.06775581]]), 'mean_fit_time': array([  5.06272719,   6.02426276,   8.74099858,  12.01822894,  12.30206459]), 'std_fit_time': array([ 2.8940321 ,  3.41215048,  5.34226127,  6.60601708,  6.73408044]), 'mean_score_time': array([ 0.89853208,  0.99827054,  0.89000692,  0.9136292 ,  0.75369356]), 'std_score_time': array([ 0.18475115,  0.21308016,  0.1187152 ,  0.17052871,  0.10057472]), 'param_truncated_svd__n_components': masked_array(data = [10 30 50 70 90],
+             mask = [False False False False False],
+       fill_value = ?)
+, 'params': [{'truncated_svd__n_components': 10}, {'truncated_svd__n_components': 30}, {'truncated_svd__n_components': 50}, {'truncated_svd__n_components': 70}, {'truncated_svd__n_components': 90}]}
+INFO:root:GridSearch TF IDF Truncated SVD SVM
+INFO:root:Best parameters set found on the training set:
+INFO:root:{'truncated_svd__n_components': 90}
+INFO:root:Grid scores on the training set:
+INFO:root:[ 0.13537997  0.29549085] (+/-[ 0.06436523  0.10269883]) for {'truncated_svd__n_components': 10}
+INFO:root:[ 0.19904378  0.36757093] (+/-[ 0.10761559  0.13335609]) for {'truncated_svd__n_components': 30}
+INFO:root:[ 0.21987921  0.38740001] (+/-[ 0.1230985   0.14461982]) for {'truncated_svd__n_components': 50}
+INFO:root:[ 0.23271263  0.39950833] (+/-[ 0.12932893  0.14599145]) for {'truncated_svd__n_components': 70}
+INFO:root:[ 0.23844992  0.40456317] (+/-[ 0.13367688  0.14932035]) for {'truncated_svd__n_components': 90}
+INFO:root:All results on the training set
+INFO:root:{'split0_test_score': array([[ 0.17362859,  0.36309329],
+       [ 0.26874685,  0.45189205],
+       [ 0.28132864,  0.46689751],
+       [ 0.28283845,  0.47035981],
+       [ 0.27931555,  0.4675222 ]]), 'split1_test_score': array([[ 0.11273276,  0.3133512 ],
+       [ 0.21992954,  0.41758535],
+       [ 0.25767489,  0.44467029],
+       [ 0.28434826,  0.4650436 ],
+       [ 0.29290388,  0.4710149 ]]), 'split2_test_score': array([[ 0.13437343,  0.30948136],
+       [ 0.21841973,  0.39522972],
+       [ 0.25415199,  0.42883289],
+       [ 0.26925013,  0.44041718],
+       [ 0.27881228,  0.44845765]]), 'split3_test_score': array([[ 0.16758933,  0.33357987],
+       [ 0.21942627,  0.39649658],
+       [ 0.25062909,  0.42666424],
+       [ 0.26723704,  0.43890325],
+       [ 0.27428284,  0.444198  ]]), 'split4_test_score': array([[ 0.16507297,  0.32682785],
+       [ 0.24408656,  0.40513705],
+       [ 0.26170106,  0.42322231],
+       [ 0.28485153,  0.44440934],
+       [ 0.2924006 ,  0.44952506]]), 'split5_test_score': array([[ 0.17010569,  0.34053317],
+       [ 0.24106694,  0.41754268],
+       [ 0.26874685,  0.43806769],
+       [ 0.28585808,  0.45203366],
+       [ 0.30045294,  0.46530604]]), 'split6_test_score': array([[ 0.11927529,  0.25685918],
+       [ 0.1751384 ,  0.32854061],
+       [ 0.18621037,  0.34201292],
+       [ 0.19325617,  0.34949947],
+       [ 0.19325617,  0.35143646]]), 'split7_test_score': array([[ 0.1313538 ,  0.26632362],
+       [ 0.17966784,  0.33286755],
+       [ 0.18872672,  0.34574332],
+       [ 0.18973327,  0.35384177],
+       [ 0.20130851,  0.36713145]]), 'split8_test_score': array([[ 0.11021641,  0.2660309 ],
+       [ 0.15047811,  0.31838007],
+       [ 0.18067438,  0.34320247],
+       [ 0.18973327,  0.35162196],
+       [ 0.19023654,  0.35343874]]), 'split9_test_score': array([[ 0.06945143,  0.17882812],
+       [ 0.0734776 ,  0.21203765],
+       [ 0.06894816,  0.21468641],
+       [ 0.08002013,  0.22895328],
+       [ 0.08152994,  0.22760119]]), 'mean_test_score': array([[ 0.13537997,  0.29549085],
+       [ 0.19904378,  0.36757093],
+       [ 0.21987921,  0.38740001],
+       [ 0.23271263,  0.39950833],
+       [ 0.23844992,  0.40456317]]), 'std_test_score': array([[ 0.03218261,  0.05134941],
+       [ 0.05380779,  0.06667804],
+       [ 0.06154925,  0.07230991],
+       [ 0.06466446,  0.07299573],
+       [ 0.06683844,  0.07466017]]), 'rank_test_score': array([5, 4, 3, 2, 1], dtype=int32), 'split0_train_score': array([[ 0.31043129,  0.50297145],
+       [ 0.44082247,  0.6282016 ],
+       [ 0.51554664,  0.6841421 ],
+       [ 0.54663992,  0.70882571],
+       [ 0.57973922,  0.73374756]]), 'split1_train_score': array([[ 0.24843004,  0.43849132],
+       [ 0.38206481,  0.56762638],
+       [ 0.43431299,  0.61410611],
+       [ 0.46747048,  0.64150125],
+       [ 0.49233861,  0.66110162]]), 'split2_train_score': array([[ 0.22637399,  0.40909683],
+       [ 0.34768767,  0.5315643 ],
+       [ 0.39577748,  0.5763015 ],
+       [ 0.42761394,  0.60533603],
+       [ 0.45258043,  0.62629967]]), 'split3_train_score': array([[ 0.2106851 ,  0.39346404],
+       [ 0.3220616 ,  0.50636   ],
+       [ 0.3769956 ,  0.55644504],
+       [ 0.40930233,  0.58315062],
+       [ 0.42702703,  0.60141934]]), 'split4_train_score': array([[ 0.20901227,  0.38668694],
+       [ 0.31573124,  0.49543365],
+       [ 0.35807685,  0.53737086],
+       [ 0.38634078,  0.56269035],
+       [ 0.41400121,  0.58638995]]), 'split5_train_score': array([[ 0.20144186,  0.37258255],
+       [ 0.31117445,  0.48861422],
+       [ 0.34571213,  0.5248621 ],
+       [ 0.37203454,  0.5495077 ],
+       [ 0.39542292,  0.57046604]]), 'split6_train_score': array([[ 0.19926703,  0.3647822 ],
+       [ 0.30720034,  0.48274593],
+       [ 0.33342915,  0.51122472],
+       [ 0.3574303 ,  0.53556472],
+       [ 0.38006611,  0.55770369]]), 'split7_train_score': array([[ 0.18688298,  0.34792981],
+       [ 0.28875055,  0.46534139],
+       [ 0.31578947,  0.49365129],
+       [ 0.34169654,  0.51913477],
+       [ 0.36263598,  0.54005308]]), 'split8_train_score': array([[ 0.17680268,  0.33760306],
+       [ 0.27741755,  0.45323968],
+       [ 0.3098938 ,  0.48467452],
+       [ 0.33409726,  0.51001188],
+       [ 0.35427613,  0.52947532]]), 'split9_train_score': array([[ 0.17180661,  0.33212942],
+       [ 0.26427529,  0.44105909],
+       [ 0.296423  ,  0.47196224],
+       [ 0.32117523,  0.49789576],
+       [ 0.33913568,  0.51659358]]), 'mean_train_score': array([[ 0.21411339,  0.38857376],
+       [ 0.3257186 ,  0.50601862],
+       [ 0.36819571,  0.54547405],
+       [ 0.39638013,  0.57136188],
+       [ 0.41972233,  0.59232498]]), 'std_train_score': array([[ 0.03866174,  0.04927974],
+       [ 0.0500489 ,  0.05384558],
+       [ 0.06327357,  0.06201579],
+       [ 0.06596226,  0.06231537],
+       [ 0.06945762,  0.06332212]]), 'mean_fit_time': array([  4.87147062,   5.76597397,   8.5378036 ,  11.2626605 ,  11.32115843]), 'std_fit_time': array([ 2.7604464 ,  2.98409575,  4.81673441,  5.43665716,  5.42596025]), 'mean_score_time': array([ 1.01871073,  0.91603186,  0.90929751,  0.80906594,  0.80117717]), 'std_score_time': array([ 0.18835516,  0.13707554,  0.13076674,  0.10662693,  0.11274188]), 'param_truncated_svd__n_components': masked_array(data = [10 30 50 70 90],
+             mask = [False False False False False],
+       fill_value = ?)
+, 'params': [{'truncated_svd__n_components': 10}, {'truncated_svd__n_components': 30}, {'truncated_svd__n_components': 50}, {'truncated_svd__n_components': 70}, {'truncated_svd__n_components': 90}]}
+INFO:root:GridSearch Boolean NMF SVM
+INFO:root:Best parameters set found on the training set:
+INFO:root:{'nmf__n_components': 90}
+INFO:root:Grid scores on the training set:
+INFO:root:[ 0.09743332  0.25148231] (+/-[ 0.06456513  0.09716536]) for {'nmf__n_components': 10}
+INFO:root:[ 0.14776044  0.30753065] (+/-[ 0.09384432  0.12546015]) for {'nmf__n_components': 30}
+INFO:root:[ 0.16467036  0.33047587] (+/-[ 0.09452908  0.11928701]) for {'nmf__n_components': 50}
+INFO:root:[ 0.18339205  0.34854461] (+/-[ 0.09565989  0.1227081 ]) for {'nmf__n_components': 70}
+INFO:root:[ 0.20246603  0.36639438] (+/-[ 0.10435866  0.12366855]) for {'nmf__n_components': 90}
+INFO:root:All results on the training set
+INFO:root:{'split0_test_score': array([[ 0.14494212,  0.32237084],
+       [ 0.19325617,  0.37646709],
+       [ 0.21640664,  0.39706119],
+       [ 0.22647207,  0.4064242 ],
+       [ 0.24358329,  0.41656777]]), 'split1_test_score': array([[ 0.10870659,  0.28062035],
+       [ 0.15249119,  0.34209026],
+       [ 0.1645697 ,  0.35932032],
+       [ 0.20382486,  0.3886445 ],
+       [ 0.21036739,  0.39491122]]), 'split2_test_score': array([[ 0.08454957,  0.25322801],
+       [ 0.1645697 ,  0.34211309],
+       [ 0.18268747,  0.36048992],
+       [ 0.19828888,  0.37693123],
+       [ 0.2118772 ,  0.38829034]]), 'split3_test_score': array([[ 0.10216407,  0.2743266 ],
+       [ 0.16406643,  0.33687565],
+       [ 0.18067438,  0.36169956],
+       [ 0.20231505,  0.38191041],
+       [ 0.21690991,  0.39456164]]), 'split4_test_score': array([[ 0.11826875,  0.2767672 ],
+       [ 0.20181178,  0.36009186],
+       [ 0.21137393,  0.36915327],
+       [ 0.23049824,  0.39332432],
+       [ 0.26069451,  0.41639816]]), 'split5_test_score': array([[ 0.1313538 ,  0.29731994],
+       [ 0.19828888,  0.35940696],
+       [ 0.21288374,  0.382453  ],
+       [ 0.23603422,  0.40608676],
+       [ 0.27377957,  0.43726356]]), 'split6_test_score': array([[ 0.0805234 ,  0.21692037],
+       [ 0.12632109,  0.26902346],
+       [ 0.15148465,  0.29578765],
+       [ 0.15249119,  0.30471279],
+       [ 0.1716155 ,  0.32672782]]), 'split7_test_score': array([[ 0.10266734,  0.23488727],
+       [ 0.12682436,  0.26745786],
+       [ 0.14695521,  0.30493301],
+       [ 0.16507297,  0.31660731],
+       [ 0.18067438,  0.33629051]]), 'split8_test_score': array([[ 0.07851032,  0.21483761],
+       [ 0.10971314,  0.25630878],
+       [ 0.1278309 ,  0.28631314],
+       [ 0.14695521,  0.30618387],
+       [ 0.17262204,  0.33751878]]), 'split9_test_score': array([[ 0.02264721,  0.14354493],
+       [ 0.0402617 ,  0.16547149],
+       [ 0.05183694,  0.18754761],
+       [ 0.07196779,  0.20462067],
+       [ 0.08253649,  0.21541401]]), 'mean_test_score': array([[ 0.09743332,  0.25148231],
+       [ 0.14776044,  0.30753065],
+       [ 0.16467036,  0.33047587],
+       [ 0.18339205,  0.34854461],
+       [ 0.20246603,  0.36639438]]), 'std_test_score': array([[ 0.03228257,  0.04858268],
+       [ 0.04692216,  0.06273008],
+       [ 0.04726454,  0.05964351],
+       [ 0.04782994,  0.06135405],
+       [ 0.05217933,  0.06183428]]), 'rank_test_score': array([5, 4, 3, 2, 1], dtype=int32), 'split0_train_score': array([[ 0.27181545,  0.44569531],
+       [ 0.37011033,  0.55103462],
+       [ 0.40872618,  0.58751328],
+       [ 0.44383149,  0.61933667],
+       [ 0.49197593,  0.66057074]]), 'split1_train_score': array([[ 0.22004521,  0.39580263],
+       [ 0.3014318 ,  0.48890915],
+       [ 0.33257975,  0.51963435],
+       [ 0.36875157,  0.55619035],
+       [ 0.39663401,  0.57876594]]), 'split2_train_score': array([[ 0.18682976,  0.35423411],
+       [ 0.27613941,  0.46158177],
+       [ 0.30563003,  0.4921745 ],
+       [ 0.3416555 ,  0.52468722],
+       [ 0.37550268,  0.55528615]]), 'split3_train_score': array([[ 0.16203646,  0.33378111],
+       [ 0.25241986,  0.42725119],
+       [ 0.29076053,  0.47647492],
+       [ 0.32960402,  0.50968891],
+       [ 0.34745443,  0.52794967]]), 'split4_train_score': array([[ 0.15117683,  0.31830971],
+       [ 0.24411587,  0.42411144],
+       [ 0.2693623 ,  0.44949004],
+       [ 0.3062764 ,  0.4871194 ],
+       [ 0.34329109,  0.52014664]]), 'split5_train_score': array([[ 0.14871322,  0.31612183],
+       [ 0.22055495,  0.39306706],
+       [ 0.26909213,  0.44705266],
+       [ 0.31008467,  0.48560068],
+       [ 0.334479  ,  0.50831988]]), 'split6_train_score': array([[ 0.1498994 ,  0.31150907],
+       [ 0.22254958,  0.39673007],
+       [ 0.26458753,  0.44053958],
+       [ 0.29311584,  0.46717454],
+       [ 0.32236275,  0.49508515]]), 'split7_train_score': array([[ 0.13997359,  0.29880547],
+       [ 0.19159907,  0.35872091],
+       [ 0.25529774,  0.4286182 ],
+       [ 0.28026159,  0.4512668 ],
+       [ 0.31251965,  0.48603283]]), 'split8_train_score': array([[ 0.13437675,  0.29259687],
+       [ 0.17685858,  0.34197934],
+       [ 0.23057574,  0.40264914],
+       [ 0.26841811,  0.44363602],
+       [ 0.29709335,  0.4698744 ]]), 'split9_train_score': array([[ 0.12698093,  0.2844503 ],
+       [ 0.17190723,  0.3356738 ],
+       [ 0.2204558 ,  0.39322748],
+       [ 0.26492932,  0.43809429],
+       [ 0.28721638,  0.46126537]]), 'mean_train_score': array([[ 0.16918476,  0.33513064],
+       [ 0.24276867,  0.41790593],
+       [ 0.28470677,  0.46373741],
+       [ 0.32069285,  0.49827949],
+       [ 0.35085293,  0.52632968]]), 'std_train_score': array([[ 0.04294605,  0.04813709],
+       [ 0.05809639,  0.06472507],
+       [ 0.05191759,  0.05511092],
+       [ 0.05152608,  0.05376544],
+       [ 0.05672468,  0.05656371]]), 'mean_fit_time': array([  10.37606387,   33.71392703,   71.50825586,  122.83346441,
+        184.54323959]), 'std_fit_time': array([  5.42271534,  17.4726174 ,  29.87581695,  50.23064288,  68.24632826]), 'mean_score_time': array([ 0.88982956,  1.10553141,  1.43521161,  1.53657131,  2.25297537]), 'std_score_time': array([ 0.09211098,  0.09903455,  0.12287398,  0.1798221 ,  0.33473676]), 'param_nmf__n_components': masked_array(data = [10 30 50 70 90],
+             mask = [False False False False False],
+       fill_value = ?)
+, 'params': [{'nmf__n_components': 10}, {'nmf__n_components': 30}, {'nmf__n_components': 50}, {'nmf__n_components': 70}, {'nmf__n_components': 90}]}
+INFO:root:GridSearch TF NMF SVM
+INFO:root:Best parameters set found on the training set:
+INFO:root:{'nmf__n_components': 90}
+INFO:root:Grid scores on the training set:
+INFO:root:[ 0.08309009  0.23249825] (+/-[ 0.0461002   0.08170419]) for {'nmf__n_components': 10}
+INFO:root:[ 0.13296427  0.29529624] (+/-[ 0.06445457  0.09841403]) for {'nmf__n_components': 30}
+INFO:root:[ 0.16436839  0.33048398] (+/-[ 0.07935131  0.10923146]) for {'nmf__n_components': 50}
+INFO:root:[ 0.17478611  0.34070548] (+/-[ 0.08726329  0.11169814]) for {'nmf__n_components': 70}
+INFO:root:[ 0.18585808  0.35130575] (+/-[ 0.09870077  0.11775227]) for {'nmf__n_components': 90}
+INFO:root:All results on the training set
+INFO:root:{'split0_test_score': array([[ 0.11675893,  0.30113987],
+       [ 0.17211877,  0.36730077],
+       [ 0.20030196,  0.39314301],
+       [ 0.21137393,  0.40268099],
+       [ 0.21087066,  0.40699977]]), 'split1_test_score': array([[ 0.07096125,  0.25234437],
+       [ 0.12330146,  0.31606074],
+       [ 0.16255662,  0.35513567],
+       [ 0.19426271,  0.37277003],
+       [ 0.18067438,  0.37136654]]), 'split2_test_score': array([[ 0.07196779,  0.23240805],
+       [ 0.12732763,  0.29769057],
+       [ 0.15903372,  0.33922425],
+       [ 0.19023654,  0.36289696],
+       [ 0.21690991,  0.38720829]]), 'split3_test_score': array([[ 0.07901359,  0.24530679],
+       [ 0.13990941,  0.30648426],
+       [ 0.18671364,  0.36313463],
+       [ 0.18822345,  0.3645974 ],
+       [ 0.19828888,  0.37425168]]), 'split4_test_score': array([[ 0.10065425,  0.24545707],
+       [ 0.16305989,  0.32410088],
+       [ 0.19979869,  0.36479923],
+       [ 0.19929542,  0.36479247],
+       [ 0.24962255,  0.40168377]]), 'split5_test_score': array([[ 0.11373931,  0.27538462],
+       [ 0.17564167,  0.34953399],
+       [ 0.21992954,  0.3874465 ],
+       [ 0.23452441,  0.40304267],
+       [ 0.248616  ,  0.4124006 ]]), 'split6_test_score': array([[ 0.07398088,  0.1978153 ],
+       [ 0.11424258,  0.26165978],
+       [ 0.14393558,  0.29361026],
+       [ 0.15601409,  0.30794471],
+       [ 0.16305989,  0.31470171]]), 'split7_test_score': array([[ 0.09662808,  0.22051683],
+       [ 0.13688978,  0.27934856],
+       [ 0.15953699,  0.30996384],
+       [ 0.15551082,  0.31041363],
+       [ 0.16155008,  0.3167952 ]]), 'split8_test_score': array([[ 0.07146452,  0.20871385],
+       [ 0.1172622 ,  0.26743926],
+       [ 0.13990941,  0.29783491],
+       [ 0.15047811,  0.31109487],
+       [ 0.15500755,  0.31499675]]), 'split9_test_score': array([[ 0.03573226,  0.14589572],
+       [ 0.05988928,  0.18334362],
+       [ 0.07196779,  0.2005475 ],
+       [ 0.06794162,  0.20682106],
+       [ 0.07398088,  0.21265322]]), 'mean_test_score': array([[ 0.08309009,  0.23249825],
+       [ 0.13296427,  0.29529624],
+       [ 0.16436839,  0.33048398],
+       [ 0.17478611,  0.34070548],
+       [ 0.18585808,  0.35130575]]), 'std_test_score': array([[ 0.0230501 ,  0.04085209],
+       [ 0.03222728,  0.04920701],
+       [ 0.03967565,  0.05461573],
+       [ 0.04363164,  0.05584907],
+       [ 0.04935039,  0.05887614]]), 'rank_test_score': array([5, 4, 3, 2, 1], dtype=int32), 'split0_train_score': array([[ 0.24373119,  0.41775114],
+       [ 0.30892678,  0.50118538],
+       [ 0.34804413,  0.54421776],
+       [ 0.37913741,  0.57471295],
+       [ 0.40220662,  0.59276618]]), 'split1_train_score': array([[ 0.19191158,  0.36771815],
+       [ 0.27003266,  0.45772432],
+       [ 0.30821402,  0.49928749],
+       [ 0.34287867,  0.5267202 ],
+       [ 0.34815373,  0.53926477]]), 'split2_train_score': array([[ 0.16236595,  0.33501224],
+       [ 0.23793566,  0.42491369],
+       [ 0.28837131,  0.47393926],
+       [ 0.31032172,  0.495891  ],
+       [ 0.34383378,  0.52445201]]), 'split3_train_score': array([[ 0.14632307,  0.31232223],
+       [ 0.21571339,  0.39208995],
+       [ 0.27869265,  0.46043684],
+       [ 0.2990572 ,  0.48096902],
+       [ 0.31527341,  0.49675825]]), 'split4_train_score': array([[ 0.13991149,  0.29873736],
+       [ 0.22168578,  0.39613494],
+       [ 0.27942064,  0.45416538],
+       [ 0.27791189,  0.45865181],
+       [ 0.3262925 ,  0.49884525]]), 'split5_train_score': array([[ 0.1372286 ,  0.29318172],
+       [ 0.22566854,  0.40304642],
+       [ 0.26842149,  0.4432688 ],
+       [ 0.28543885,  0.46032445],
+       [ 0.30128259,  0.47464147]]), 'split6_train_score': array([[ 0.13409026,  0.28905029],
+       [ 0.21507617,  0.38602849],
+       [ 0.25682667,  0.43041142],
+       [ 0.27400115,  0.44864389],
+       [ 0.30432596,  0.47341994]]), 'split7_train_score': array([[ 0.12884361,  0.27867353],
+       [ 0.20782242,  0.37514892],
+       [ 0.24894674,  0.42038234],
+       [ 0.26454128,  0.43733069],
+       [ 0.28007294,  0.45121822]]), 'split8_train_score': array([[ 0.12291783,  0.27155453],
+       [ 0.19306875,  0.35289778],
+       [ 0.23873672,  0.40975046],
+       [ 0.25835662,  0.42772417],
+       [ 0.27138066,  0.44228911]]), 'split9_train_score': array([[ 0.11299492,  0.26370895],
+       [ 0.19625698,  0.3615202 ],
+       [ 0.23182573,  0.40144793],
+       [ 0.24621422,  0.41810972],
+       [ 0.25914373,  0.4305275 ]]), 'mean_train_score': array([[ 0.15203185,  0.31277101],
+       [ 0.22921871,  0.40506901],
+       [ 0.27475001,  0.45373077],
+       [ 0.2937859 ,  0.47290779],
+       [ 0.31519659,  0.49241827]]), 'std_train_score': array([[ 0.03706169,  0.04576764],
+       [ 0.03376091,  0.04305021],
+       [ 0.03298685,  0.04141253],
+       [ 0.03883663,  0.04594965],
+       [ 0.04025833,  0.04697701]]), 'mean_fit_time': array([   9.70965502,   32.4154881 ,   65.85700111,  106.51709516,
+        151.83330226]), 'std_fit_time': array([  5.33658426,  16.86519222,  32.89118987,  54.27600252,  78.4084038 ]), 'mean_score_time': array([ 0.94656937,  1.18075981,  1.54025469,  1.52939351,  2.23757832]), 'std_score_time': array([ 0.0876767 ,  0.21308652,  0.25610121,  0.15110961,  0.3947914 ]), 'param_nmf__n_components': masked_array(data = [10 30 50 70 90],
+             mask = [False False False False False],
+       fill_value = ?)
+, 'params': [{'nmf__n_components': 10}, {'nmf__n_components': 30}, {'nmf__n_components': 50}, {'nmf__n_components': 70}, {'nmf__n_components': 90}]}
+INFO:root:GridSearch TF IDF NMF SVM
+INFO:root:Best parameters set found on the training set:
+INFO:root:{'nmf__n_components': 90}
+INFO:root:Grid scores on the training set:
+INFO:root:[ 0.10714645  0.25797814] (+/-[ 0.06703067  0.09435204]) for {'nmf__n_components': 10}
+INFO:root:[ 0.15465526  0.31862758] (+/-[ 0.07473407  0.10403648]) for {'nmf__n_components': 30}
+INFO:root:[ 0.17911424  0.34415525] (+/-[ 0.08841254  0.11463518]) for {'nmf__n_components': 50}
+INFO:root:[ 0.18928032  0.35431545] (+/-[ 0.09163789  0.11833046]) for {'nmf__n_components': 70}
+INFO:root:[ 0.19451434  0.35893513] (+/-[ 0.1003117   0.12527159]) for {'nmf__n_components': 90}
+INFO:root:All results on the training set
+INFO:root:{'split0_test_score': array([[ 0.15047811,  0.33932807],
+       [ 0.19174635,  0.3879352 ],
+       [ 0.21238047,  0.41214178],
+       [ 0.22747861,  0.4250899 ],
+       [ 0.22898842,  0.43028884]]), 'split1_test_score': array([[ 0.07096125,  0.25263654],
+       [ 0.15500755,  0.33839293],
+       [ 0.18822345,  0.37205665],
+       [ 0.19426271,  0.38204127],
+       [ 0.20080523,  0.38946695]]), 'split2_test_score': array([[ 0.10971314,  0.26120991],
+       [ 0.17312531,  0.33842303],
+       [ 0.19979869,  0.37225067],
+       [ 0.21640664,  0.38771015],
+       [ 0.22647207,  0.39482533]]), 'split3_test_score': array([[ 0.12632109,  0.28327697],
+       [ 0.18017111,  0.35180129],
+       [ 0.20281832,  0.37487354],
+       [ 0.21992954,  0.38779536],
+       [ 0.23452441,  0.39703471]]), 'split4_test_score': array([[ 0.1278309 ,  0.28046615],
+       [ 0.17262204,  0.33618587],
+       [ 0.2118772 ,  0.3689497 ],
+       [ 0.23150478,  0.38687486],
+       [ 0.23754404,  0.39296125]]), 'split5_test_score': array([[ 0.14896829,  0.30521531],
+       [ 0.20382486,  0.37538227],
+       [ 0.24006039,  0.40469861],
+       [ 0.23754404,  0.40793282],
+       [ 0.25012582,  0.41707824]]), 'split6_test_score': array([[ 0.09058883,  0.22135294],
+       [ 0.11524912,  0.26649142],
+       [ 0.14645194,  0.2966987 ],
+       [ 0.15802718,  0.30951604],
+       [ 0.16205335,  0.31332785]]), 'split7_test_score': array([[ 0.11927529,  0.24650422],
+       [ 0.14896829,  0.29827022],
+       [ 0.16054353,  0.31761425],
+       [ 0.1610468 ,  0.31636896],
+       [ 0.15802718,  0.31451441]]), 'split8_test_score': array([[ 0.08907901,  0.23224557],
+       [ 0.13387016,  0.28769888],
+       [ 0.15198792,  0.30959907],
+       [ 0.16356316,  0.32169008],
+       [ 0.16708606,  0.32484785]]), 'split9_test_score': array([[ 0.03824862,  0.15754572],
+       [ 0.07196779,  0.20569473],
+       [ 0.0770005 ,  0.21266951],
+       [ 0.08303976,  0.21813501],
+       [ 0.07951686,  0.21500586]]), 'mean_test_score': array([[ 0.10714645,  0.25797814],
+       [ 0.15465526,  0.31862758],
+       [ 0.17911424,  0.34415525],
+       [ 0.18928032,  0.35431545],
+       [ 0.19451434,  0.35893513]]), 'std_test_score': array([[ 0.03351533,  0.04717602],
+       [ 0.03736704,  0.05201824],
+       [ 0.04420627,  0.05731759],
+       [ 0.04581894,  0.05916523],
+       [ 0.05015585,  0.0626358 ]]), 'rank_test_score': array([5, 4, 3, 2, 1], dtype=int32), 'split0_train_score': array([[ 0.28335005,  0.46165994],
+       [ 0.33199599,  0.52132409],
+       [ 0.38314945,  0.57355736],
+       [ 0.4002006 ,  0.5910089 ],
+       [ 0.39217653,  0.58490124]]), 'split1_train_score': array([[ 0.19768902,  0.3789629 ],
+       [ 0.28711379,  0.47254666],
+       [ 0.33685004,  0.5239315 ],
+       [ 0.36523487,  0.54844775],
+       [ 0.3677468 ,  0.55566486]]), 'split2_train_score': array([[ 0.17258713,  0.34309027],
+       [ 0.2711126 ,  0.45166095],
+       [ 0.32875335,  0.50674385],
+       [ 0.3433311 ,  0.52171522],
+       [ 0.36243298,  0.53787679]]), 'split3_train_score': array([[ 0.16442489,  0.32951409],
+       [ 0.26033941,  0.43901633],
+       [ 0.30559397,  0.48409632],
+       [ 0.32231301,  0.50164716],
+       [ 0.34142049,  0.51643118]]), 'split4_train_score': array([[ 0.15821766,  0.32801334],
+       [ 0.25296721,  0.42909329],
+       [ 0.28324281,  0.46014544],
+       [ 0.30486824,  0.48237434],
+       [ 0.32367733,  0.49785574]]), 'split5_train_score': array([[ 0.15072512,  0.31284183],
+       [ 0.24830246,  0.42519759],
+       [ 0.28208567,  0.45631929],
+       [ 0.30899489,  0.48074635],
+       [ 0.32173694,  0.49430325]]), 'split6_train_score': array([[ 0.14522851,  0.30802575],
+       [ 0.22829836,  0.39822546],
+       [ 0.27407301,  0.44674331],
+       [ 0.29440931,  0.46631727],
+       [ 0.29951135,  0.47323971]]), 'split7_train_score': array([[ 0.13890461,  0.29755016],
+       [ 0.2293278 ,  0.40004922],
+       [ 0.26290637,  0.43535026],
+       [ 0.27560838,  0.44755197],
+       [ 0.28667547,  0.4589814 ]]), 'split8_train_score': array([[ 0.13828955,  0.29290881],
+       [ 0.22537731,  0.39261855],
+       [ 0.25595305,  0.4253126 ],
+       [ 0.27283399,  0.44221074],
+       [ 0.28054779,  0.45009101]]), 'split9_train_score': array([[ 0.13638879,  0.29233769],
+       [ 0.22966242,  0.39859484],
+       [ 0.24696886,  0.41642019],
+       [ 0.26251446,  0.43163957],
+       [ 0.27192232,  0.44258422]]), 'mean_train_score': array([[ 0.16858053,  0.33449048],
+       [ 0.25644973,  0.4328327 ],
+       [ 0.29595766,  0.47286201],
+       [ 0.31503088,  0.49136593],
+       [ 0.3247848 ,  0.50119294]]), 'std_train_score': array([[ 0.04225956,  0.04932552],
+       [ 0.03188622,  0.03864553],
+       [ 0.04045826,  0.04689686],
+       [ 0.04157632,  0.04789367],
+       [ 0.03864511,  0.04496707]]), 'mean_fit_time': array([  8.61267905,  21.97173417,  38.58645756,  63.09320292,  96.97348878]), 'std_fit_time': array([  4.87826621,  10.62935108,  19.28845645,  26.54550982,  38.96037383]), 'mean_score_time': array([ 0.9758687 ,  1.28402023,  1.62547629,  1.61469748,  2.34369621]), 'std_score_time': array([ 0.09171522,  0.20795383,  0.24465335,  0.18715482,  0.59666879]), 'param_nmf__n_components': masked_array(data = [10 30 50 70 90],
+             mask = [False False False False False],
+       fill_value = ?)
+, 'params': [{'nmf__n_components': 10}, {'nmf__n_components': 30}, {'nmf__n_components': 50}, {'nmf__n_components': 70}, {'nmf__n_components': 90}]}
+INFO:root:********* Evaluation on fold 1 *********
+INFO:root:Training of the models
+INFO:root:Boolean SVM_TF SVM
+INFO:root:--- 0.8173348903656006 seconds ---
+INFO:root:Boolean SVM_TF IDF SVM
+INFO:root:--- 1.5796997547149658 seconds ---
+INFO:root:Boolean SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 2.860203742980957 seconds ---
+INFO:root:Boolean SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 4.133114814758301 seconds ---
+INFO:root:Boolean SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 5.424179792404175 seconds ---
+INFO:root:Boolean SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 39.97871470451355 seconds ---
+INFO:root:Boolean SVM_GridSearch TF NMF SVM
+INFO:root:--- 55.57622718811035 seconds ---
+INFO:root:Boolean SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 68.37078309059143 seconds ---
+INFO:root:TF SVM_TF IDF SVM
+INFO:root:--- 69.32385993003845 seconds ---
+INFO:root:TF SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 71.08412456512451 seconds ---
+INFO:root:TF SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 72.95026588439941 seconds ---
+INFO:root:TF SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 74.41446328163147 seconds ---
+INFO:root:TF SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 110.52895522117615 seconds ---
+INFO:root:TF SVM_GridSearch TF NMF SVM
+INFO:root:--- 126.55044794082642 seconds ---
+INFO:root:TF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 138.711119890213 seconds ---
+INFO:root:TF IDF SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 140.05224895477295 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 141.47057676315308 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 142.87493467330933 seconds ---
+INFO:root:TF IDF SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 177.65290212631226 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF NMF SVM
+INFO:root:--- 193.23096656799316 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 205.2783842086792 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 206.99428367614746 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 208.6721477508545 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 244.43273210525513 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 260.6592478752136 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 273.3577606678009 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 275.1372444629669 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 311.3807258605957 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 327.59026980400085 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 340.3779184818268 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 375.7668950557709 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 392.08355164527893 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 404.99638295173645 seconds ---
+INFO:root:GridSearch Boolean NMF SVM_GridSearch TF NMF SVM
+INFO:root:--- 456.28607392311096 seconds ---
+INFO:root:GridSearch Boolean NMF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 502.53883600234985 seconds ---
+INFO:root:GridSearch TF NMF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 530.6263399124146 seconds ---
+INFO:root:Making predictions
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.450801350434
+INFO:root:--- 531.6867024898529 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.452219620627
+INFO:root:--- 532.7318570613861 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.449245782313
+INFO:root:--- 533.8003160953522 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.449817565431
+INFO:root:--- 534.8502285480499 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.451049447694
+INFO:root:--- 535.9205255508423 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.44816231235
+INFO:root:--- 537.5570154190063 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.449002261167
+INFO:root:--- 539.129358291626 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.44851741678
+INFO:root:--- 540.686238527298 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.469790188927
+INFO:root:--- 541.6740229129791 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.474126460922
+INFO:root:--- 542.7271120548248 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.478045467417
+INFO:root:--- 543.783175945282 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.484594907432
+INFO:root:--- 544.8412108421326 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.468876643208
+INFO:root:--- 546.4338817596436 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.475910878175
+INFO:root:--- 548.0078897476196 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.479481190842
+INFO:root:--- 549.578287601471 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.484549316739
+INFO:root:--- 550.6438353061676 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.480334435165
+INFO:root:--- 551.7244098186493 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.490009608455
+INFO:root:--- 552.8188951015472 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.476633635909
+INFO:root:--- 554.4411408901215 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.481046749231
+INFO:root:--- 556.0366568565369 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.4816048382
+INFO:root:--- 557.6231608390808 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.451724024913
+INFO:root:--- 558.6337389945984 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.467860136172
+INFO:root:--- 559.6084382534027 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.441581294929
+INFO:root:--- 561.1806571483612 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.446192458677
+INFO:root:--- 562.7678878307343 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.457886872051
+INFO:root:--- 564.3560664653778 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.468212990055
+INFO:root:--- 565.3265223503113 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.449122361248
+INFO:root:--- 566.9186677932739 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.448531397885
+INFO:root:--- 568.4838252067566 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.452297751011
+INFO:root:--- 570.0445902347565 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.47177773147
+INFO:root:--- 571.618448972702 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.470265062767
+INFO:root:--- 573.178961277008 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.471257111176
+INFO:root:--- 574.7484805583954 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.437457021571
+INFO:root:--- 576.9174561500549 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.460862491142
+INFO:root:--- 579.0723333358765 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.443908272873
+INFO:root:--- 581.2443387508392 seconds ---
+INFO:root:********* Evaluation on fold 2 *********
+INFO:root:Training of the models
+INFO:root:Boolean SVM_TF SVM
+INFO:root:--- 583.4538338184357 seconds ---
+INFO:root:Boolean SVM_TF IDF SVM
+INFO:root:--- 585.6025652885437 seconds ---
+INFO:root:Boolean SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 589.0262305736542 seconds ---
+INFO:root:Boolean SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 592.2452433109283 seconds ---
+INFO:root:Boolean SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 595.317863702774 seconds ---
+INFO:root:Boolean SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 651.3799648284912 seconds ---
+INFO:root:Boolean SVM_GridSearch TF NMF SVM
+INFO:root:--- 683.1473796367645 seconds ---
+INFO:root:Boolean SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 722.0714190006256 seconds ---
+INFO:root:TF SVM_TF IDF SVM
+INFO:root:--- 723.9277400970459 seconds ---
+INFO:root:TF SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 726.6346952915192 seconds ---
+INFO:root:TF SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 729.6093518733978 seconds ---
+INFO:root:TF SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 732.3754692077637 seconds ---
+INFO:root:TF SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 786.674959897995 seconds ---
+INFO:root:TF SVM_GridSearch TF NMF SVM
+INFO:root:--- 818.752758026123 seconds ---
+INFO:root:TF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 857.4630808830261 seconds ---
+INFO:root:TF IDF SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 860.1039869785309 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 862.823802947998 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 865.4638812541962 seconds ---
+INFO:root:TF IDF SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 920.5976617336273 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF NMF SVM
+INFO:root:--- 953.0311179161072 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 991.103857755661 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 994.5918118953705 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 997.9634199142456 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 1054.5820167064667 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 1087.6976742744446 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 1127.8030354976654 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 1131.873536348343 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 1189.164789199829 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 1221.6152551174164 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 1261.5979928970337 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 1316.2085542678833 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 1349.151006937027 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 1387.836454629898 seconds ---
+INFO:root:GridSearch Boolean NMF SVM_GridSearch TF NMF SVM
+INFO:root:--- 1472.3998007774353 seconds ---
+INFO:root:GridSearch Boolean NMF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 1561.9715497493744 seconds ---
+INFO:root:GridSearch TF NMF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 1629.1561965942383 seconds ---
+INFO:root:Making predictions
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.41364372022
+INFO:root:--- 1630.187359571457 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.414669299253
+INFO:root:--- 1631.2120447158813 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.413674631414
+INFO:root:--- 1632.308515548706 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.413833950984
+INFO:root:--- 1633.4059085845947 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.416631532001
+INFO:root:--- 1634.501755475998 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.409014987514
+INFO:root:--- 1636.2702326774597 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.408575640087
+INFO:root:--- 1637.8975594043732 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.409240703654
+INFO:root:--- 1639.5351521968842 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.45901907497
+INFO:root:--- 1640.5584824085236 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.469671230929
+INFO:root:--- 1641.6487832069397 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.469336943166
+INFO:root:--- 1642.7400393486023 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.476634920334
+INFO:root:--- 1643.837730884552 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.471085746982
+INFO:root:--- 1645.560961484909 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.470491488295
+INFO:root:--- 1647.1779794692993 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.470276516271
+INFO:root:--- 1648.81165599823 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.474332330328
+INFO:root:--- 1649.9495158195496 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.47078841217
+INFO:root:--- 1651.0973839759827 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.478358448889
+INFO:root:--- 1652.2568414211273 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.470803915716
+INFO:root:--- 1654.0590801239014 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.472131761445
+INFO:root:--- 1655.721087694168 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.47146034499
+INFO:root:--- 1657.3972699642181 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.458377988538
+INFO:root:--- 1658.4170389175415 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.469486315271
+INFO:root:--- 1659.4727668762207 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.446436434072
+INFO:root:--- 1661.2000703811646 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.459387492904
+INFO:root:--- 1662.8930501937866 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.469346515528
+INFO:root:--- 1664.5556037425995 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.474000615838
+INFO:root:--- 1665.5691962242126 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.453041063089
+INFO:root:--- 1667.320041179657 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.442965579478
+INFO:root:--- 1668.992247581482 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.45255336442
+INFO:root:--- 1670.7646009922028 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.474804140416
+INFO:root:--- 1672.498244524002 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.472692265646
+INFO:root:--- 1674.182021856308 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.474654510147
+INFO:root:--- 1675.8574256896973 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.434885906825
+INFO:root:--- 1678.2322812080383 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.45001518362
+INFO:root:--- 1680.6309039592743 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.406874905922
+INFO:root:--- 1682.8804228305817 seconds ---
+INFO:root:********* Evaluation on fold 3 *********
+INFO:root:Training of the models
+INFO:root:Boolean SVM_TF SVM
+INFO:root:--- 1686.1933953762054 seconds ---
+INFO:root:Boolean SVM_TF IDF SVM
+INFO:root:--- 1689.4564311504364 seconds ---
+INFO:root:Boolean SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 1694.2847995758057 seconds ---
+INFO:root:Boolean SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 1699.0564532279968 seconds ---
+INFO:root:Boolean SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 1703.9645020961761 seconds ---
+INFO:root:Boolean SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 1780.7354209423065 seconds ---
+INFO:root:Boolean SVM_GridSearch TF NMF SVM
+INFO:root:--- 1830.1591112613678 seconds ---
+INFO:root:Boolean SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 1870.765239238739 seconds ---
+INFO:root:TF SVM_TF IDF SVM
+INFO:root:--- 1873.7152128219604 seconds ---
+INFO:root:TF SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 1878.070058107376 seconds ---
+INFO:root:TF SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 1883.8153240680695 seconds ---
+INFO:root:TF SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 1888.1755871772766 seconds ---
+INFO:root:TF SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 1965.1049721240997 seconds ---
+INFO:root:TF SVM_GridSearch TF NMF SVM
+INFO:root:--- 2015.019180059433 seconds ---
+INFO:root:TF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 2056.1551423072815 seconds ---
+INFO:root:TF IDF SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 2060.205240011215 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 2064.4205029010773 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 2068.486149072647 seconds ---
+INFO:root:TF IDF SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 2144.4790642261505 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF NMF SVM
+INFO:root:--- 2192.2778499126434 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 2232.701669692993 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 2238.818227291107 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 2244.2480227947235 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 2323.8096358776093 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 2374.0947313308716 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 2415.7153623104095 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 2421.457876443863 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 2500.4693825244904 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 2558.8892738819122 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 2601.6678378582 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 2679.0557565689087 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 2729.9211254119873 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 2778.1495294570923 seconds ---
+INFO:root:GridSearch Boolean NMF SVM_GridSearch TF NMF SVM
+INFO:root:--- 2904.9082837104797 seconds ---
+INFO:root:GridSearch Boolean NMF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 3021.8182802200317 seconds ---
+INFO:root:GridSearch TF NMF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 3110.0915145874023 seconds ---
+INFO:root:Making predictions
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.408986435732
+INFO:root:--- 3111.173109769821 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.411568438883
+INFO:root:--- 3112.2249636650085 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.40702841271
+INFO:root:--- 3113.3956377506256 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.40952820783
+INFO:root:--- 3114.56698179245 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.409253673055
+INFO:root:--- 3115.7045702934265 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.408775379051
+INFO:root:--- 3117.5488159656525 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.408335926899
+INFO:root:--- 3119.2595629692078 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.408439400219
+INFO:root:--- 3121.083672761917 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.448355900942
+INFO:root:--- 3122.1351778507233 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.457706225762
+INFO:root:--- 3123.2559716701508 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.459553596216
+INFO:root:--- 3124.3692338466644 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.466038926409
+INFO:root:--- 3125.4852724075317 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.450108371846
+INFO:root:--- 3127.3108055591583 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.458267117954
+INFO:root:--- 3128.996558189392 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.456153300163
+INFO:root:--- 3130.791330099106 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.462237720691
+INFO:root:--- 3131.907538175583 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.464209696206
+INFO:root:--- 3133.0190358161926 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.472690473405
+INFO:root:--- 3134.136449575424 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.45772374936
+INFO:root:--- 3135.95613861084 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.45993968111
+INFO:root:--- 3137.649158000946 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.460054770262
+INFO:root:--- 3139.4781885147095 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.44024608175
+INFO:root:--- 3140.4932656288147 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.44642822525
+INFO:root:--- 3141.522067308426 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.423726615352
+INFO:root:--- 3143.400393009186 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.430650316298
+INFO:root:--- 3145.1576297283173 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.433141683274
+INFO:root:--- 3147.0743963718414 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.456007800816
+INFO:root:--- 3148.14634513855 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.430142883071
+INFO:root:--- 3150.021955728531 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.424563109992
+INFO:root:--- 3151.701502561569 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.429496756476
+INFO:root:--- 3153.5441682338715 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.445802611934
+INFO:root:--- 3155.416678905487 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.450337089
+INFO:root:--- 3157.156112909317 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.451802195816
+INFO:root:--- 3158.987977027893 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.418618098643
+INFO:root:--- 3161.465742111206 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.424015750659
+INFO:root:--- 3164.04665017128 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.406668752266
+INFO:root:--- 3166.551600217819 seconds ---
+INFO:root:********* Evaluation on fold 4 *********
+INFO:root:Training of the models
+INFO:root:Boolean SVM_TF SVM
+INFO:root:--- 3171.380129098892 seconds ---
+INFO:root:Boolean SVM_TF IDF SVM
+INFO:root:--- 3176.135535955429 seconds ---
+INFO:root:Boolean SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 3182.9378054142 seconds ---
+INFO:root:Boolean SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 3189.55184674263 seconds ---
+INFO:root:Boolean SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 3196.4257423877716 seconds ---
+INFO:root:Boolean SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 3300.8775758743286 seconds ---
+INFO:root:Boolean SVM_GridSearch TF NMF SVM
+INFO:root:--- 3370.642830848694 seconds ---
+INFO:root:Boolean SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 3427.1503603458405 seconds ---
+INFO:root:TF SVM_TF IDF SVM
+INFO:root:--- 3431.169704437256 seconds ---
+INFO:root:TF SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 3437.037662744522 seconds ---
+INFO:root:TF SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 3443.2903633117676 seconds ---
+INFO:root:TF SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 3449.500940799713 seconds ---
+INFO:root:TF SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 3556.487091064453 seconds ---
+INFO:root:TF SVM_GridSearch TF NMF SVM
+INFO:root:--- 3635.2242035865784 seconds ---
+INFO:root:TF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 3693.1017968654633 seconds ---
+INFO:root:TF IDF SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 3698.929957151413 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 3704.7275404930115 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 3710.5046343803406 seconds ---
+INFO:root:TF IDF SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 3813.9670610427856 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF NMF SVM
+INFO:root:--- 3884.910478115082 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 3942.4166810512543 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 3950.5617067813873 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 3958.8169627189636 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 4068.915518283844 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 4141.627158164978 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 4198.519246816635 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 4206.97714805603 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 4314.259187698364 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 4385.790266275406 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 4441.263377189636 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 4548.215569496155 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 4618.843931913376 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 4673.680462360382 seconds ---
+INFO:root:GridSearch Boolean NMF SVM_GridSearch TF NMF SVM
+INFO:root:--- 4840.298682689667 seconds ---
+INFO:root:GridSearch Boolean NMF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 4995.12620973587 seconds ---
+INFO:root:GridSearch TF NMF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 5115.876955986023 seconds ---
+INFO:root:Making predictions
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.376284948352
+INFO:root:--- 5117.050331354141 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.377814875681
+INFO:root:--- 5118.217479705811 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.373642938621
+INFO:root:--- 5119.470368146896 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.373594679012
+INFO:root:--- 5120.707947731018 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.377788276247
+INFO:root:--- 5121.955279588699 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.37221833829
+INFO:root:--- 5123.7586550712585 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.371626888421
+INFO:root:--- 5125.596708536148 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.372373254489
+INFO:root:--- 5127.556439161301 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.434835078019
+INFO:root:--- 5128.724084377289 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.449034785844
+INFO:root:--- 5129.971285104752 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.453616350954
+INFO:root:--- 5131.219733476639 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.459256309416
+INFO:root:--- 5132.460705280304 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.446100797604
+INFO:root:--- 5134.279378890991 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.450614366014
+INFO:root:--- 5136.139285802841 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.448716567019
+INFO:root:--- 5138.135263442993 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.451228492401
+INFO:root:--- 5139.38876414299 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.447867560015
+INFO:root:--- 5140.632377147675 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.452474087729
+INFO:root:--- 5141.880798578262 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.440044882703
+INFO:root:--- 5143.76273226738 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.441551616977
+INFO:root:--- 5145.6194496154785 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.441481455401
+INFO:root:--- 5147.5947098731995 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.433772434293
+INFO:root:--- 5148.727445363998 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.445836816232
+INFO:root:--- 5149.870926141739 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.432728802087
+INFO:root:--- 5151.6520137786865 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.434458221877
+INFO:root:--- 5153.4834797382355 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.442203490064
+INFO:root:--- 5155.453919172287 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.444550858788
+INFO:root:--- 5156.599063634872 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.424159136577
+INFO:root:--- 5158.3836216926575 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.423152228989
+INFO:root:--- 5160.21991610527 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.428078643958
+INFO:root:--- 5162.187964677811 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.449113294837
+INFO:root:--- 5163.98848938942 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.446350226624
+INFO:root:--- 5165.837384939194 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.445761468812
+INFO:root:--- 5167.813720464706 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.416043320661
+INFO:root:--- 5170.30842757225 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.420995293741
+INFO:root:--- 5172.91495680809 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.406630156788
+INFO:root:--- 5175.583745479584 seconds ---
+INFO:root:********* Evaluation on fold 5 *********
+INFO:root:Training of the models
+INFO:root:Boolean SVM_TF SVM
+INFO:root:--- 5182.615193128586 seconds ---
+INFO:root:Boolean SVM_TF IDF SVM
+INFO:root:--- 5189.394599914551 seconds ---
+INFO:root:Boolean SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 5199.014542102814 seconds ---
+INFO:root:Boolean SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 5208.422473669052 seconds ---
+INFO:root:Boolean SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 5217.995059728622 seconds ---
+INFO:root:Boolean SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 5352.950967550278 seconds ---
+INFO:root:Boolean SVM_GridSearch TF NMF SVM
+INFO:root:--- 5456.159374952316 seconds ---
+INFO:root:Boolean SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 5509.384154319763 seconds ---
+INFO:root:TF SVM_TF IDF SVM
+INFO:root:--- 5515.354781627655 seconds ---
+INFO:root:TF SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 5523.853439331055 seconds ---
+INFO:root:TF SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 5533.350148200989 seconds ---
+INFO:root:TF SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 5542.4338936805725 seconds ---
+INFO:root:TF SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 5683.844193935394 seconds ---
+INFO:root:TF SVM_GridSearch TF NMF SVM
+INFO:root:--- 5789.827361822128 seconds ---
+INFO:root:TF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 5842.208697795868 seconds ---
+INFO:root:TF IDF SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 5850.794143676758 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 5860.011770486832 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 5868.6711213588715 seconds ---
+INFO:root:TF IDF SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 6008.683994054794 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF NMF SVM
+INFO:root:--- 6111.890265464783 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 6165.623983383179 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 6177.841377735138 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 6189.936913251877 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 6333.152800559998 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 6442.258642911911 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 6497.357012987137 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 6510.411493778229 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 6659.358565330505 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 6767.777814865112 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 6821.7717435359955 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 6968.929900407791 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 7077.915153503418 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 7131.691040754318 seconds ---
+INFO:root:GridSearch Boolean NMF SVM_GridSearch TF NMF SVM
+INFO:root:--- 7375.201780319214 seconds ---
+INFO:root:GridSearch Boolean NMF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 7561.92507147789 seconds ---
+INFO:root:GridSearch TF NMF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 7712.69348025322 seconds ---
+INFO:root:Making predictions
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.397628344409
+INFO:root:--- 7713.960354566574 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.39752966912
+INFO:root:--- 7715.181683063507 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.394874741861
+INFO:root:--- 7716.471394062042 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.393591546494
+INFO:root:--- 7717.736434936523 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.396010795568
+INFO:root:--- 7719.006008386612 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.391318777961
+INFO:root:--- 7720.891433477402 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.391648974114
+INFO:root:--- 7722.778090715408 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.391242621038
+INFO:root:--- 7725.042116880417 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.455256799633
+INFO:root:--- 7726.193604469299 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.476297527273
+INFO:root:--- 7727.410662651062 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.472532317813
+INFO:root:--- 7728.637414455414 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.473232737046
+INFO:root:--- 7729.883373975754 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.475161419104
+INFO:root:--- 7731.7238483428955 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.469758486482
+INFO:root:--- 7733.59642124176 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.470972394775
+INFO:root:--- 7735.809916973114 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.47242160665
+INFO:root:--- 7737.02991604805 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.471786970251
+INFO:root:--- 7738.263380289078 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.472912785794
+INFO:root:--- 7739.487617969513 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.474150441501
+INFO:root:--- 7741.318554639816 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.467393432824
+INFO:root:--- 7743.211611509323 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.466941694335
+INFO:root:--- 7745.422334432602 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.44555727781
+INFO:root:--- 7746.518961429596 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.4548429216
+INFO:root:--- 7747.614484548569 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.448340925857
+INFO:root:--- 7749.380445718765 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.446990408106
+INFO:root:--- 7751.191997289658 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.447529618555
+INFO:root:--- 7753.4026222229 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.447840636912
+INFO:root:--- 7754.501919031143 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.441944510727
+INFO:root:--- 7756.251438617706 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.433155865585
+INFO:root:--- 7758.069879770279 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.432333237972
+INFO:root:--- 7760.271184206009 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.460095463886
+INFO:root:--- 7762.090294122696 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.454930733918
+INFO:root:--- 7763.937421798706 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.449508738691
+INFO:root:--- 7766.309317350388 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.437162194462
+INFO:root:--- 7768.788326740265 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.441033566873
+INFO:root:--- 7771.655254602432 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.4108683996
+INFO:root:--- 7774.594160079956 seconds ---
+INFO:root:********* Evaluation on fold 6 *********
+INFO:root:Training of the models
+INFO:root:Boolean SVM_TF SVM
+INFO:root:--- 7783.479667663574 seconds ---
+INFO:root:Boolean SVM_TF IDF SVM
+INFO:root:--- 7792.4128839969635 seconds ---
+INFO:root:Boolean SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 7804.77405166626 seconds ---
+INFO:root:Boolean SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 7817.38206243515 seconds ---
+INFO:root:Boolean SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 7830.048401355743 seconds ---
+INFO:root:Boolean SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 7990.167232513428 seconds ---
+INFO:root:Boolean SVM_GridSearch TF NMF SVM
+INFO:root:--- 8116.910674333572 seconds ---
+INFO:root:Boolean SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 8217.707596302032 seconds ---
+INFO:root:TF SVM_TF IDF SVM
+INFO:root:--- 8224.989727020264 seconds ---
+INFO:root:TF SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 8235.57628083229 seconds ---
+INFO:root:TF SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 8248.36861872673 seconds ---
+INFO:root:TF SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 8262.366928100586 seconds ---
+INFO:root:TF SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 8433.743866920471 seconds ---
+INFO:root:TF SVM_GridSearch TF NMF SVM
+INFO:root:--- 8557.58991265297 seconds ---
+INFO:root:TF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 8650.5669631958 seconds ---
+INFO:root:TF IDF SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 8660.597881317139 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 8671.433643579483 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 8681.68885421753 seconds ---
+INFO:root:TF IDF SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 8848.858159303665 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF NMF SVM
+INFO:root:--- 8981.52830862999 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 9077.980190992355 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 9093.621027946472 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 9107.737972736359 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 9273.50044465065 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 9399.892871379852 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 9496.517494440079 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 9511.478871107101 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 9684.98316192627 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 9821.838642120361 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 9921.976857185364 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 10088.968142271042 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 10227.31648182869 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 10333.662413358688 seconds ---
+INFO:root:GridSearch Boolean NMF SVM_GridSearch TF NMF SVM
+INFO:root:--- 10625.419434309006 seconds ---
+INFO:root:GridSearch Boolean NMF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 10879.96982717514 seconds ---
+INFO:root:GridSearch TF NMF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 11095.516718626022 seconds ---
+INFO:root:Making predictions
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.422918817278
+INFO:root:--- 11096.663232564926 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.423226177341
+INFO:root:--- 11097.78948354721 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.422483219309
+INFO:root:--- 11098.979201555252 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.425140044006
+INFO:root:--- 11100.171483039856 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.422561338934
+INFO:root:--- 11101.361109256744 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.417251310732
+INFO:root:--- 11103.246171474457 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.417336864901
+INFO:root:--- 11105.089898347855 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.416775535957
+INFO:root:--- 11107.06415104866 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.48573203876
+INFO:root:--- 11108.194523096085 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.495939520135
+INFO:root:--- 11109.403360366821 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.493052552445
+INFO:root:--- 11110.649622440338 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.495882419039
+INFO:root:--- 11111.896169424057 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.498139241891
+INFO:root:--- 11113.849588155746 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.493248499089
+INFO:root:--- 11115.79739356041 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.492486625272
+INFO:root:--- 11117.958696365356 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.504816282227
+INFO:root:--- 11119.212804317474 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.499615982478
+INFO:root:--- 11120.421326875687 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.501690950353
+INFO:root:--- 11121.63765001297 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.497814316567
+INFO:root:--- 11123.52638721466 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.498651000613
+INFO:root:--- 11125.3892288208 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.49857115152
+INFO:root:--- 11127.380538225174 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.459573533013
+INFO:root:--- 11128.467436552048 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.471355622904
+INFO:root:--- 11129.580996513367 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.455218528647
+INFO:root:--- 11131.481859445572 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.46023530411
+INFO:root:--- 11133.320365667343 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.458428629
+INFO:root:--- 11135.277918815613 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.469610509802
+INFO:root:--- 11136.401726007462 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.458289143567
+INFO:root:--- 11138.304590940475 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.445692467455
+INFO:root:--- 11140.183192014694 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.448488777501
+INFO:root:--- 11142.233560323715 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.474951342784
+INFO:root:--- 11144.140489578247 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.467771561926
+INFO:root:--- 11146.02495265007 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.467316832055
+INFO:root:--- 11148.03540611267 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.447630117284
+INFO:root:--- 11150.7285759449 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.445487919717
+INFO:root:--- 11153.4761095047 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.424283138082
+INFO:root:--- 11156.185137271881 seconds ---
+INFO:root:********* Evaluation on fold 7 *********
+INFO:root:Training of the models
+INFO:root:Boolean SVM_TF SVM
+INFO:root:--- 11168.655855178833 seconds ---
+INFO:root:Boolean SVM_TF IDF SVM
+INFO:root:--- 11181.33605837822 seconds ---
+INFO:root:Boolean SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 11198.41961312294 seconds ---
+INFO:root:Boolean SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 11215.227537155151 seconds ---
+INFO:root:Boolean SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 11232.307297468185 seconds ---
+INFO:root:Boolean SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 11413.915962219238 seconds ---
+INFO:root:Boolean SVM_GridSearch TF NMF SVM
+INFO:root:--- 11574.136569976807 seconds ---
+INFO:root:Boolean SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 11666.320633411407 seconds ---
+INFO:root:TF SVM_TF IDF SVM
+INFO:root:--- 11675.50184059143 seconds ---
+INFO:root:TF SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 11688.685293674469 seconds ---
+INFO:root:TF SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 11703.104618549347 seconds ---
+INFO:root:TF SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 11716.80759859085 seconds ---
+INFO:root:TF SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 11894.5315823555 seconds ---
+INFO:root:TF SVM_GridSearch TF NMF SVM
+INFO:root:--- 12047.556242465973 seconds ---
+INFO:root:TF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 12127.45522761345 seconds ---
+INFO:root:TF IDF SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 12140.064433336258 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 12153.047117233276 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 12165.88727593422 seconds ---
+INFO:root:TF IDF SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 12343.286247015 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF NMF SVM
+INFO:root:--- 12498.582553863525 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 12578.802880525589 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 12597.106272935867 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 12614.732649803162 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 12793.398283481598 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 12952.751217365265 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 13040.924250125885 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 13059.669490098953 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 13240.065794706345 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 13396.969967842102 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 13483.88960981369 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 13674.797880411148 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 13831.331817150116 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 13917.51408624649 seconds ---
+INFO:root:GridSearch Boolean NMF SVM_GridSearch TF NMF SVM
+INFO:root:--- 14246.95940041542 seconds ---
+INFO:root:GridSearch Boolean NMF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 14508.445326089859 seconds ---
+INFO:root:GridSearch TF NMF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 14744.14112663269 seconds ---
+INFO:root:Making predictions
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.334169215333
+INFO:root:--- 14745.281246185303 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.334405469686
+INFO:root:--- 14746.417930364609 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.331978250023
+INFO:root:--- 14747.624688148499 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.330965610717
+INFO:root:--- 14748.83200931549 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.333629939788
+INFO:root:--- 14750.0460999012 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.330238823119
+INFO:root:--- 14752.127734422684 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.33047280142
+INFO:root:--- 14754.024283647537 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.330984148184
+INFO:root:--- 14755.983743190765 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.381314902275
+INFO:root:--- 14757.123410701752 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.390397559549
+INFO:root:--- 14758.344488620758 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.387055772634
+INFO:root:--- 14759.593106508255 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.387265737183
+INFO:root:--- 14760.807455778122 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.389333354287
+INFO:root:--- 14762.867733955383 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.387611171494
+INFO:root:--- 14764.751644611359 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.387333323917
+INFO:root:--- 14766.69795370102 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.392219386027
+INFO:root:--- 14767.905264377594 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.394481918285
+INFO:root:--- 14769.120295763016 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.392447079355
+INFO:root:--- 14770.333206892014 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.391081495116
+INFO:root:--- 14772.42426609993 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.391266862265
+INFO:root:--- 14774.327068567276 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.391526697684
+INFO:root:--- 14776.278092861176 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.360444368614
+INFO:root:--- 14777.371010541916 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.365258558381
+INFO:root:--- 14778.472860336304 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.357142328448
+INFO:root:--- 14780.553081512451 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.361058189699
+INFO:root:--- 14782.453521966934 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.363891730543
+INFO:root:--- 14784.391128063202 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.356239593142
+INFO:root:--- 14785.47290444374 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.355011221998
+INFO:root:--- 14787.491248607635 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.343941889799
+INFO:root:--- 14789.383217334747 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.342999151059
+INFO:root:--- 14791.339199543 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.364730627098
+INFO:root:--- 14793.389854669571 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.355360609807
+INFO:root:--- 14795.289167642593 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.356830996921
+INFO:root:--- 14797.25977063179 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.343451823289
+INFO:root:--- 14800.089675664902 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.347107210201
+INFO:root:--- 14803.002198696136 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.325998784407
+INFO:root:--- 14805.795314073563 seconds ---
+INFO:root:********* Evaluation on fold 8 *********
+INFO:root:Training of the models
+INFO:root:Boolean SVM_TF SVM
+INFO:root:--- 14821.714509487152 seconds ---
+INFO:root:Boolean SVM_TF IDF SVM
+INFO:root:--- 14837.656037807465 seconds ---
+INFO:root:Boolean SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 14859.719025850296 seconds ---
+INFO:root:Boolean SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 14881.943132162094 seconds ---
+INFO:root:Boolean SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 14903.622462034225 seconds ---
+INFO:root:Boolean SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 15110.589187860489 seconds ---
+INFO:root:Boolean SVM_GridSearch TF NMF SVM
+INFO:root:--- 15308.199231386185 seconds ---
+INFO:root:Boolean SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 15411.634141206741 seconds ---
+INFO:root:TF SVM_TF IDF SVM
+INFO:root:--- 15423.250369787216 seconds ---
+INFO:root:TF SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 15440.346828222275 seconds ---
+INFO:root:TF SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 15459.273182630539 seconds ---
+INFO:root:TF SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 15480.372474193573 seconds ---
+INFO:root:TF SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 15695.650630950928 seconds ---
+INFO:root:TF SVM_GridSearch TF NMF SVM
+INFO:root:--- 15888.926707983017 seconds ---
+INFO:root:TF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 15986.231326818466 seconds ---
+INFO:root:TF IDF SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 16002.155735492706 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 16018.94792842865 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 16035.646411180496 seconds ---
+INFO:root:TF IDF SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 16238.097587823868 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF NMF SVM
+INFO:root:--- 16419.632068157196 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 16512.798053741455 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 16536.619906425476 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 16559.508004426956 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 16768.907860040665 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 16957.009665966034 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 17056.705034971237 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 17081.210568666458 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 17305.26792550087 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 17504.809149742126 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 17616.017503976822 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 17842.38520050049 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 18037.221509456635 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 18136.716767549515 seconds ---
+INFO:root:GridSearch Boolean NMF SVM_GridSearch TF NMF SVM
+INFO:root:--- 18526.236914634705 seconds ---
+INFO:root:GridSearch Boolean NMF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 18817.294439315796 seconds ---
+INFO:root:GridSearch TF NMF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 19089.607997894287 seconds ---
+INFO:root:Making predictions
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.346143087153
+INFO:root:--- 19091.019655942917 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.345623996052
+INFO:root:--- 19092.20120573044 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.341658492983
+INFO:root:--- 19093.440254449844 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.344369353042
+INFO:root:--- 19094.669414758682 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.346651584177
+INFO:root:--- 19095.898072481155 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.340346416691
+INFO:root:--- 19098.12958073616 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.339865256579
+INFO:root:--- 19100.15601158142 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.34044033052
+INFO:root:--- 19102.23678445816 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.392509206016
+INFO:root:--- 19103.389551639557 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.409741181717
+INFO:root:--- 19104.608164310455 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.40829841922
+INFO:root:--- 19105.844744443893 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.407957002393
+INFO:root:--- 19107.09700846672 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.410517094787
+INFO:root:--- 19109.30168557167 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.408243261823
+INFO:root:--- 19111.39004921913 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.407890846915
+INFO:root:--- 19113.506835460663 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.40615230137
+INFO:root:--- 19114.746495723724 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.403341651812
+INFO:root:--- 19115.98278737068 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.407426707138
+INFO:root:--- 19117.222840070724 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.406190198916
+INFO:root:--- 19119.414754152298 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.401329528827
+INFO:root:--- 19121.430763483047 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.400444863882
+INFO:root:--- 19123.525820970535 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.366752755061
+INFO:root:--- 19124.640342473984 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.382505534209
+INFO:root:--- 19125.753262043 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.356197005369
+INFO:root:--- 19127.92079281807 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.360902588811
+INFO:root:--- 19129.92216181755 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.36120297241
+INFO:root:--- 19132.021234035492 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.37951907397
+INFO:root:--- 19133.136365413666 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.36382202248
+INFO:root:--- 19135.283620119095 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.340829681329
+INFO:root:--- 19137.301503896713 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.341155051827
+INFO:root:--- 19139.36804151535 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.386708049663
+INFO:root:--- 19141.525864601135 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.373590527424
+INFO:root:--- 19143.523911476135 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.371468908829
+INFO:root:--- 19145.60031723976 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.347037142522
+INFO:root:--- 19148.644178390503 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.346463273509
+INFO:root:--- 19151.758853197098 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.319914879433
+INFO:root:--- 19154.732009410858 seconds ---
+INFO:root:********* Evaluation on fold 9 *********
+INFO:root:Training of the models
+INFO:root:Boolean SVM_TF SVM
+INFO:root:--- 19176.52147269249 seconds ---
+INFO:root:Boolean SVM_TF IDF SVM
+INFO:root:--- 19197.341951847076 seconds ---
+INFO:root:Boolean SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 19224.582952976227 seconds ---
+INFO:root:Boolean SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 19252.118203878403 seconds ---
+INFO:root:Boolean SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 19279.48736691475 seconds ---
+INFO:root:Boolean SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 19510.407843589783 seconds ---
+INFO:root:Boolean SVM_GridSearch TF NMF SVM
+INFO:root:--- 19727.695974826813 seconds ---
+INFO:root:Boolean SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 19853.3700466156 seconds ---
+INFO:root:TF SVM_TF IDF SVM
+INFO:root:--- 19870.263555049896 seconds ---
+INFO:root:TF SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 19896.385932207108 seconds ---
+INFO:root:TF SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 19925.397458076477 seconds ---
+INFO:root:TF SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 19953.930349349976 seconds ---
+INFO:root:TF SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 20195.44300699234 seconds ---
+INFO:root:TF SVM_GridSearch TF NMF SVM
+INFO:root:--- 20414.986082077026 seconds ---
+INFO:root:TF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 20552.99409675598 seconds ---
+INFO:root:TF IDF SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 20583.573819875717 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 20618.570232868195 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 20649.63238787651 seconds ---
+INFO:root:TF IDF SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 20929.56676888466 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF NMF SVM
+INFO:root:--- 21183.86941099167 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 21324.812435150146 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 21368.40697312355 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 21413.47407913208 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 21710.62244772911 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 21955.771093845367 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 22115.919627666473 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 22159.93669486046 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 22461.743158102036 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 22748.698599100113 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 22909.548159837723 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 23200.25232887268 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 23454.958875656128 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 23609.709268331528 seconds ---
+INFO:root:GridSearch Boolean NMF SVM_GridSearch TF NMF SVM
+INFO:root:--- 24131.123389482498 seconds ---
+INFO:root:GridSearch Boolean NMF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 24523.72379374504 seconds ---
+INFO:root:GridSearch TF NMF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 24868.994172096252 seconds ---
+INFO:root:Making predictions
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.330892191532
+INFO:root:--- 24870.137551546097 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.331734940541
+INFO:root:--- 24871.246629953384 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.327084188837
+INFO:root:--- 24872.44069290161 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.327382801898
+INFO:root:--- 24873.635381937027 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.329819445343
+INFO:root:--- 24874.832623958588 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.325292570906
+INFO:root:--- 24877.474259376526 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.325357293554
+INFO:root:--- 24879.577332496643 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.325483061931
+INFO:root:--- 24881.90712070465 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.371145171763
+INFO:root:--- 24882.95853114128 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.391969487639
+INFO:root:--- 24884.085166454315 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.389209743077
+INFO:root:--- 24885.18765115738 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.389840106281
+INFO:root:--- 24886.32276368141 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.386929742955
+INFO:root:--- 24888.819599866867 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.387396053491
+INFO:root:--- 24891.095788002014 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.386715362014
+INFO:root:--- 24893.134136915207 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.388010399738
+INFO:root:--- 24894.231466293335 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.381193440448
+INFO:root:--- 24895.32700228691 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.381612440673
+INFO:root:--- 24896.426100969315 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.380064279204
+INFO:root:--- 24898.638744831085 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.37573820547
+INFO:root:--- 24900.55102443695 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.375806021614
+INFO:root:--- 24902.42051076889 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.360885159854
+INFO:root:--- 24903.41559767723 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.373322284097
+INFO:root:--- 24904.404483795166 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.368326684368
+INFO:root:--- 24906.534836292267 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.362428548554
+INFO:root:--- 24908.43298125267 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.366954451871
+INFO:root:--- 24910.2764480114 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.357768088956
+INFO:root:--- 24911.380543470383 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.354849523629
+INFO:root:--- 24913.548163414 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.335105996809
+INFO:root:--- 24915.534457683563 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.342072908961
+INFO:root:--- 24917.470457792282 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.368708031656
+INFO:root:--- 24919.83678507805 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.355696526348
+INFO:root:--- 24921.810940027237 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.355874276404
+INFO:root:--- 24923.6829931736 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.350895260064
+INFO:root:--- 24926.821361780167 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.353979726971
+INFO:root:--- 24929.778007268906 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.327693936424
+INFO:root:--- 24932.559542417526 seconds ---
+INFO:root:********* Evaluation on fold 10 *********
+INFO:root:Training of the models
+INFO:root:Boolean SVM_TF SVM
+INFO:root:--- 24956.627309322357 seconds ---
+INFO:root:Boolean SVM_TF IDF SVM
+INFO:root:--- 24981.74318099022 seconds ---
+INFO:root:Boolean SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 25017.969906806946 seconds ---
+INFO:root:Boolean SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 25052.674232006073 seconds ---
+INFO:root:Boolean SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 25088.23785829544 seconds ---
+INFO:root:Boolean SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 25342.100192070007 seconds ---
+INFO:root:Boolean SVM_GridSearch TF NMF SVM
+INFO:root:--- 25582.345158576965 seconds ---
+INFO:root:Boolean SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 25743.924283504486 seconds ---
+INFO:root:TF SVM_TF IDF SVM
+INFO:root:--- 25760.452427864075 seconds ---
+INFO:root:TF SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 25786.28647494316 seconds ---
+INFO:root:TF SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 25813.953313589096 seconds ---
+INFO:root:TF SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 25840.52572774887 seconds ---
+INFO:root:TF SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 26086.71139740944 seconds ---
+INFO:root:TF SVM_GridSearch TF NMF SVM
+INFO:root:--- 26321.298159122467 seconds ---
+INFO:root:TF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 26470.344051122665 seconds ---
+INFO:root:TF IDF SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:--- 26495.380932092667 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 26525.725249528885 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 26555.775940418243 seconds ---
+INFO:root:TF IDF SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 26811.676683425903 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF NMF SVM
+INFO:root:--- 27055.503220319748 seconds ---
+INFO:root:TF IDF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 27211.30264568329 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF Truncated SVD SVM
+INFO:root:--- 27255.77344584465 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 27294.939638137817 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 27566.977714538574 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 27816.736734628677 seconds ---
+INFO:root:GridSearch Boolean Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 27982.598543405533 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:--- 28019.851643800735 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 28283.625098228455 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 28536.50320792198 seconds ---
+INFO:root:GridSearch TF Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 28708.796262979507 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:--- 28967.377012968063 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:--- 29205.329632282257 seconds ---
+INFO:root:GridSearch TF IDF Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 29369.63161277771 seconds ---
+INFO:root:GridSearch Boolean NMF SVM_GridSearch TF NMF SVM
+INFO:root:--- 29854.711139440536 seconds ---
+INFO:root:GridSearch Boolean NMF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 30254.341289520264 seconds ---
+INFO:root:GridSearch TF NMF SVM_GridSearch TF IDF NMF SVM
+INFO:root:--- 30617.275071382523 seconds ---
+INFO:root:Making predictions
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.209605912899
+INFO:root:--- 30618.30128288269 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.212684246722
+INFO:root:--- 30619.301060199738 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.206726911618
+INFO:root:--- 30620.380566835403 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.206434425361
+INFO:root:--- 30621.47295975685 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.204993010416
+INFO:root:--- 30622.564068555832 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.208813819883
+INFO:root:--- 30624.436498880386 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.208818838771
+INFO:root:--- 30626.277055978775 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.208707205352
+INFO:root:--- 30628.187695026398 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.245793521654
+INFO:root:--- 30629.18013048172 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.257151250908
+INFO:root:--- 30630.25742340088 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.254168210148
+INFO:root:--- 30631.336357593536 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.255302508567
+INFO:root:--- 30632.42504310608 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.259499626549
+INFO:root:--- 30634.306726932526 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.251693106151
+INFO:root:--- 30636.235483646393 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.251520921875
+INFO:root:--- 30638.15234708786 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.257391354929
+INFO:root:--- 30639.236005544662 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.249950834762
+INFO:root:--- 30640.325226783752 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.252332220053
+INFO:root:--- 30641.411710977554 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.253706326136
+INFO:root:--- 30643.275903463364 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.249430492467
+INFO:root:--- 30645.107417583466 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.249275530688
+INFO:root:--- 30647.046971321106 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.242075914033
+INFO:root:--- 30648.01983499527 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.239082142746
+INFO:root:--- 30649.0442237854 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.229734855834
+INFO:root:--- 30650.87539601326 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.235495206563
+INFO:root:--- 30652.74944615364 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.236013166973
+INFO:root:--- 30654.641305685043 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.237092814651
+INFO:root:--- 30655.62545275688 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.238390291459
+INFO:root:--- 30657.47035264969 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.224511394004
+INFO:root:--- 30659.293065071106 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.226031402381
+INFO:root:--- 30661.192452907562 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.238247027485
+INFO:root:--- 30663.035128355026 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.229618937636
+INFO:root:--- 30664.857637405396 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.230123601406
+INFO:root:--- 30666.774957180023 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.234503862968
+INFO:root:--- 30669.4782807827 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.232881927076
+INFO:root:--- 30672.223450422287 seconds ---
+INFO:root:Mean Reciprocal Rank:
+INFO:root:0.218696785777
+INFO:root:--- 30674.9732503891 seconds ---
+INFO:root:Accuracy of Boolean SVM_TF SVM
+INFO:root:Each fold
+INFO:root:[0.29290387518872674, 0.26119778560644186, 0.26874685455460495, 0.22345244086562657, 0.26824358329139408, 0.28032209360845495, 0.20130850528434827, 0.23150478107700051, 0.21640664318067437, 0.10417715148465023]
+INFO:root:Average
+INFO:root:0.234826371414
+INFO:root:MRR of Boolean SVM_TF SVM
+INFO:root:Each fold
+INFO:root:[0.45080135043395264, 0.41364372022004808, 0.4089864357320977, 0.37628494835202081, 0.39762834440884132, 0.42291881727759911, 0.33416921533310129, 0.34614308715331066, 0.33089219153229915, 0.20960591289928984]
+INFO:root:Average
+INFO:root:0.369107402334
+INFO:root:Accuracy of Boolean SVM_TF IDF SVM
+INFO:root:Each fold
+INFO:root:[0.29441368897835934, 0.2622043281328636, 0.27226975339708104, 0.22596879718168092, 0.26673376950176148, 0.28082536487166582, 0.20030196275792653, 0.22949169602415703, 0.2159033719174635, 0.10719677906391545]
+INFO:root:Average
+INFO:root:0.235530951183
+INFO:root:MRR of Boolean SVM_TF IDF SVM
+INFO:root:Each fold
+INFO:root:[0.45221962062730936, 0.41466929925340207, 0.4115684388834786, 0.37781487568107619, 0.3975296691196471, 0.42322617734129209, 0.33440546968608348, 0.34562399605169558, 0.3317349405410287, 0.21268424672217429]
+INFO:root:Average
+INFO:root:0.370147673391
+INFO:root:Accuracy of Boolean SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:Each fold
+INFO:root:[0.29491696024157021, 0.26522395571212881, 0.26774031202818321, 0.22345244086562657, 0.26522395571212881, 0.28183190739808756, 0.19979869149471566, 0.22445898339204831, 0.21338701560140916, 0.10166079516859587]
+INFO:root:Average
+INFO:root:0.233769501761
+INFO:root:MRR of Boolean SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:Each fold
+INFO:root:[0.44924578231310303, 0.41367463141411581, 0.40702841271004703, 0.3736429386213389, 0.39487474186085264, 0.42248321930892158, 0.33197825002268178, 0.34165849298302858, 0.32708418883735824, 0.20672691161794463]
+INFO:root:Average
+INFO:root:0.366839756969
+INFO:root:Accuracy of Boolean SVM_GridSearch TF Truncated SVD SVM
+INFO:root:Each fold
+INFO:root:[0.29340714645193761, 0.2637141419224962, 0.27377956718671365, 0.22093608454957223, 0.2637141419224962, 0.28384499245093103, 0.19879214896829392, 0.22747861097131353, 0.21389028686462003, 0.10417715148465023]
+INFO:root:Average
+INFO:root:0.234373427277
+INFO:root:MRR of Boolean SVM_GridSearch TF Truncated SVD SVM
+INFO:root:Each fold
+INFO:root:[0.44981756543127877, 0.41383395098426806, 0.40952820783047245, 0.37359467901206633, 0.39359154649353217, 0.42514004400599975, 0.3309656107168748, 0.34436935304247429, 0.32738280189771457, 0.20643442536082712]
+INFO:root:Average
+INFO:root:0.367465818478
+INFO:root:Accuracy of Boolean SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:Each fold
+INFO:root:[0.29290387518872674, 0.26572722697533968, 0.26874685455460495, 0.22747861097131353, 0.26723704076497234, 0.27679919476597886, 0.20281831907398087, 0.23200805234021138, 0.2159033719174635, 0.10166079516859587]
+INFO:root:Average
+INFO:root:0.235128334172
+INFO:root:MRR of Boolean SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:Each fold
+INFO:root:[0.45104944769367933, 0.41663153200096592, 0.40925367305500004, 0.37778827624653782, 0.39601079556817248, 0.42256133893398395, 0.33362993978805094, 0.34665158417673175, 0.32981944534301044, 0.20499301041606435]
+INFO:root:Average
+INFO:root:0.368838904322
+INFO:root:Accuracy of Boolean SVM_GridSearch Boolean NMF SVM
+INFO:root:Each fold
+INFO:root:[0.29139406139909413, 0.25817815802717664, 0.27226975339708104, 0.2229491696024157, 0.26069451434323099, 0.27579265223955712, 0.19979869149471566, 0.22596879718168092, 0.21036738802214394, 0.10568696527428284]
+INFO:root:Average
+INFO:root:0.232310015098
+INFO:root:MRR of Boolean SVM_GridSearch Boolean NMF SVM
+INFO:root:Each fold
+INFO:root:[0.44816231235021559, 0.40901498751389392, 0.40877537905071748, 0.37221833828998829, 0.39131877796122572, 0.41725131073209248, 0.33023882311945296, 0.34034641669143861, 0.32529257090571573, 0.20881381988294964]
+INFO:root:Average
+INFO:root:0.36514327365
+INFO:root:Accuracy of Boolean SVM_GridSearch TF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.29240060392551587, 0.25666834423754403, 0.27075993960744843, 0.22244589833920483, 0.26170105686965273, 0.27579265223955712, 0.20030196275792653, 0.22496225465525918, 0.21036738802214394, 0.10568696527428284]
+INFO:root:Average
+INFO:root:0.232108706593
+INFO:root:MRR of Boolean SVM_GridSearch TF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.44900226116660974, 0.40857564008730168, 0.40833592689924647, 0.37162688842078767, 0.39164897411418614, 0.41733686490068805, 0.33047280142013447, 0.33986525657914746, 0.32535729355420179, 0.20881883877084989]
+INFO:root:Average
+INFO:root:0.365104074591
+INFO:root:Accuracy of Boolean SVM_GridSearch TF IDF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.29139406139909413, 0.25817815802717664, 0.27075993960744843, 0.22345244086562657, 0.26069451434323099, 0.27478610971313538, 0.20130850528434827, 0.22596879718168092, 0.21087065928535481, 0.10568696527428284]
+INFO:root:Average
+INFO:root:0.232310015098
+INFO:root:MRR of Boolean SVM_GridSearch TF IDF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.44851741678027746, 0.40924070365382387, 0.40843940021908542, 0.37237325448862912, 0.39124262103812146, 0.41677553595718669, 0.33098414818369454, 0.34044033052020001, 0.32548306193077059, 0.20870720535165341]
+INFO:root:Average
+INFO:root:0.365220367812
+INFO:root:Accuracy of TF SVM_TF IDF SVM
+INFO:root:Each fold
+INFO:root:[0.30296930045294412, 0.29894313034725717, 0.29592350276799195, 0.27377956718671365, 0.319073980875692, 0.33819828887770509, 0.24106693507800706, 0.25767488676396577, 0.23603422244589833, 0.11373930548565676]
+INFO:root:Average
+INFO:root:0.267740312028
+INFO:root:MRR of TF SVM_TF IDF SVM
+INFO:root:Each fold
+INFO:root:[0.46979018892723962, 0.45901907497049504, 0.44835590094204253, 0.43483507801949722, 0.45525679963265281, 0.48573203875969989, 0.38131490227466563, 0.39250920601593464, 0.37114517176345535, 0.24579352165444646]
+INFO:root:Average
+INFO:root:0.414375188296
+INFO:root:Accuracy of TF SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:Each fold
+INFO:root:[0.30649219929542021, 0.30699547055863108, 0.30246602918973325, 0.27881227981882234, 0.33870156014091596, 0.34071464519375944, 0.24408656265727227, 0.26321087065928533, 0.2435832913940614, 0.11424257674886763]
+INFO:root:Average
+INFO:root:0.273930548566
+INFO:root:MRR of TF SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:Each fold
+INFO:root:[0.47412646092245303, 0.46967123092894542, 0.45770622576165737, 0.44903478584421802, 0.47629752727339586, 0.49593952013489961, 0.39039755954947752, 0.40974118171745927, 0.39196948763874939, 0.25715125090825552]
+INFO:root:Average
+INFO:root:0.427203523068
+INFO:root:Accuracy of TF SVM_GridSearch TF Truncated SVD SVM
+INFO:root:Each fold
+INFO:root:[0.31051836940110722, 0.30145948666331152, 0.30296930045294412, 0.29089079013588326, 0.334675390035229, 0.33517866129843987, 0.23754403623553094, 0.26270759939607446, 0.24207347760442879, 0.11524911927528939]
+INFO:root:Average
+INFO:root:0.27332662305
+INFO:root:MRR of TF SVM_GridSearch TF Truncated SVD SVM
+INFO:root:Each fold
+INFO:root:[0.4780454674168973, 0.46933694316553159, 0.45955359621564401, 0.45361635095419911, 0.47253231781311084, 0.49305255244453244, 0.38705577263439139, 0.40829841921963955, 0.38920974307741624, 0.25416821014796609]
+INFO:root:Average
+INFO:root:0.426486937309
+INFO:root:Accuracy of TF SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:Each fold
+INFO:root:[0.31303472571716157, 0.30649219929542021, 0.30800201308505282, 0.29441368897835934, 0.33366884750880726, 0.33668847508807248, 0.23905385002516355, 0.26069451434323099, 0.24157020634121792, 0.11323603422244589]
+INFO:root:Average
+INFO:root:0.27468545546
+INFO:root:MRR of TF SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:Each fold
+INFO:root:[0.4845949074324456, 0.47663492033411481, 0.46603892640860556, 0.45925630941576623, 0.47323273704590119, 0.49588241903911595, 0.38726573718332985, 0.40795700239305993, 0.3898401062812637, 0.25530250856725967]
+INFO:root:Average
+INFO:root:0.42960055741
+INFO:root:Accuracy of TF SVM_GridSearch Boolean NMF SVM
+INFO:root:Each fold
+INFO:root:[0.30598892803220934, 0.3125314544539507, 0.29441368897835934, 0.2778057372924006, 0.33819828887770509, 0.34423754403623552, 0.24056366381479619, 0.26623049823855061, 0.23955712128837445, 0.12380473074987418]
+INFO:root:Average
+INFO:root:0.274333165576
+INFO:root:MRR of TF SVM_GridSearch Boolean NMF SVM
+INFO:root:Each fold
+INFO:root:[0.46887664320789146, 0.47108574698165334, 0.4501083718463515, 0.44610079760408294, 0.47516141910351217, 0.49813924189055875, 0.38933335428702293, 0.41051709478653498, 0.38692974295522914, 0.25949962654855779]
+INFO:root:Average
+INFO:root:0.425575203921
+INFO:root:Accuracy of TF SVM_GridSearch TF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.30749874182184195, 0.30598892803220934, 0.3049823855057876, 0.28686462003019625, 0.33064921992954205, 0.33819828887770509, 0.24006039255158532, 0.26623049823855061, 0.2435832913940614, 0.11172622043281329]
+INFO:root:Average
+INFO:root:0.273578258681
+INFO:root:MRR of TF SVM_GridSearch TF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.4759108781751481, 0.47049148829454046, 0.45826711795429631, 0.45061436601410371, 0.46975848648169377, 0.49324849908893709, 0.38761117149399521, 0.40824326182310733, 0.38739605349107509, 0.25169310615068302]
+INFO:root:Average
+INFO:root:0.425323442897
+INFO:root:Accuracy of TF SVM_GridSearch TF IDF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.31303472571716157, 0.30548565676899847, 0.30145948666331152, 0.28334172118772016, 0.3331655762455964, 0.33618520382486161, 0.23955712128837445, 0.26522395571212881, 0.24207347760442879, 0.11122294916960242]
+INFO:root:Average
+INFO:root:0.273074987418
+INFO:root:MRR of TF SVM_GridSearch TF IDF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.47948119084239343, 0.47027651627115463, 0.45615330016271599, 0.44871656701896023, 0.47097239477522712, 0.49248662527168591, 0.38733332391711406, 0.40789084691478544, 0.38671536201371726, 0.25152092187521663]
+INFO:root:Average
+INFO:root:0.425154704906
+INFO:root:Accuracy of TF IDF SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:Each fold
+INFO:root:[0.31756416708605939, 0.31051836940110722, 0.30900855561147461, 0.28636134876698538, 0.33517866129843987, 0.35480624056366383, 0.24207347760442879, 0.26723704076497234, 0.24559637644690488, 0.12128837443381983]
+INFO:root:Average
+INFO:root:0.278963261198
+INFO:root:MRR of TF IDF SVM_GridSearch Boolean Truncated SVD SVM
+INFO:root:Each fold
+INFO:root:[0.48454931673893598, 0.4743323303280087, 0.46223772069055724, 0.45122849240149071, 0.47242160664976363, 0.50481628222736707, 0.39221938602667089, 0.40615230137023056, 0.38801039973768919, 0.25739135492853848]
+INFO:root:Average
+INFO:root:0.42933591911
+INFO:root:Accuracy of TF IDF SVM_GridSearch TF Truncated SVD SVM
+INFO:root:Each fold
+INFO:root:[0.31202818319073983, 0.30347257171615499, 0.31152491192752896, 0.28384499245093103, 0.33366884750880726, 0.34675390035228987, 0.24660291897332662, 0.2622043281328636, 0.23754403623553094, 0.11273276295923502]
+INFO:root:Average
+INFO:root:0.275037745345
+INFO:root:MRR of TF IDF SVM_GridSearch TF Truncated SVD SVM
+INFO:root:Each fold
+INFO:root:[0.48033443516511881, 0.47078841216980483, 0.4642096962057124, 0.44786756001544697, 0.47178697025088884, 0.49961598247829236, 0.39448191828519952, 0.40334165181247317, 0.38119344044849252, 0.24995083476182675]
+INFO:root:Average
+INFO:root:0.426357090159
+INFO:root:Accuracy of TF IDF SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:Each fold
+INFO:root:[0.319073980875692, 0.31051836940110722, 0.32008052340211374, 0.28686462003019625, 0.33618520382486161, 0.34675390035228987, 0.24157020634121792, 0.26774031202818321, 0.23351786612984399, 0.11776547559134373]
+INFO:root:Average
+INFO:root:0.278007045798
+INFO:root:MRR of TF IDF SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:Each fold
+INFO:root:[0.49000960845451641, 0.47835844888853307, 0.47269047340512238, 0.45247408772854003, 0.47291278579396956, 0.50169095035296996, 0.39244707935462858, 0.40742670713838991, 0.38161244067344591, 0.25233222005322065]
+INFO:root:Average
+INFO:root:0.430195480184
+INFO:root:Accuracy of TF IDF SVM_GridSearch Boolean NMF SVM
+INFO:root:Each fold
+INFO:root:[0.31001509813789635, 0.31152491192752896, 0.30447911424257673, 0.27428283844992452, 0.34021137393054857, 0.34574735782586813, 0.24308002013085053, 0.2712632108706593, 0.23754403623553094, 0.11927528938097634]
+INFO:root:Average
+INFO:root:0.275742325113
+INFO:root:MRR of TF IDF SVM_GridSearch Boolean NMF SVM
+INFO:root:Each fold
+INFO:root:[0.47663363590855706, 0.47080391571630609, 0.45772374936021221, 0.44004488270284042, 0.47415044150115898, 0.49781431656677494, 0.39108149511596946, 0.40619019891615837, 0.38006427920362978, 0.25370632613552141]
+INFO:root:Average
+INFO:root:0.424821324113
+INFO:root:Accuracy of TF IDF SVM_GridSearch TF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.30951182687468548, 0.31001509813789635, 0.30649219929542021, 0.27579265223955712, 0.33115249119275292, 0.35027679919476595, 0.24710619023653749, 0.26572722697533968, 0.23251132360342225, 0.11474584801207852]
+INFO:root:Average
+INFO:root:0.274333165576
+INFO:root:MRR of TF IDF SVM_GridSearch TF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.48104674923123303, 0.47213176144490315, 0.45993968110994443, 0.44155161697716855, 0.4673934328242107, 0.49865100061256795, 0.39126686226523555, 0.40132952882730649, 0.37573820546978798, 0.24943049246728316]
+INFO:root:Average
+INFO:root:0.423847933123
+INFO:root:Accuracy of TF IDF SVM_GridSearch TF IDF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.31051836940110722, 0.30900855561147461, 0.30649219929542021, 0.27629592350276799, 0.33064921992954205, 0.35078007045797682, 0.24760946149974836, 0.26421741318570707, 0.23301459486663312, 0.11373930548565676]
+INFO:root:Average
+INFO:root:0.274232511324
+INFO:root:MRR of TF IDF SVM_GridSearch TF IDF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.48160483820013289, 0.47146034498996314, 0.46005477026166386, 0.44148145540083933, 0.46694169433480126, 0.49857115152037168, 0.39152669768397841, 0.40044486388244427, 0.375806021613656, 0.24927553068750033]
+INFO:root:Average
+INFO:root:0.423716736858
+INFO:root:Accuracy of GridSearch Boolean Truncated SVD SVM_GridSearch TF Truncated SVD SVM
+INFO:root:Each fold
+INFO:root:[0.27881227981882234, 0.29089079013588326, 0.27528938097634625, 0.26421741318570707, 0.29290387518872674, 0.29290387518872674, 0.20684448917966783, 0.2073477604428787, 0.19879214896829392, 0.096124811273276295]
+INFO:root:Average
+INFO:root:0.240412682436
+INFO:root:MRR of GridSearch Boolean Truncated SVD SVM_GridSearch TF Truncated SVD SVM
+INFO:root:Each fold
+INFO:root:[0.45172402491313746, 0.45837798853798467, 0.44024608174956364, 0.43377243429262291, 0.44555727781014015, 0.45957353301295217, 0.36044436861444717, 0.36675275506116034, 0.36088515985437686, 0.24207591403333206]
+INFO:root:Average
+INFO:root:0.401940953788
+INFO:root:Accuracy of GridSearch Boolean Truncated SVD SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:Each fold
+INFO:root:[0.29542023150478108, 0.29944640161046804, 0.27981882234524408, 0.27327629592350278, 0.30045294413688978, 0.30598892803220934, 0.21087065928535481, 0.22093608454957223, 0.21187720181177655, 0.091092098641167588]
+INFO:root:Average
+INFO:root:0.248917966784
+INFO:root:MRR of GridSearch Boolean Truncated SVD SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:Each fold
+INFO:root:[0.46786013617201272, 0.46948631527105916, 0.44642822525019155, 0.44583681623158511, 0.45484292159979217, 0.47135562290419625, 0.36525855838083821, 0.38250553420889305, 0.37332228409656665, 0.23908214274629977]
+INFO:root:Average
+INFO:root:0.411597855686
+INFO:root:Accuracy of GridSearch Boolean Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:Each fold
+INFO:root:[0.26723704076497234, 0.27025666834423756, 0.25113236034222447, 0.26472068444891794, 0.29793658782083543, 0.28837443381982891, 0.20181177654755914, 0.19476597886260694, 0.21187720181177655, 0.084549572219426272]
+INFO:root:Average
+INFO:root:0.233266230498
+INFO:root:MRR of GridSearch Boolean Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:Each fold
+INFO:root:[0.4415812949290488, 0.44643643407213901, 0.42372661535231992, 0.43272880208650194, 0.44834092585685498, 0.45521852864723561, 0.35714232844831278, 0.35619700536874654, 0.36832668436844385, 0.22973485583394124]
+INFO:root:Average
+INFO:root:0.395943347496
+INFO:root:Accuracy of GridSearch Boolean Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.26723704076497234, 0.28585807750377451, 0.26170105686965273, 0.26522395571212881, 0.29240060392551587, 0.29290387518872674, 0.20533467539003522, 0.20030196275792653, 0.20030196275792653, 0.087569199798691488]
+INFO:root:Average
+INFO:root:0.235883241067
+INFO:root:MRR of GridSearch Boolean Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.44619245867744289, 0.4593874929039401, 0.43065031629761885, 0.43445822187706984, 0.4469904081057175, 0.46023530411002506, 0.36105818969945458, 0.36090258881090326, 0.3624285485538879, 0.2354952065629862]
+INFO:root:Average
+INFO:root:0.39977987356
+INFO:root:Accuracy of GridSearch Boolean Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.27981882234524408, 0.29340714645193761, 0.25918470055359838, 0.27176648213387017, 0.29240060392551587, 0.29139406139909413, 0.21036738802214394, 0.20231504781077, 0.20533467539003522, 0.087569199798691488]
+INFO:root:Average
+INFO:root:0.239355812783
+INFO:root:MRR of GridSearch Boolean Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.45788687205065715, 0.46934651552823897, 0.43314168327449359, 0.44220349006398413, 0.44752961855470125, 0.45842862900023901, 0.36389173054346152, 0.36120297240994098, 0.36695445187131831, 0.23601316697337246]
+INFO:root:Average
+INFO:root:0.403659913027
+INFO:root:Accuracy of GridSearch TF Truncated SVD SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:Each fold
+INFO:root:[0.28887770508303978, 0.29994967287367891, 0.28787116255661804, 0.27327629592350278, 0.28736789129340717, 0.30145948666331152, 0.19979869149471566, 0.21741318570709611, 0.19476597886260694, 0.090588827377956718]
+INFO:root:Average
+INFO:root:0.244136889784
+INFO:root:MRR of GridSearch TF Truncated SVD SVM_GridSearch TF IDF Truncated SVD SVM
+INFO:root:Each fold
+INFO:root:[0.46821299005534067, 0.4740006158379248, 0.45600780081592862, 0.44455085878836198, 0.44784063691181453, 0.46961050980221691, 0.35623959314243953, 0.37951907397009943, 0.35776808895612927, 0.23709281465070631]
+INFO:root:Average
+INFO:root:0.409084298293
+INFO:root:Accuracy of GridSearch TF Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:Each fold
+INFO:root:[0.27931555108203321, 0.28233517866129842, 0.2637141419224962, 0.25364871665827882, 0.28686462003019625, 0.29089079013588326, 0.19577252138902868, 0.20332159033719174, 0.19023653749370911, 0.093608454957221948]
+INFO:root:Average
+INFO:root:0.233970810267
+INFO:root:MRR of GridSearch TF Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:Each fold
+INFO:root:[0.44912236124792598, 0.45304106308879888, 0.43014288307067333, 0.42415913657690923, 0.44194451072693658, 0.4582891435674763, 0.35501122199783258, 0.36382202247960821, 0.35484952362940336, 0.23839029145907942]
+INFO:root:Average
+INFO:root:0.396877215784
+INFO:root:Accuracy of GridSearch TF Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.26925012581781582, 0.26421741318570707, 0.25163563160543534, 0.25616507297433316, 0.27830900855561147, 0.28334172118772016, 0.19124308002013085, 0.18319073980875691, 0.17664821338701561, 0.079516859587317565]
+INFO:root:Average
+INFO:root:0.223351786613
+INFO:root:MRR of GridSearch TF Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.4485313978845884, 0.44296557947821869, 0.42456310999181557, 0.42315222898890298, 0.43315586558534669, 0.44569246745460495, 0.34394188979917045, 0.34082968132919816, 0.33510599680924558, 0.22451139400432304]
+INFO:root:Average
+INFO:root:0.386244961133
+INFO:root:Accuracy of GridSearch TF Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.27428283844992452, 0.27528938097634625, 0.25868142929038751, 0.25968797181680925, 0.27679919476597886, 0.28485153497735277, 0.18973326623049824, 0.18117765475591344, 0.18218419728233518, 0.080523402113739304]
+INFO:root:Average
+INFO:root:0.226321087066
+INFO:root:MRR of GridSearch TF Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.45229775101108521, 0.45255336442010302, 0.42949675647559393, 0.42807864395763184, 0.43233323797216183, 0.44848877750056576, 0.34299915105888312, 0.34115505182718137, 0.34207290896053794, 0.22603140238078515]
+INFO:root:Average
+INFO:root:0.389550704556
+INFO:root:Accuracy of GridSearch TF IDF Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:Each fold
+INFO:root:[0.29743331655762456, 0.30598892803220934, 0.27679919476597886, 0.27881227981882234, 0.30649219929542021, 0.31152491192752896, 0.20533467539003522, 0.22345244086562657, 0.20432813286361348, 0.092601912430800196]
+INFO:root:Average
+INFO:root:0.250276799195
+INFO:root:MRR of GridSearch TF IDF Truncated SVD SVM_GridSearch Boolean NMF SVM
+INFO:root:Each fold
+INFO:root:[0.47177773146953889, 0.47480414041607916, 0.44580261193431625, 0.44911329483735035, 0.46009546388561129, 0.47495134278440138, 0.36473062709774839, 0.38670804966285466, 0.36870803165615057, 0.23824702748519108]
+INFO:root:Average
+INFO:root:0.413493832123
+INFO:root:Accuracy of GridSearch TF IDF Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.28183190739808756, 0.29642677403120282, 0.27881227981882234, 0.27679919476597886, 0.29994967287367891, 0.30397584297936586, 0.19677906391545041, 0.2073477604428787, 0.19174635128334172, 0.082536487166582795]
+INFO:root:Average
+INFO:root:0.241620533468
+INFO:root:MRR of GridSearch TF IDF Truncated SVD SVM_GridSearch TF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.4702650627670843, 0.47269226564584477, 0.45033708899998831, 0.44635022662408785, 0.45493073391836281, 0.46777156192551655, 0.35536060980704065, 0.37359052742358434, 0.35569652634845256, 0.2296189376357054]
+INFO:root:Average
+INFO:root:0.40766135411
+INFO:root:Accuracy of GridSearch TF IDF Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.28183190739808756, 0.29944640161046804, 0.28132863613487669, 0.27528938097634625, 0.29441368897835934, 0.30045294413688978, 0.19828887770508305, 0.20533467539003522, 0.19325616507297433, 0.082536487166582795]
+INFO:root:Average
+INFO:root:0.241217916457
+INFO:root:MRR of GridSearch TF IDF Truncated SVD SVM_GridSearch TF IDF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.47125711117638713, 0.47465451014726096, 0.4518021958162417, 0.44576146881174034, 0.44950873869149066, 0.46731683205460911, 0.35683099692139753, 0.3714689088286352, 0.3558742764040293, 0.23012360140624308]
+INFO:root:Average
+INFO:root:0.407459864026
+INFO:root:Accuracy of GridSearch Boolean NMF SVM_GridSearch TF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.26069451434323099, 0.26069451434323099, 0.24660291897332662, 0.24408656265727227, 0.2843482637141419, 0.28082536487166582, 0.18419728233517865, 0.18772018117765477, 0.18772018117765477, 0.090085556114745849]
+INFO:root:Average
+INFO:root:0.222697533971
+INFO:root:MRR of GridSearch Boolean NMF SVM_GridSearch TF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.43745702157054528, 0.43488590682505479, 0.41861809864283089, 0.41604332066096972, 0.43716219446174837, 0.44763011728405744, 0.34345182328901108, 0.34703714252248974, 0.35089526006396149, 0.23450386296838788]
+INFO:root:Average
+INFO:root:0.386768474829
+INFO:root:Accuracy of GridSearch Boolean NMF SVM_GridSearch TF IDF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.29089079013588326, 0.27730246602918973, 0.25465525918470056, 0.2486160040261701, 0.28938097634625065, 0.27730246602918973, 0.18922999496728737, 0.18671363865123303, 0.19023653749370911, 0.087065928535480619]
+INFO:root:Average
+INFO:root:0.22913940614
+INFO:root:MRR of GridSearch Boolean NMF SVM_GridSearch TF IDF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.46086249114219419, 0.45001518362028858, 0.42401575065890451, 0.42099529374073186, 0.44103356687333101, 0.44548791971720952, 0.34710721020149693, 0.34646327350879352, 0.3539797269713395, 0.23288192707584168]
+INFO:root:Average
+INFO:root:0.392284234351
+INFO:root:Accuracy of GridSearch TF NMF SVM_GridSearch TF IDF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.25364871665827882, 0.22043281328636136, 0.23200805234021138, 0.2365374937091092, 0.25566180171112229, 0.25364871665827882, 0.1731253145445395, 0.16205334675390035, 0.16859587317564168, 0.076497232008052335]
+INFO:root:Average
+INFO:root:0.203220936085
+INFO:root:MRR of GridSearch TF NMF SVM_GridSearch TF IDF NMF SVM
+INFO:root:Each fold
+INFO:root:[0.44390827287311274, 0.40687490592225023, 0.40666875226615201, 0.40663015678810283, 0.41086839960000671, 0.42428313808244594, 0.32599878440698982, 0.31991487943263591, 0.32769393642424804, 0.21869678577673032]
+INFO:root:Average
+INFO:root:0.369153801157
+INFO:root:--- 30675.002722740173 seconds ---
