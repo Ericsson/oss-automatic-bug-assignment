@@ -45,11 +45,11 @@ def plot_learning_curve(title, computed_score, train_sizes, \
 
     """
     fig = plt.figure(figsize=(20.0, 12.5))
-    plt.title(title, size=27)    
+    plt.title(title, size=31)    
     plt.xlim(xmin=0, xmax=30000)
     plt.ylim(ymin=0.0, ymax=1.0)
-    plt.xlabel("Training examples", size=25)
-    plt.ylabel(computed_score.capitalize(), size=25)
+    plt.xlabel("Training examples", size=28)
+    plt.ylabel(computed_score.capitalize(), size=28)
     plt.grid()
 
     plt.fill_between(train_sizes, train_scores_mean - \
@@ -64,8 +64,8 @@ def plot_learning_curve(title, computed_score, train_sizes, \
     plt.plot(train_sizes, test_scores_mean, 'o-', color="g", \
            label="Test {}".format(computed_score), \
            linewidth=5.0, markersize=13.0)
-    plt.legend(loc="best", prop={'size': 23})
-    plt.tick_params(axis='both', which='major', labelsize=20)
+    plt.legend(loc="best", prop={'size': 26})
+    plt.tick_params(axis='both', which='major', labelsize=22)
     
     return fig
 
