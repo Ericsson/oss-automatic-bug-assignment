@@ -42,31 +42,29 @@ class MozillaExperiment1ResultsPlotter(Experiment1ResultsPlotter):
                 "x_lim_max": 0.17,
                 "x_label": "Accuracy",
                 "y_label": "Configurations",
-                "labels_font_size": 35, 
-                "y_tick_labels_font_size": 35,
+                "title_font_size": 50,
+                "labels_font_size": 45, 
+                "y_tick_labels_font_size": 40,
                 "title": "Accuracy of the different pre-processing " \
                 "configurations",
                 "file_name" : "experiment_11.png",
                 "debug_title": "Average Accuracy",
                 "bars_labels_space": 0.0001,
-                "fig_width_inches": 25,
-                "fig_height_inches": 60       
             },
             {
                 "key": "avg_mrr",
                 "x_lim_min": 0.3285,
-                "x_lim_max": 0.3485,
+                "x_lim_max": 0.349,
                 "x_label": "MRR",
                 "y_label": "Configurations",
-                "labels_font_size": 35,
-                "y_tick_labels_font_size": 35,
+                "title_font_size": 50,
+                "labels_font_size": 45,
+                "y_tick_labels_font_size": 40,
                 "title": "MRR of the different pre-processing " \
                 "configurations",
                 "file_name": "experiment_12.png",
                 "debug_title": "Average MRR",
                 "bars_labels_space": 0.0001,
-                "fig_width_inches": 25,
-                "fig_height_inches": 60
             }       
         ]
         super().plot_results()

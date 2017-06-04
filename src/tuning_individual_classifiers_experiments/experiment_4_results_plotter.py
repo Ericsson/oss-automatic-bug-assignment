@@ -78,8 +78,11 @@ class Experiment4ResultsPlotter(ResultsPlotter):
             # accuracy)
             for param_key, param_value in zipped_accuracy[0][0].items():
                 param_key_list = param_key.split("__")
+                param_value = "{:.2e}".format(param_value) \
+                              if isinstance(param_value, float) \
+                              else str(param_value)
                 cleaned_key += ("|" + param_key_list[1] + "=" + \
-                                str(param_value) + "\n") 
+                                param_value + "\n") 
             generated_accuracy_list.append((cleaned_key[:-1], \
                                             accuracy))
             
@@ -97,8 +100,11 @@ class Experiment4ResultsPlotter(ResultsPlotter):
                 # MRR)
                 for param_key, param_value in zipped_mrr[0][0].items():
                     param_key_list = param_key.split("__")
+                    param_value = "{:.2e}".format(param_value) \
+                                  if isinstance(param_value, float) \
+                                  else str(param_value)
                     cleaned_key += ("|" + param_key_list[1] + "=" + \
-                                    str(param_value) + "\n") 
+                                    param_value + "\n") 
                 generated_mrr_list.append((cleaned_key[:-1], mrr))
 
 #             TO DO: To remove later if not needed
@@ -128,7 +134,9 @@ class Experiment4ResultsPlotter(ResultsPlotter):
     @abc.abstractmethod
     def plot_results(self):
         """This method plots the results in chart(s)"""
-        super().plot_results()        
+        super().plot_results()
+        fig_width_inches = 25
+        fig_height_inches = 45      
         for plot_parameter in self.plot_parameters:
             # The dictionary below contains the values of two metric 
             # related to the different configurations
@@ -159,6 +167,7 @@ class Experiment4ResultsPlotter(ResultsPlotter):
             x_lim_max = plot_parameter["x_lim_max"][0]
             x_label = plot_parameter["x_label"][0]
             y_label = plot_parameter["y_label"][0]
+            titles_font_size = plot_parameter["titles_font_size"][0]
             labels_font_size = plot_parameter["labels_font_size"][0]
             y_tick_labels_font_size = \
             plot_parameter["y_tick_labels_font_size"][0]
@@ -167,8 +176,9 @@ class Experiment4ResultsPlotter(ResultsPlotter):
             bars_labels_space = plot_parameter["bars_labels_space"][0]
             self.plot_bar(y_labels, x_values, x_lim_min, x_lim_max, \
                           x_label, y_label, title, file_name, \
-                          labels_font_size, y_tick_labels_font_size, \
-                          bars_labels_space)
+                          titles_font_size, labels_font_size, \
+                          y_tick_labels_font_size, bars_labels_space, \
+                          fig_width_inches, fig_height_inches)
             
             # We sort the aforementioned cleaned list in the reverse 
             # order
@@ -187,6 +197,7 @@ class Experiment4ResultsPlotter(ResultsPlotter):
             x_lim_max = plot_parameter["x_lim_max"][1]
             x_label = plot_parameter["x_label"][1]
             y_label = plot_parameter["y_label"][1]
+            titles_font_size = plot_parameter["titles_font_size"][1]
             labels_font_size = plot_parameter["labels_font_size"][1]
             y_tick_labels_font_size = \
             plot_parameter["y_tick_labels_font_size"][1]
@@ -195,5 +206,7 @@ class Experiment4ResultsPlotter(ResultsPlotter):
             bars_labels_space = plot_parameter["bars_labels_space"][1]
             self.plot_bar(y_labels, x_values, x_lim_min, x_lim_max, \
                           x_label, y_label, title, file_name, \
-                          labels_font_size, y_tick_labels_font_size, \
-                          bars_labels_space)
+                          titles_font_size, labels_font_size, \
+                          y_tick_labels_font_size, \
+                          bars_labels_space, fig_width_inches, \
+                          fig_height_inches)

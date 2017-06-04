@@ -63,7 +63,8 @@ class ResultsPlotter(abc.ABC):
     
     def plot_bar(self, y_labels, x_values, x_lim_min, x_lim_max, \
                  x_label, y_label, title, file_name=None, \
-                 labels_font_size=35, y_tick_labels_font_size=20, 
+                 title_font_size=40, labels_font_size=35, \
+                 y_tick_labels_font_size=20, \
                  bars_labels_space=0.005, fig_width_inches=25, \
                  fig_height_inches=40):
         """Makes a bar plot"""
@@ -78,7 +79,7 @@ class ResultsPlotter(abc.ABC):
         # Below, we compute the position of each bin
         bins = list(map(lambda y: y, range(1, len(y_labels)+1)))
     
-        plt.title(title, fontsize=40)
+        plt.title(title, fontsize=title_font_size)
     
         # We set the x and y limits of the chart
         plt.ylim([1-height, len(y_labels) + height])

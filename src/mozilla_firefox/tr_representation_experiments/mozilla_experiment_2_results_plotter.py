@@ -39,11 +39,12 @@ class MozillaExperiment2ResultsPlotter(Experiment2ResultsPlotter):
             {
                 "key": "not_combined_avg_accuracy",
                 "x_lim_min": 0.11,
-                "x_lim_max": 0.173,
+                "x_lim_max": 0.176,
                 "x_label": "Accuracy",
                 "y_label": "Configurations",
-                "labels_font_size": 35, 
-                "y_tick_labels_font_size": 30,
+                "title_font_size": 45,
+                "labels_font_size": 40, 
+                "y_tick_labels_font_size": 35,
                 "title": "Accuracy of the different feature " + \
                 "extraction techniques (without combination of " + \
                 "features)",
@@ -54,12 +55,13 @@ class MozillaExperiment2ResultsPlotter(Experiment2ResultsPlotter):
             },
             {
                 "key": "combined_avg_accuracy",
-                "x_lim_min": 0.123,
-                "x_lim_max": 0.1725,
+                "x_lim_min": 0.124,
+                "x_lim_max": 0.174,
                 "x_label": "Accuracy",
                 "y_label": "Configurations",
-                "labels_font_size": 35, 
-                "y_tick_labels_font_size": 30,
+                "title_font_size": 45,
+                "labels_font_size": 40, 
+                "y_tick_labels_font_size": 35,
                 "title": "Accuracy of the different feature " + \
                 "extraction techniques (with combination of " + \
                 "features)",
@@ -71,11 +73,12 @@ class MozillaExperiment2ResultsPlotter(Experiment2ResultsPlotter):
             {
                 "key": "not_combined_avg_mrr",
                 "x_lim_min": 0.28,
-                "x_lim_max": 0.3535,
+                "x_lim_max": 0.355,
                 "x_label": "MRR",
                 "y_label": "Configurations",
-                "labels_font_size": 35, 
-                "y_tick_labels_font_size": 30,
+                "title_font_size": 45,
+                "labels_font_size": 40, 
+                "y_tick_labels_font_size": 35,
                 "title": "MRR of the different feature " + \
                 "extraction techniques (without combination of " + \
                 "features)",
@@ -87,11 +90,12 @@ class MozillaExperiment2ResultsPlotter(Experiment2ResultsPlotter):
             {
                 "key": "combined_avg_mrr",
                 "x_lim_min": 0.29,
-                "x_lim_max": 0.3530,
+                "x_lim_max": 0.354,
                 "x_label": "MRR",
                 "y_label": "Configurations",
-                "labels_font_size": 35, 
-                "y_tick_labels_font_size": 30,
+                "title_font_size": 45,
+                "labels_font_size": 40, 
+                "y_tick_labels_font_size": 35,
                 "title": "MRR of the different feature " + \
                 "extraction techniques (with combination of " + \
                 "features)",

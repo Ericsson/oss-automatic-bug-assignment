@@ -130,6 +130,7 @@ class Experiment2ResultsPlotter(ResultsPlotter):
             x_lim_max = plot_parameter["x_lim_max"]
             x_label = plot_parameter["x_label"]
             y_label = plot_parameter["y_label"]
+            title_font_size = plot_parameter["title_font_size"]
             labels_font_size = plot_parameter["labels_font_size"]
             y_tick_labels_font_size = \
             plot_parameter["y_tick_labels_font_size"]
@@ -138,5 +139,5 @@ class Experiment2ResultsPlotter(ResultsPlotter):
             bars_labels_space = plot_parameter["bars_labels_space"]
             self.plot_bar(y_labels, x_values, x_lim_min, x_lim_max, \
                           x_label, y_label, title, file_name, \
-                          labels_font_size, y_tick_labels_font_size, \
-                          bars_labels_space)
+                          title_font_size, labels_font_size, \
+                          y_tick_labels_font_size, bars_labels_space)

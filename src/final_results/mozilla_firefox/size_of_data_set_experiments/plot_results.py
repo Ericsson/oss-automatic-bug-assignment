@@ -50,7 +50,7 @@ def plot_learning_curve(title, computed_score, train_sizes, \
     plt.ylim(ymin=0.0, ymax=1.0)
     plt.xlabel("Training examples", size=28)
     plt.ylabel(computed_score.capitalize(), size=28)
-    plt.grid()
+    plt.grid(linewidth=3)
 
     plt.fill_between(train_sizes, train_scores_mean - \
         train_scores_std, train_scores_mean + train_scores_std, \

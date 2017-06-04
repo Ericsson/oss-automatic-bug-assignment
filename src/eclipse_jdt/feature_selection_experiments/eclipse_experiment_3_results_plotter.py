@@ -39,31 +39,33 @@ class EclipseExperiment3ResultsPlotter(Experiment3ResultsPlotter):
             {
                 "key": "avg_accuracy",
                 "x_lim_min": 0.266,
-                "x_lim_max": 0.2755,
+                "x_lim_max": 0.2757,
                 "x_label": "Accuracy",
                 "y_label": "Configurations",
-                "labels_font_size": 35, 
-                "y_tick_labels_font_size": 30,
+                "title_font_size": 60,
+                "labels_font_size": 50, 
+                "y_tick_labels_font_size": 40,
                 "title": "Accuracy of the different feature " + \
                 "selection techniques",
                 "file_name" : "experiment_31.png",
                 "debug_title": "Average Accuracy",
-                "bars_labels_space": 0.0002
+                "bars_labels_space": 0.0001
         
             },
             {
                 "key": "avg_mrr",
                 "x_lim_min": 0.4155,
-                "x_lim_max": 0.4248,
+                "x_lim_max": 0.4252,
                 "x_label": "MRR",
                 "y_label": "Configurations",
-                "labels_font_size": 35, 
-                "y_tick_labels_font_size": 30,
+                "title_font_size": 60,
+                "labels_font_size": 50, 
+                "y_tick_labels_font_size": 40,
                 "title": "MRR of the different feature selection " + \
                 "techniques",
                 "file_name" : "experiment_32.png",
                 "debug_title": "Average MRR",
-                "bars_labels_space": 0.0002
+                "bars_labels_space": 0.0001
             }
         ]
         super().plot_results()

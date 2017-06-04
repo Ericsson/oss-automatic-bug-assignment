@@ -39,12 +39,13 @@ class EclipseExperiment4ResultsPlotter(Experiment4ResultsPlotter):
             {
                 "key": "normal_avg",
                 "x_lim_min": [0.185, 0.3375],
-                "x_lim_max": [0.295, 0.465],
+                "x_lim_max": [0.295, 0.467],
                 "x_label": ["Accuracy", "MRR"],
                 "y_label": ["Configurations", "Configurations"],
-                "labels_font_size": [35, 35], 
-                "y_tick_labels_font_size": [35, 35],
-                "bars_labels_space": [0.0005, 0.0005], 
+                "titles_font_size": [60, 60],
+                "labels_font_size": [51, 51], 
+                "y_tick_labels_font_size": [42, 42],
+                "bars_labels_space": [0.001, 0.001], 
                 "title": ["Accuracy of the different " + \
                           "configurations (grid search)",
                           "MRR of the different configurations " + \
@@ -57,12 +58,13 @@ class EclipseExperiment4ResultsPlotter(Experiment4ResultsPlotter):
             {
                 "key": "random_avg",
                 "x_lim_min": [0.1825, 0.335],
-                "x_lim_max": [0.2925, 0.4625],
+                "x_lim_max": [0.293, 0.4635],
                 "x_label": ["Accuracy", "MRR"],
                 "y_label": ["Configurations", "Configurations"],
-                "labels_font_size": [35, 35], 
-                "y_tick_labels_font_size": [35, 35],
-                "bars_labels_space": [0.0005, 0.0005],
+                "titles_font_size": [60, 60],
+                "labels_font_size": [51, 51], 
+                "y_tick_labels_font_size": [42, 42],
+                "bars_labels_space": [0.001, 0.001],
                 "title": ["Accuracy of the different " + \
                           "configurations (random search)",
                           "MRR of the different configurations " + \

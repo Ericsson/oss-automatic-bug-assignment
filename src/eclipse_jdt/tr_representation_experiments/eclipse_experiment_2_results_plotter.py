@@ -39,27 +39,29 @@ class EclipseExperiment2ResultsPlotter(Experiment2ResultsPlotter):
             {
                 "key": "not_combined_avg_accuracy",
                 "x_lim_min": 0.08,
-                "x_lim_max": 0.291,
+                "x_lim_max": 0.299,
                 "x_label": "Accuracy",
                 "y_label": "Configurations",
-                "labels_font_size": 35, 
-                "y_tick_labels_font_size": 30,
+                "title_font_size": 45,
+                "labels_font_size": 40, 
+                "y_tick_labels_font_size": 35,
                 "title": "Accuracy of the different feature " + \
                 "extraction techniques (without combination of " + \
                 "features)",
                 "file_name" : "experiment_21.png",
                 "debug_title": "Average Accuracy (Without Combination)",
                 "combined": False,
-                "bars_labels_space": 0.0005
+                "bars_labels_space": 0.0015
             },
             {
                 "key": "combined_avg_accuracy",
                 "x_lim_min": 0.20,
-                "x_lim_max": 0.2875,
+                "x_lim_max": 0.289,
                 "x_label": "Accuracy",
                 "y_label": "Configurations",
-                "labels_font_size": 35, 
-                "y_tick_labels_font_size": 30,
+                "title_font_size": 45,
+                "labels_font_size": 40, 
+                "y_tick_labels_font_size": 35,
                 "title": "Accuracy of the different feature " + \
                 "extraction techniques (with combination of " + \
                 "features)",
@@ -71,27 +73,29 @@ class EclipseExperiment2ResultsPlotter(Experiment2ResultsPlotter):
             {
                 "key": "not_combined_avg_mrr",
                 "x_lim_min": 0.23,
-                "x_lim_max": 0.442,
+                "x_lim_max": 0.45,
                 "x_label": "MRR",
                 "y_label": "Configurations",
-                "labels_font_size": 35, 
-                "y_tick_labels_font_size": 30,
+                "title_font_size": 45,
+                "labels_font_size": 40, 
+                "y_tick_labels_font_size": 35,
                 "title": "MRR of the different feature " + \
                 "extraction techniques (without combination of " + \
                 "features)",
                 "file_name" : "experiment_23.png",
                 "debug_title": "Average MRR (Without Combination)",
                 "combined": False,
-                "bars_labels_space": 0.0005
+                "bars_labels_space": 0.0015
             },
             {
                 "key": "combined_avg_mrr",
                 "x_lim_min": 0.3625,
-                "x_lim_max": 0.4375,
+                "x_lim_max": 0.439,
                 "x_label": "MRR",
                 "y_label": "Configurations",
-                "labels_font_size": 35, 
-                "y_tick_labels_font_size": 30,
+                "title_font_size": 45,
+                "labels_font_size": 40, 
+                "y_tick_labels_font_size": 35,
                 "title": "MRR of the different feature " + \
                 "extraction techniques (with combination of " + \
                 "features)",

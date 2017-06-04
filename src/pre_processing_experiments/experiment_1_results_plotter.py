@@ -70,6 +70,8 @@ class Experiment1ResultsPlotter(ResultsPlotter):
     def plot_results(self):
         """This method plots the results in chart(s)"""
         super().plot_results()
+        fig_width_inches = 25
+        fig_height_inches = 72
         for plot_parameter in self.plot_parameters:
             list_of_metric_values = []
             for key, value in self \
@@ -111,16 +113,16 @@ class Experiment1ResultsPlotter(ResultsPlotter):
             x_lim_max = plot_parameter["x_lim_max"]
             x_label = plot_parameter["x_label"]
             y_label = plot_parameter["y_label"]
+            title_font_size = plot_parameter["title_font_size"]
             labels_font_size = plot_parameter["labels_font_size"]
             y_tick_labels_font_size = \
             plot_parameter["y_tick_labels_font_size"]
             title = plot_parameter["title"]
             file_name = plot_parameter["file_name"]
             bars_labels_space = plot_parameter["bars_labels_space"]
-            fig_width_inches = plot_parameter["fig_width_inches"]
-            fig_height_inches = plot_parameter["fig_height_inches"]
             self.plot_bar(y_labels, x_values, x_lim_min, x_lim_max, \
                           x_label, y_label, title, file_name, \
-                          labels_font_size, y_tick_labels_font_size, \
+                          title_font_size, labels_font_size, \
+                          y_tick_labels_font_size, \
                           bars_labels_space, fig_width_inches, \
                           fig_height_inches)
