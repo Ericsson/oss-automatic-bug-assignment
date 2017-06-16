@@ -31,13 +31,88 @@ class Experiment2ResultsPlotter(ResultsPlotter):
         "Boolean SVM": "BOOL",
         "TF SVM": "TF",
         "TF IDF SVM": "TF-IDF",
-        "GridSearch Boolean Truncated SVD SVM": "BOOL+SVD",
-        "GridSearch TF Truncated SVD SVM": "TF+SVD",
-        "GridSearch TF IDF Truncated SVD SVM": "TF-IDF+SVD",
+        "GridSearch Boolean Truncated SVD SVM": "BOOL+LSI",
+        "GridSearch TF Truncated SVD SVM": "TF+LSI",
+        "GridSearch TF IDF Truncated SVD SVM": "TF-IDF+LSI",
         "GridSearch Boolean NMF SVM": "BOOL+NMF",
         "GridSearch TF NMF SVM": "TF+NMF",
         "GridSearch TF IDF NMF SVM": "TF-IDF+NMF",
     }
+    
+    CONFS_1 = [
+        "BOOL",
+        "TF",
+        "TF-IDF",
+        "BOOL+LSI-10",
+        "BOOL+LSI-30",
+        "BOOL+LSI-50",
+        "BOOL+LSI-70",
+        "BOOL+LSI-90",
+        "TF+LSI-10",
+        "TF+LSI-30",
+        "TF+LSI-50",
+        "TF+LSI-70",
+        "TF+LSI-90",
+        "TF-IDF+LSI-10",
+        "TF-IDF+LSI-30",
+        "TF-IDF+LSI-50",
+        "TF-IDF+LSI-70",
+        "TF-IDF+LSI-90",
+        "BOOL+NMF-10",
+        "BOOL+NMF-30",
+        "BOOL+NMF-50",
+        "BOOL+NMF-70",
+        "BOOL+NMF-90",
+        "TF+NMF-10",
+        "TF+NMF-30",
+        "TF+NMF-50",
+        "TF+NMF-70",
+        "TF+NMF-90",
+        "TF-IDF+NMF-10",
+        "TF-IDF+NMF-30",
+        "TF-IDF+NMF-50",
+        "TF-IDF+NMF-70",
+        "TF-IDF+NMF-90"
+    ]
+    
+    CONFS_2 = [
+        "BOOL&TF",
+        "BOOL&TF-IDF",
+        "BOOL&BOOL+LSI",
+        "BOOL&TF+LSI",
+        "BOOL&TF-IDF+LSI",
+        "BOOL&BOOL+NMF",
+        "BOOL&TF+NMF",
+        "BOOL&TF-IDF+NMF",
+        "TF&TF-IDF",
+        "TF&BOOL+LSI",
+        "TF&TF+LSI",
+        "TF&TF-IDF+LSI",
+        "TF&BOOL+NMF",
+        "TF&TF+NMF",
+        "TF&TF-IDF+NMF",
+        "TF-IDF&BOOL+LSI",
+        "TF-IDF&TF+LSI",
+        "TF-IDF&TF-IDF+LSI",
+        "TF-IDF&BOOL+NMF",
+        "TF-IDF&TF+NMF",
+        "TF-IDF&TF-IDF+NMF",
+        "BOOL+LSI&TF+LSI",
+        "BOOL+LSI&TF-IDF+LSI",
+        "BOOL+LSI&BOOL+NMF",
+        "BOOL+LSI&TF+NMF",
+        "BOOL+LSI&TF-IDF+NMF",
+        "TF+LSI&TF-IDF+LSI",
+        "TF+LSI&BOOL+NMF",
+        "TF+LSI&TF+NMF",
+        "TF+LSI&TF-IDF+NMF",
+        "TF-IDF+LSI&BOOL+NMF",
+        "TF-IDF+LSI&TF+NMF",
+        "TF-IDF+LSI&TF-IDF+NMF",
+        "BOOL+NMF&TF+NMF",
+        "BOOL+NMF&TF-IDF+NMF",
+        "TF+NMF&TF-IDF+NMF"
+    ]
     
     @abc.abstractmethod
     def __init__(self, cleaned_results_file_name):
@@ -53,15 +128,22 @@ class Experiment2ResultsPlotter(ResultsPlotter):
         (without combination)
         """
         generated_list = []
+        conf = ""
         for key, value in dict_content.items():
             if isinstance(value, list):
                 i = 0
                 for accuracy in value:
-                    generated_list.append((cls.get_small_key(key) + \
-                        "-{}".format(10+i*20), accuracy))
+                    conf = cls.get_small_key(key) + \
+                    "-{}".format(10+i*20)
+                    conf += " #3.1." + "{:<2d}" \
+                    .format(cls.CONFS_1.index(conf) + 1)
+                    generated_list.append((conf, accuracy))
                     i += 1
             else:
-                generated_list.append((cls.get_small_key(key), value))        
+                conf = cls.get_small_key(key)
+                conf += " #3.1." + "{:<2d}" \
+                .format(cls.CONFS_1.index(conf) + 1)
+                generated_list.append((conf, value))        
         return generated_list
     
     @classmethod
@@ -76,9 +158,11 @@ class Experiment2ResultsPlotter(ResultsPlotter):
         generated_list = []
         for key, value in dict_content.items():
             key_split = key.split("_")
-            generated_list.append((cls.get_small_key(key_split[0]) + \
-                                   "&" + \
-                                   cls.get_small_key(key_split[1]), \
+            conf = cls.get_small_key(key_split[0]) + "&" + \
+            cls.get_small_key(key_split[1])
+            conf += " #3.2." + "{:<2d}" \
+            .format(cls.CONFS_2.index(conf) + 1)
+            generated_list.append((conf, \
                                    value))
         return generated_list
     

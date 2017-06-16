@@ -58,12 +58,25 @@ class Experiment1ResultsPlotter(ResultsPlotter):
         name_of_file_parts = name_of_file_without_extension.split("_")
         small_name = ""
         # print(name_of_file) # Debug
+        id = 1
+        param_number = 5
         for index, acronym in cls.ACRONYMS_MAPPING:
             # print(acronym) # Debug
-            # print(name_of_file_parts[index]) # Debug        
+            # print(name_of_file_parts[index]) # Debug
             if index > 1:
                 small_name += "|"
+            if param_number == 5 and name_of_file_parts[index] ==  "with":
+                id += 3 * 2**4
+            elif param_number == 4:
+                if name_of_file_parts[5] ==  "with":
+                    id += 2**4
+                elif name_of_file_parts[index] ==  "with":
+                    id += 2 * 2**4
+            elif param_number < 3 and name_of_file_parts[index] ==  "with":
+                id += 2 * 2**param_number
             small_name += acronym if name_of_file_parts[index] ==  "with" else "NOT({})".format(acronym)
+            param_number -= 1
+        small_name += " #1." + "{:<2d}".format(int(id))
         return small_name
     
     @abc.abstractmethod

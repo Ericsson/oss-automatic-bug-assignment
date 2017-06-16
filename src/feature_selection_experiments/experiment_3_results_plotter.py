@@ -34,6 +34,29 @@ class Experiment3ResultsPlotter(ResultsPlotter):
         "RFECV SVM": "RFE"
     }
 
+    CONFS = [
+        "CHI-2-10",
+        "CHI-2-30",
+        "CHI-2-50", 
+        "CHI-2-70",
+        "CHI-2-90",
+        "ANOVA-10",
+        "ANOVA-30",
+        "ANOVA-50", 
+        "ANOVA-70",
+        "ANOVA-90",
+        "MI-10",
+        "MI-30",
+        "MI-50", 
+        "MI-70",
+        "MI-90",
+        "RFE-10",
+        "RFE-30",
+        "RFE-50", 
+        "RFE-70",
+        "RFE-90"
+    ]
+
     @abc.abstractmethod
     def __init__(self, cleaned_results_file_name):
         """Constructor"""
@@ -63,19 +86,26 @@ class Experiment3ResultsPlotter(ResultsPlotter):
         :raises: KeyError        
         """
         generated_list = []
+        conf = ""
         for key, value in dict_content.items():
             if key == "GridSearch var_threshold Linear SVM":
                 continue
             if key == "RFECV SVM":
                 i = 0
                 for i in range(5):
-                    generated_list.append((cls.get_small_key(key) + \
-                        "-{}".format(10+i*20), value[2+i*2]))
+                    conf = cls.get_small_key(key) + \
+                    "-{}".format(10+i*20)
+                    conf += " #3." + "{:<2d}" \
+                    .format(cls.CONFS.index(conf) + 1)
+                    generated_list.append((conf, value[2+i*2]))
             else:
                 i = 0
                 for accuracy in value:
-                    generated_list.append((cls.get_small_key(key) + \
-                        "-{}".format(10+i*20), accuracy))
+                    conf = cls.get_small_key(key) + \
+                    "-{}".format(10+i*20)
+                    conf += " #3." + "{:<2d}" \
+                    .format(cls.CONFS.index(conf) + 1)
+                    generated_list.append((conf, accuracy))
                     i += 1
         return generated_list
     
