@@ -76,7 +76,10 @@ def main():
     current_dir = os.path.dirname(os.path.abspath( \
     inspect.getfile(inspect.currentframe())))
 
-    data_set_file = "./pre_processing_experiments/output_with_cleaning_without_stemming_without_lemmatizing_with_stop_words_removal_with_punctuation_removal_with_numbers_removal.json" # The path of the file which 
+    data_set_file = "./mozilla_firefox/pre_processing_experiments/output_without_cleaning_without_stemming_without_lemmatizing_without_stop_words_removal_without_punctuation_removal_without_numbers_removal.json" # The path of the file which 
+    # "./eclipse_jdt/pre_processing_experiments/output_without_cleaning_without_stemming_without_lemmatizing_without_stop_words_removal_without_punctuation_removal_without_numbers_removal.json"
+    # "./mozilla_firefox/pre_processing_experiments/output_without_cleaning_without_stemming_without_lemmatizing_without_stop_words_removal_without_punctuation_removal_without_numbers_removal.json"
+    
     # contains the pre-processed output
     # Below, the path of the file which contains a dictionary related 
     # to the mappings of the developers
@@ -92,8 +95,10 @@ def main():
 
     # First we load the data of the three aforementioned files
     json_data = load_data_set(data_set_file)
-    developers_dict_data = load_developers_mappings(developers_dict_file)
-    developers_list_data = load_distinct_developers_list(developers_list_file)
+    developers_dict_data = None
+#     developers_dict_data = load_developers_mappings(developers_dict_file)
+    developers_list_data = None
+#     developers_list_data = load_distinct_developers_list(developers_list_file)
 
 #     sm = SMOTE(random_state=42)
 

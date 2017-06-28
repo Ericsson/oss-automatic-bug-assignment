@@ -97,12 +97,12 @@ def main():
     data_file = os.path.join(current_dir, data_file)
 
     # The flags which are used to initialize the pre-processor
-    clean_brs = True
-    use_stemmer = True
+    clean_brs = False
+    use_stemmer = False
     use_lemmatizer = False
-    stop_words_removal = True
-    punctuation_removal = True
-    numbers_removal = True
+    stop_words_removal = False
+    punctuation_removal = False
+    numbers_removal = False
     
     # Below, we are giving a relevant name to the output file
     clean_brs_string = "" if clean_brs else "out" 
