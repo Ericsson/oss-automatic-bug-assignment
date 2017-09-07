@@ -1,0 +1,11 @@
+*.pyc
+*.log
+*.json
+*.csv
+*.png
+doc/build/
+!src/final_results/*/*/*
+!src/eclipse_jdt/scrap_eclipse_jdt/brs.json
+!src/eclipse_jdt/scrap_eclipse_jdt/sorted_brs.json
+!src/mozilla_firefox/scrap_mozilla_firefox/brs.json
+!src/mozilla_firefox/scrap_mozilla_firefox/sorted_brs.json

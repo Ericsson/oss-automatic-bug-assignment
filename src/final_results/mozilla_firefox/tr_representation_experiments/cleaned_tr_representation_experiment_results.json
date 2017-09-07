@@ -1,0 +1,172 @@
+{
+    "not_combined_avg_accuracy": {
+        "Boolean SVM": 0.13058017727639,
+        "TF SVM": 0.167767929089444,
+        "TF IDF SVM": 0.16353746978243353,
+        "GridSearch Boolean Truncated SVD SVM": [
+            0.11764705882352941,
+            0.11700241740531829,
+            0.11913779210314264,
+            0.12018533440773571,
+            0.12272360999194198
+        ],
+        "GridSearch TF Truncated SVD SVM": [
+            0.11651893634165995,
+            0.11885576148267527,
+            0.1251007252215955,
+            0.13037872683319904,
+            0.1315874294923449
+        ],
+        "GridSearch TF IDF Truncated SVD SVM": [
+            0.11853344077356971,
+            0.12574536663980662,
+            0.1365028203062047,
+            0.14033037872683324,
+            0.14701853344077356
+        ],
+        "GridSearch Boolean NMF SVM": [
+            0.11716357775987107,
+            0.11248992747784045,
+            0.1160354552780016,
+            0.11913779210314264,
+            0.11941982272361
+        ],
+        "GridSearch TF NMF SVM": [
+            0.12042707493956487,
+            0.12453666398066074,
+            0.12461724415793714,
+            0.12775987107171635,
+            0.1315874294923449
+        ],
+        "GridSearch TF IDF NMF SVM": [
+            0.12530217566478646,
+            0.12949234488315875,
+            0.133883964544722,
+            0.1360596293311845,
+            0.13738920225624499
+        ]
+    },
+    "not_combined_avg_mrr": {
+        "Boolean SVM": 0.2922978011582557,
+        "TF SVM": 0.34619053770694724,
+        "TF IDF SVM": 0.34152240257302435,
+        "GridSearch Boolean Truncated SVD SVM": [
+            0.28473841048138926,
+            0.28550856201386726,
+            0.2894810866216404,
+            0.29302985791674757,
+            0.29762524918536
+        ],
+        "GridSearch TF Truncated SVD SVM": [
+            0.2818819918740451,
+            0.28954091361426004,
+            0.29841896832607906,
+            0.3060244203089469,
+            0.30942632462726116
+        ],
+        "GridSearch TF IDF Truncated SVD SVM": [
+            0.29342637171003283,
+            0.30634036735843917,
+            0.31901808125157693,
+            0.3238049027520886,
+            0.3300756776975701
+        ],
+        "GridSearch Boolean NMF SVM": [
+            0.2840883090668999,
+            0.2834964451159935,
+            0.28743283774996237,
+            0.29191059041066203,
+            0.29381886185492956
+        ],
+        "GridSearch TF NMF SVM": [
+            0.2827904033505054,
+            0.2931686290524197,
+            0.2978269195812196,
+            0.302466169005952,
+            0.3079391284905379
+        ],
+        "GridSearch TF IDF NMF SVM": [
+            0.2927015488870889,
+            0.3024323670413732,
+            0.3099821057103901,
+            0.3166033681250421,
+            0.3184276738152858
+        ]
+    },
+    "combined_avg_accuracy": {
+        "Boolean SVM_TF SVM": 0.1311845286059629,
+        "Boolean SVM_TF IDF SVM": 0.13315874294923447,
+        "Boolean SVM_GridSearch Boolean Truncated SVD SVM": 0.13098307816277194,
+        "Boolean SVM_GridSearch TF Truncated SVD SVM": 0.1309427880741338,
+        "Boolean SVM_GridSearch TF IDF Truncated SVD SVM": 0.13134568896051574,
+        "Boolean SVM_GridSearch Boolean NMF SVM": 0.13045930701047545,
+        "Boolean SVM_GridSearch TF NMF SVM": 0.13045930701047542,
+        "Boolean SVM_GridSearch TF IDF NMF SVM": 0.13049959709911363,
+        "TF SVM_TF IDF SVM": 0.15757453666398064,
+        "TF SVM_GridSearch Boolean Truncated SVD SVM": 0.16329572925060437,
+        "TF SVM_GridSearch TF Truncated SVD SVM": 0.16579371474617247,
+        "TF SVM_GridSearch TF IDF Truncated SVD SVM": 0.16498791297340853,
+        "TF SVM_GridSearch Boolean NMF SVM": 0.16744560838033845,
+        "TF SVM_GridSearch TF NMF SVM": 0.167767929089444,
+        "TF SVM_GridSearch TF IDF NMF SVM": 0.16788879935535855,
+        "TF IDF SVM_GridSearch Boolean Truncated SVD SVM": 0.16325543916196616,
+        "TF IDF SVM_GridSearch TF Truncated SVD SVM": 0.16394037066881548,
+        "TF IDF SVM_GridSearch TF IDF Truncated SVD SVM": 0.1660757453666398,
+        "TF IDF SVM_GridSearch Boolean NMF SVM": 0.1644238517324738,
+        "TF IDF SVM_GridSearch TF NMF SVM": 0.16349717969379535,
+        "TF IDF SVM_GridSearch TF IDF NMF SVM": 0.16357775987107173,
+        "GridSearch Boolean Truncated SVD SVM_GridSearch TF Truncated SVD SVM": 0.12888799355358582,
+        "GridSearch Boolean Truncated SVD SVM_GridSearch TF IDF Truncated SVD SVM": 0.14105560032232073,
+        "GridSearch Boolean Truncated SVD SVM_GridSearch Boolean NMF SVM": 0.12570507655116842,
+        "GridSearch Boolean Truncated SVD SVM_GridSearch TF NMF SVM": 0.12965350523771152,
+        "GridSearch Boolean Truncated SVD SVM_GridSearch TF IDF NMF SVM": 0.1356567284448026,
+        "GridSearch TF Truncated SVD SVM_GridSearch TF IDF Truncated SVD SVM": 0.14697824335213538,
+        "GridSearch TF Truncated SVD SVM_GridSearch Boolean NMF SVM": 0.13287671232876713,
+        "GridSearch TF Truncated SVD SVM_GridSearch TF NMF SVM": 0.13424657534246578,
+        "GridSearch TF Truncated SVD SVM_GridSearch TF IDF NMF SVM": 0.13742949234488316,
+        "GridSearch TF IDF Truncated SVD SVM_GridSearch Boolean NMF SVM": 0.1467365028203062,
+        "GridSearch TF IDF Truncated SVD SVM_GridSearch TF NMF SVM": 0.1486301369863014,
+        "GridSearch TF IDF Truncated SVD SVM_GridSearch TF IDF NMF SVM": 0.14758259468170828,
+        "GridSearch Boolean NMF SVM_GridSearch TF NMF SVM": 0.12977437550362614,
+        "GridSearch Boolean NMF SVM_GridSearch TF IDF NMF SVM": 0.13670427074939567,
+        "GridSearch TF NMF SVM_GridSearch TF IDF NMF SVM": 0.13835616438356163
+    },
+    "combined_avg_mrr": {
+        "Boolean SVM_TF SVM": 0.2937647660328133,
+        "Boolean SVM_TF IDF SVM": 0.29552715073206565,
+        "Boolean SVM_GridSearch Boolean Truncated SVD SVM": 0.29264939472609963,
+        "Boolean SVM_GridSearch TF Truncated SVD SVM": 0.29257652292189634,
+        "Boolean SVM_GridSearch TF IDF Truncated SVD SVM": 0.2932659843584152,
+        "Boolean SVM_GridSearch Boolean NMF SVM": 0.2922250465134518,
+        "Boolean SVM_GridSearch TF NMF SVM": 0.2922803919594291,
+        "Boolean SVM_GridSearch TF IDF NMF SVM": 0.29227075620671494,
+        "TF SVM_TF IDF SVM": 0.33159400400532313,
+        "TF SVM_GridSearch Boolean Truncated SVD SVM": 0.3391851356691148,
+        "TF SVM_GridSearch TF Truncated SVD SVM": 0.34307154999206385,
+        "TF SVM_GridSearch TF IDF Truncated SVD SVM": 0.3435785818795304,
+        "TF SVM_GridSearch Boolean NMF SVM": 0.3446598010731868,
+        "TF SVM_GridSearch TF NMF SVM": 0.34611637911126814,
+        "TF SVM_GridSearch TF IDF NMF SVM": 0.34627696102567834,
+        "TF IDF SVM_GridSearch Boolean Truncated SVD SVM": 0.3380038058127097,
+        "TF IDF SVM_GridSearch TF Truncated SVD SVM": 0.3398386240708527,
+        "TF IDF SVM_GridSearch TF IDF Truncated SVD SVM": 0.3432032713594183,
+        "TF IDF SVM_GridSearch Boolean NMF SVM": 0.3412976099173426,
+        "TF IDF SVM_GridSearch TF NMF SVM": 0.3415259481194646,
+        "TF IDF SVM_GridSearch TF IDF NMF SVM": 0.34153167115861816,
+        "GridSearch Boolean Truncated SVD SVM_GridSearch TF Truncated SVD SVM": 0.3037378512942932,
+        "GridSearch Boolean Truncated SVD SVM_GridSearch TF IDF Truncated SVD SVM": 0.3201566770777335,
+        "GridSearch Boolean Truncated SVD SVM_GridSearch Boolean NMF SVM": 0.2997353502025654,
+        "GridSearch Boolean Truncated SVD SVM_GridSearch TF NMF SVM": 0.30510932177091,
+        "GridSearch Boolean Truncated SVD SVM_GridSearch TF IDF NMF SVM": 0.3126719263796109,
+        "GridSearch TF Truncated SVD SVM_GridSearch TF IDF Truncated SVD SVM": 0.32824268856409305,
+        "GridSearch TF Truncated SVD SVM_GridSearch Boolean NMF SVM": 0.30855043087272355,
+        "GridSearch TF Truncated SVD SVM_GridSearch TF NMF SVM": 0.31184523476571985,
+        "GridSearch TF Truncated SVD SVM_GridSearch TF IDF NMF SVM": 0.3167859480681526,
+        "GridSearch TF IDF Truncated SVD SVM_GridSearch Boolean NMF SVM": 0.3281908197743163,
+        "GridSearch TF IDF Truncated SVD SVM_GridSearch TF NMF SVM": 0.33189480861451864,
+        "GridSearch TF IDF Truncated SVD SVM_GridSearch TF IDF NMF SVM": 0.33141937070967925,
+        "GridSearch Boolean NMF SVM_GridSearch TF NMF SVM": 0.3067369920714692,
+        "GridSearch Boolean NMF SVM_GridSearch TF IDF NMF SVM": 0.31687801687354467,
+        "GridSearch TF NMF SVM_GridSearch TF IDF NMF SVM": 0.3199966722847189
+    }
+}
