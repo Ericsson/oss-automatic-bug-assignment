@@ -231,6 +231,33 @@ the code in the *oss-automatic-bug-assignment* repository:
 
 25. Run it and enjoy! Normally, you should not get any error messages.
 
+## Dependencies of the project
+
+The source code has been written Python 3.6. Below, there are the
+dependencies of the project:
+
+* matplotlib
+
+* nltk
+
+* numpy
+
+* pandas
+
+* scikit-learn==0.18.1
+
+* scipy
+
+* scrapy
+
+* seaborn
+
+* sphinx
+
+* wordcloud
+
+* selenium
+
 ## Organization
 
 Below, the organization of the repository is described:
