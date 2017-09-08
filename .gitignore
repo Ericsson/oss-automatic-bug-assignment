@@ -4,6 +4,7 @@
 *.csv
 *.png
 doc/build/
+!read_me_images/*
 !src/final_results/*/*/*
 !src/eclipse_jdt/scrap_eclipse_jdt/brs.json
 !src/eclipse_jdt/scrap_eclipse_jdt/sorted_brs.json
