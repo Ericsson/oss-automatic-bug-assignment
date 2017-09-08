@@ -214,7 +214,7 @@ the code in the *oss-automatic-bug-assignment* repository:
 
     ![Update preferences](./read_me_images/update_preferences.png)
 
-19. Don’t forget to click on the *Apply* and *OK* buttons
+19. Don't forget to click on the *Apply* and *OK* buttons
 
 20. Move to your local copy of the *oss-automatic-bug-assignment*
     repository (with your console)
@@ -257,6 +257,136 @@ dependencies of the project:
 * wordcloud
 
 * selenium
+
+## (Re-)generate the documentation of the *oss-automatic-bug-assignment* repository
+
+The section describes how to generate or re-generate the *oss-automatic-bug-assignment* repository.
+
+The files (*doc/source/\*.rst*, *doc/Makefile*, *doc/make.bat* and
+*doc/source/conf.py*) needed to generate the documentation are indexed
+by Git and have been pushed to the remote repository.
+
+If one modifies the code base, the above-mentioned files will have to
+be re-generated. To do that, one will have to follow the instructions
+below:
+
+1. Move to your local copy of the *oss-automatic-bug-assignment*
+   repository (with your console)
+
+2. Type the following command line to delete the *doc* folder and all
+   its files recursively (be careful when you type it):
+
+   ```console
+   rm -rf doc/
+   ```
+
+3. Then, verify if you need to update the content of the
+   *setup_files_for_doc.bash* file (more precisely, the content
+   related to the step iv)). This Bash script is used to generate the
+   files needed to generate the documentation. More precisely it does
+   the following things:
+
+    1. First, it will launch the
+       [sphinx-quickstart](http://www.sphinx-doc.org/en/stable/invocation.html)
+       script. You will have to type the following things during the
+       execution of the script:
+
+        1. doc
+        2. y
+        3. _
+        4. OSS Automatic Bug Assignment
+        5. Daniel Artchounin, Ola Leifler and Daniel Nilsson
+        6. 1.0
+        7. 1.0
+        8. en
+        9. .rst
+        10. index
+        11. y
+        12. y
+        13. y
+        14. y
+        15. y
+        16. y
+        17. y
+        18. y
+        19. y
+        20. y
+        21. y
+        22. y
+        23. y
+
+    2. The script will then print *Please modify the conf.py file
+       before continuing*. You will have to modify the
+       *doc/source/conf.py* file and have to replace the following
+       lines inside of it:
+
+       ```python
+       # import os
+       # import sys
+       # sys.path.insert(0, os.path.abspath('.'))
+       ```
+
+       by
+
+       ```python
+       import os
+       import sys
+       sys.path.insert(0, os.path.abspath('../../src'))
+       ```
+
+    3. You will have to press a key to continue the execution of the
+       script
+
+    4. Next, the script really generates the files needed to generate
+       the documentation using the *sphinx-apidoc* tool. Then, this
+       script modifies 4 RST files (to improve the quality of the
+       documentation):
+
+        * *doc/source/index.rst*: the master document used to generate
+          the documentation. It contains the main [TOC
+          tree](http://www.sphinx-doc.org/en/stable/markup/toctree.html).
+          This TOC tree mainly includes the *doc/source/modules.rst*
+          document;
+
+        * *doc/source/modules.rst*: the document which contains a
+          sub-TOC tree which includes the documents related to each
+          package of the *oss-automatic-bug-assignment/src* folder;
+
+        * */doc/source/eclipse_jdt.rst*: the document which is used to
+          generate the documentation of the
+          *oss-automatic-bug-assignment/src/eclipse_jdt* folder
+
+        * */doc/source/mozilla_firefox.rst*: the document which is
+          used to generate the documentation of the
+          *oss-automatic-bug-assignment/src/mozilla_firefox* folder
+
+        * *doc/source/scikit_learn.rst*: the document which is used to
+          generate the documentation of the
+          *oss-automatic-bug-assignment/src/scikit_learn* folder
+
+       Before executing the Bash script, you will have to update its
+       content based on the modifications you have made (if you have
+       removed a Python module mentioned in the script, if you have
+       renamed a Python module mentioned in the script or added a
+       Python module which should be mentioned in the script).
+
+    5. Then, it will ask you whether or not it should generate the
+       HTML documentation. You will just have to type *y*. The HTML
+       documentation will be in the *doc/build/html* folder
+
+If one wants to only re-generate the HTML documentation without
+modifying the files needed to generate it (*doc/source/*.rst*,
+*doc/Makefile*, *doc/make.bat* and *doc/source/conf.py*), one will
+have to follow the instructions below:
+
+1. Move to the *edanart/doc* folder (with the terminal)
+
+2. Then, type the following command line to generate the HTML
+   documentation:
+
+   ```console
+   make html
+   ```
 
 ## Organization
 
