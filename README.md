@@ -58,7 +58,7 @@ Below, there are the instructions to follow in order to install Python
    installed Python 3.6 in a virtual environment. If not, you should
    go back to one of the previous steps.
 
-## Install packages in your Python 3.6 virtual environment
+## Installation of the required packages in your Python 3.6 virtual environment
 
 Below, there are the instructions to follow in order to install
 packages in your Python 3.6 virtual environment:
