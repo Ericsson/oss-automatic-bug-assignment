@@ -388,6 +388,461 @@ have to follow the instructions below:
    make html
    ```
 
+## Description of the different Python packages and Python modules of the *oss-automatic-bug-assignment* repository
+
+The *oss-automatic-bug-assignment* repository contains the following
+Python packages and Python modules:
+
+* *.project*: a project description file used by Eclipse;
+
+* *.pydevproject*: a PyDev project must have this file. It is used to
+  define which interpreter to use for the project, the location of the
+  project's Python source files, etc.;
+
+* *.settings*: this folder contains some Eclipse project specific
+  settings;
+
+* *README.md*: the README file of the *oss-automatic-bug-assignment*
+  repository;
+
+* *.gitignore*: the file used by Git to know which files to ignore;
+
+* *doc/*: this folder contains all the files of the project related to
+  the documentation ;
+
+    * *Makefile*: the makefile which might be used to generate the
+      html documentation;
+
+    * *make.bat*: the batch file that should be used on Windows;
+
+    * *source/*
+
+        * *\*.rst*: the RST files used to generate the documentation
+          of the different packages of the project;
+
+        * *conf.py*: it is "called the 'build configuration file' and
+          contains all configuration needed to customize Sphinx input
+          and output behavior" ([Sphinx
+          documentation](http://www.sphinx-doc.org/en/stable/config.html));
+
+* *setup_files_for_doc.bash*: this Bash script is used to generate the
+  files needed to generate the documentation (cf. step 3. of the
+  Section *(Re-)generate the documentation of the
+  **oss-automatic-bug-assignment** repository*);
+
+* *src/*: this folder contains the source code of the
+  *oss-automatic-bug-assignment* repository
+
+    * *eclipse_jdt/*:
+
+        * *experiment_3/*:
+
+            * *eclipse_exp_3_launcher.py*: this module contains a
+              class used to conduct the third experiment on the bug
+              reports of Eclipse JDT. The experiment consists mainly
+              of comparing several feature selection techniques and
+              selecting the best one;
+
+            * *eclipse_exp_3_results_plotter.py*: this module contains
+              a class used to plot the results related to the third
+              experiment conducted on the bug reports of Eclipse JDT.
+              The experiment consists mainly of comparing several
+              feature selection techniques and selecting the best one;
+
+        * *experiment_1/*:
+
+            * *eclipse_data_pre_processor.py*: this module contains a
+              class used to apply different combinations of
+              pre-processing techniques on the bug reports of Eclipse
+              JDT;
+
+            * *eclipse_exp_1_launcher.py*: this module contains a
+              class used to conduct the first experiment on the bug
+              reports of Eclipse JDT. The experiment consists mainly
+              of comparing several combinations of pre-processing
+              techniques and selecting the best one;
+
+            * *eclipse_exp_1_results_plotter.py*: this module contains
+              a class used to plot the results related to the first
+              experiment conducted on the bug reports of Eclipse JDT.
+              The experiment consists mainly of comparing several
+              combinations of pre-processing techniques and selecting
+              the best one;
+
+        * *preliminary_experiment/*:
+
+            * *eclipse_sub_exp_1_of_preliminary_exp_launcher.py*: this
+              module contains a class used to conduct the first sub
+              experiment of the preliminary experiment on the bug
+              reports of Eclipse JDT. The experiment consists mainly
+              of trying to find the optimal number of bug reports that
+              should be used to train a classifier. In the context of
+              the first sub experiment, all the folds, except the
+              oldest one, are used to evaluate the performance of the
+              classifier (cf. Master's Thesis);
+
+            * *eclipse_sub_exp_2_of_preliminary_exp_launcher.py*: this
+              module contains a class used to conduct the second sub
+              experiment of the preliminary experiment on the bug
+              reports of Eclipse JDT. The experiment consists mainly
+              of trying to find the optimal number of bug reports that
+              should be used to train a classifier. In the context of
+              the second sub experiment, only the latest fold is used
+              to evaluate the performance of the classifier (cf.
+              Master's Thesis);
+
+            * *eclipse_sub_exps_of_preliminary_exp_launcher.py*: this
+              module contains a class used to conduct both sub
+              experiments of the preliminary experiment on the bug
+              reports of Eclipse JDT. The experiment consists mainly
+              of trying to find the optimal number of bug reports that
+              should be used to train a classifier;
+
+        * *experiment_2/*:
+
+            * *eclipse_exp_2_launcher.py*: this module contains a
+              class used to conduct the second experiment on the bug
+              reports of Eclipse JDT. The experiment consists mainly
+              of comparing several feature extraction techniques and
+              selecting the best one;
+
+            * *eclipse_exp_2_results_plotter.py*: this module contains
+              a class used to plot the results related to the second
+              experiment conducted on the bug reports of Eclipse JDT.
+              The experiment consists mainly of comparing several
+              feature extraction techniques and selecting the best
+              one;
+
+        * *experiment_4/*:
+
+            * *eclipse_exp_4_launcher.py*: this module contains a
+              class used to conduct the last experiment on the bug
+              reports of Eclipse JDT. The experiment consists mainly
+              of tuning several classifiers and selecting the best
+              performing one;
+
+            * *eclipse_exp_4_results_plotter.py*: this module contains
+              a class used to plot the results related to the last
+              experiment conducted on the bug reports of Eclipse JDT.
+              The experiment consists mainly of tuning several
+              classifiers and selecting the best performing one;
+
+        * *scrap_eclipse_jdt/*: this folder contains some bug reports
+          of Eclipse JDT and the Python code used to scrap them
+
+            * *scrap_eclipse_jdt/*: this folder contains the Python
+              code used to scrap some bug reports of Eclipse JDT
+
+                * *settings.py*: this module contains the Scrapy
+                  settings for the *scrap_eclipse_jdt* project;
+
+                * *spiders/*: this folder contains the Scrapy spider
+                  used to scrap some bug reports of Eclipse JDT
+
+                    * *eclipse_jdt_spider.py*: this module contains a
+                      class (a Scrapy Spider) used to define how
+                      Bugzilla should be scraped;
+
+            * *brs.json*: the Eclipse JDT data set used in this thesis
+              (the bug reports have not been sorted by their ids);
+
+            * *eclipse_data_set_sorter.py*: this module is used to
+              sort the bug reports of Eclipse JDT (the bug reports in
+              *brs.json*) by their ids;
+
+            * sorted_brs.json: the Eclipse JDT data set used in this
+              thesis (the bug reports have been sorted by their ids);
+
+        * *final_results/*: this folder contains all the results
+          related to the experiments conducted on the bug reports of
+          Eclipse JDT (the ones in the thesis report);
+
+        * *eclipse_exps_launcher.py*: this module contains a class
+          used to launch sequentially all the experiments on the bug
+          reports of Eclipse JDT;
+
+    * *experiment_3/*:
+
+        * *exp_3_launcher.py*: this module contains an abstract class
+          used to conduct the third experiment on any of the data sets
+          of the thesis. The experiment consists mainly of comparing
+          several feature selection techniques and selecting the best
+          one;
+
+        * *exp_3_results_plotter.py*: this module contains an abstract
+          class used to plot the results related to the third
+          experiment conducted on any of the data sets of the thesis.
+          The experiment consists mainly of comparing several feature
+          selection techniques and selecting the best one;
+
+    * *experiment_1/*:
+
+        * *data_pre_processor.py*: this module contains an abstract
+          class used to apply different combinations of pre-processing
+          techniques on any of the data sets used in the thesis;
+
+        * *exp_1_launcher.py*: this module contains an abstract class
+          used to conduct the first experiment on any of the data sets
+          of the thesis. The experiment consists mainly of comparing
+          several combinations of pre-processing techniques and
+          selecting the best one;
+
+        * *exp_1_results_plotter.py*: this module contains an abstract
+          class used to plot the results related to the first
+          experiment conducted on any of the data sets of the thesis.
+          The experiment consists mainly of comparing several
+          combinations of pre-processing techniques and selecting the
+          best one;
+
+    * *mozilla_firefox/*:
+
+        * *experiment_3/*:
+
+            * *mozilla_exp_3_launcher.py*: this module contains a
+              class used to conduct the third experiment on the bug
+              reports of Mozilla Firefox. The experiment consists
+              mainly of comparing several feature selection techniques
+              and selecting the best one;
+
+            * *mozilla_exp_3_results_plotter.py*: this module contains
+              a class used to plot the results related to the third
+              experiment conducted on the bug reports of Mozilla
+              Firefox. The experiment consists mainly of comparing
+              several feature selection techniques and selecting the
+              best one;
+
+        * *experiment_1/*:
+
+            * *mozilla_data_pre_processor.py*: this module contains a
+              class used to apply different combinations of
+              pre-processing techniques on the bug reports of Mozilla
+              Firefox;
+
+            * *mozilla_exp_1_launcher.py*: this module contains a
+              class used to conduct the first experiment on the bug
+              reports of Mozilla Firefox. The experiment consists
+              mainly of comparing several combinations of
+              pre-processing techniques and selecting the best one;
+
+            * *mozilla_exp_1_results_plotter.py*: this module contains
+              a class used to plot the results related to the first
+              experiment conducted on the bug reports of Mozilla
+              Firefox. The experiment consists mainly of comparing
+              several combinations of pre-processing techniques and
+              selecting the best one;
+
+        * *preliminary_experiment/*:
+
+            * *mozilla_sub_exp_1_of_preliminary_exp_launcher.py*: this
+              module contains a class used to conduct the first sub
+              experiment of the preliminary experiment on the bug
+              reports of Mozilla Firefox. The experiment consists
+              mainly of trying to find the optimal number of bug
+              reports that should be used to train a classifier. In
+              the context of the first sub experiment, all the folds,
+              except the oldest one, are used to evaluate the
+              performance of the classifier (cf. Master's Thesis);
+
+            * *mozilla_sub_exp_2_of_preliminary_exp_launcher.py*: this
+              module contains a class used to conduct the second sub
+              experiment of the preliminary experiment on the bug
+              reports of Mozilla Firefox. The experiment consists
+              mainly of trying to find the optimal number of bug
+              reports that should be used to train a classifier. In
+              the context of the second sub experiment, only the
+              latest fold is used to evaluate the performance of the
+              classifier (cf. Master's Thesis);
+
+            * *mozilla_sub_exps_of_preliminary_exp_launcher.py*: this
+              module contains a class used to conduct both sub
+              experiments of the preliminary experiment on the bug
+              reports of Mozilla Firefox. The experiment consists
+              mainly of trying to find the optimal number of bug
+              reports that should be used to train a classifier;
+
+        * *experiment_2/*:
+
+            * *mozilla_exp_2_launcher.py*: this module contains a
+              class used to conduct the second experiment on the bug
+              reports of Mozilla Firefox. The experiment consists
+              mainly of comparing several feature extraction
+              techniques and selecting the best one.
+
+            * *mozilla_exp_2_results_plotter.py*: this module contains
+              a class used to plot the results related to the second
+              experiment conducted on the bug reports of Mozilla
+              Firefox. The experiment consists mainly of comparing
+              several feature extraction techniques and selecting the
+              best one.
+
+        * *experiment_4/*:
+
+            * *mozilla_exp_4_launcher.py*: this module contains a
+              class used to conduct the last experiment on the bug
+              reports of Mozilla Firefox. The experiment consists
+              mainly of tuning several classifiers and selecting the
+              best performing one;
+
+            * *mozilla_exp_4_results_plotter.py*: this module contains
+              a class used to plot the results related to the last
+              experiment conducted on the bug reports of Mozilla
+              Firefox. The experiment consists mainly of tuning
+              several classifiers and selecting the best performing
+              one;
+
+        * *scrap_mozilla_firefox/*: this folder contains some bug
+          reports of Mozilla Firefox and the Python code used to scrap
+          them
+
+            * *scrap_mozilla_firefox/*: this folder contains the
+              Python code used to scrap some bug reports of Mozilla
+              Firefox
+
+                * *settings.py*: this module contains the Scrapy
+                  settings for the *scrap_mozilla_firefox* project;
+
+                * *spiders/*: this folder contains the Scrapy spider
+                  used to scrap some bug reports of Mozilla Firefox
+
+                    * *mozilla_firefox_spider.py*: this module
+                      contains a class (a Scrapy Spider) used to
+                      define how Bugzilla should be scraped;
+
+            * *brs.json*: the Mozilla Firefox data set used in this
+              thesis (the bug reports have not been sorted by their
+              ids);
+
+            * *mozilla_data_set_sorter.py*: this module is used to
+              sort the bug reports of Mozilla Firefox (the bug reports
+              in *brs.json*) by their ids;
+
+            * sorted_brs.json: the Mozilla Firefox data set used in
+              this thesis (the bug reports have been sorted by their
+              ids);
+
+        * *final_results/*: this folder contains all the results
+          related to the experiments conducted on the bug reports of
+          Mozilla Firefox (the ones in the thesis report);
+
+        * *mozilla_exps_launcher.py*: this module contains a class
+          used to launch sequentially all the experiments on the bug
+          reports of Mozilla Firefox;
+
+    * *scikit_learn/*:
+
+        * *_search.py*: this module has been downloaded (from the
+          [GitHub repository of
+          scikit-learn](https://github.com/scikit-learn/scikit-learn))
+          to be used in the fourth experiment of the thesis;
+
+        * *_validation.py*: this module has been downloaded (from the
+          [GitHub repository of
+          scikit-learn](https://github.com/scikit-learn/scikit-learn))
+          to be used in the fourth experiment of the thesis;
+
+        * *accuracy_mrr_scoring_object.py*: this module contains a
+          scorer callable function used to compute the values of both
+          the accuracy and MRR metrics. The function is mainly used in
+          the fourth experiment of the thesis;
+
+        * *rfe.py*: this module has been downloaded (from the [GitHub
+          repository of
+          scikit-learn](https://github.com/scikit-learn/scikit-learn))
+          to be used in the fourth experiment of the thesis.
+
+    * *sort/*:
+
+        * this module contains a class used to sort any of the data
+          sets used in this thesis (the data should have been scrapped
+          via the Scrapy library and should be in a JSON file);
+
+    * *preliminary_experiment/*:
+
+        * *sub_exp_1_of_preliminary_exp_launcher.py*: this module
+          contains an abstract class used to conduct the first sub
+          experiment of the preliminary experiment on any of the data
+          sets of the thesis. The experiment consists mainly of trying
+          to find the optimal number of bug reports that should be
+          used to train a classifier. In the context of the first sub
+          experiment, all the folds, except the oldest one, are used
+          to evaluate the performance of the classifier (cf. Master's
+          Thesis).
+
+        * *sub_exp_2_of_preliminary_exp_launcher.py*: this module
+          contains an abstract class used to conduct the second sub
+          experiment of the preliminary experiment on any of the data
+          sets of the thesis. The experiment consists mainly of trying
+          to find the optimal number of bug reports that should be
+          used to train a classifier. In the context of the second sub
+          experiment, only the latest fold is used to evaluate the
+          performance of the classifier (cf. Master's Thesis);
+
+        * *sub_exp_of_preliminary_exp_launcher.py*: this module
+          contains an abstract class used to conduct one of the two
+          sub experiments of the preliminary experiment on any of the
+          data sets of the thesis. The experiment consists mainly of
+          trying to find the optimal number of bug reports that should
+          be used to train a classifier.
+
+        * *sub_exps_of_preliminary_exp_launcher.py*: this module
+          contains an abstract class used to conduct both sub
+          experiments of the preliminary experiment on any of the data
+          sets of the thesis. The experiment consists mainly of trying
+          to find the optimal number of bug reports that should be
+          used to train a classifier;
+
+    * *experiment_2/*:
+
+        * *exp_2_launcher.py*: this module contains an abstract class
+          used to conduct the second experiment on any of the data
+          sets of the thesis. The experiment consists mainly of
+          comparing several feature extraction techniques and
+          selecting the best one;
+
+        * *exp_2_results_plotter.py*: this module contains an abstract
+          class used to plot the results related to the second
+          experiment conducted on any of the data sets of the thesis.
+          The experiment consists mainly of comparing several feature
+          extraction techniques and selecting the best one;
+
+    * *experiment_4/*:
+
+        * *exp_4_launcher.py*: this module contains an abstract class
+          used to conduct the last experiment on any of the data sets
+          of the thesis. The experiment consists mainly of tuning
+          several classifiers and selecting the best performing one;
+
+        * *exp_4_results_plotter.py*: this module contains an abstract
+          class used to plot the results related to the last
+          experiment conducted on any of the data sets of the thesis.
+          The experiment consists mainly of tuning several classifiers
+          and selecting the best performing one;
+
+        * *log_space_uniform.py*: this module contains a class used to
+          generate random numbers uniformly distributed in log space;
+
+    * *classify.py*: this module is used to conduct some minor random
+      experiments on any of the data sets used in the thesis;
+
+    * *classify_k_folds.py*: this module is used to conduct some minor
+      random experiments on any of the data sets used in the thesis.
+      These experiments should use cross-validation;
+
+    * *exp.py*: this module contains an abstract class used to
+      launch any of the experiments on any of the data sets used in
+      the thesis;
+
+    * *exps_launcher.py*: this module contains an abstract
+      class used to launch sequentially all the experiments on any of
+      the data sets used in the thesis.
+
+    * *results_plotter.py*: this module contains an abstract class
+      used to plot the results related to any of the experiments of
+      the thesis;
+
+    * *utilities.py*: this module contains some general-purpose
+      utility functions;
+
 ## Organization
 
 Below, the organization of the repository is described:
