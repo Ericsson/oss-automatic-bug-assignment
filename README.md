@@ -872,35 +872,118 @@ Python modules of the **oss-automatic-bug-assignment** repository*.
 ![Simplified class
 diagram](./read_me_images/simplified_class_diagram.png)
 
-## Organization
+## Web scraping
 
-Below, the organization of the repository is described:
+### Eclipse JDT
 
-* *eclipse_jdt/*: contains the code base related to the Eclipse JDT
-  project;
+As mentioned in the section *Description of the different Python
+packages and Python modules of the **oss-automatic-bug-assignment**
+repository*, the file *src/eclipse_jdt/scrap_eclipse_jdt/brs.json*
+contains the bug reports of Eclipse JDT used in this thesis (not
+sorted by their ids). If you want to scrape some additional bug
+reports from Bugzilla (the bug reports that have been fixed since the
+conduct of our experiments), you will have to follow the following
+steps:
 
-* *mozilla_firefox/*: contains the code base related to the Mozilla
-  Firefox project.
+1. Verify that the XPath queries in the file
+   *src/eclipse_jdt/scrap_eclipse_jdt/scrap_eclipse_jdt/spiders/eclipse_jdt_spider.py*
+   are still relevant : the interface of Bugzilla may have been
+   modified since the bug reports used in this thesis were scraped.
 
-## Eclipse JDT
+2. Move to the Scrapy project's top level directory:
 
-### Scrapy
+   ```console
+   cd src/eclipse_jdt/scrap_eclipse_jdt/
+   ```
 
-Below, there are some useful command lines to get started with Scrapy:
+3. Run the Eclipse JDT spider and store the scraped data into a JSON
+   file:
 
-* `cd eclipse_jdt/scrap_eclipse_jdt/`: move to the relevant folder;
+   ```console
+   scrapy crawl eclipse_jdt -o <json_file>
+   ```
 
-* `scrapy crawl eclipse_jdt -o brs.json`: run the Eclipse JDT spider
-  and store the scrapped data into a JSON file.
+   "For historic reasons, Scrapy appends to a given file instead of
+   overwriting its contents. If you run this command twice without
+   removing the file before the second time, you'll end up with a
+   broken JSON file." ([Scrapy
+   documentation](https://doc.scrapy.org/en/latest/intro/tutorial.html)).
+   Therefore, verify that the <json_file> doesn't exist or is empty
+   before typing the command line above.
 
-## Mozilla Firefox
+4. Sort the <json_file> by its bug ids:
 
-### Scrapy
+   ```console
+   python eclipse_data_set_sorter.py
+   ```
 
-Below, there are some useful command lines to get started with Scrapy:
+   Don't forget to modify the following line of the file
+   *src/eclipse_jdt/scrap_eclipse_jdt/eclipse_data_set_sorter.py*
+   based on your <json_file> and the JSON file where you want to store
+   the sorted bug reports in:
 
-* `cd mozilla_firefox/scrap_mozilla_firefox/`: move to the relevant
-  folder;
+   ```python
+       data_set_sorter = DataSetSorter("brs.json", "sorted_brs.json")
+   ```
 
-* `scrapy crawl mozilla_firefox -o brs.json`: run the Mozilla Firefox
-  spider and store the scrapped data into a JSON file.
+If you want to scrape some other bug reports of Eclipse JDT, don't
+forget to modify the file
+*src/eclipse_jdt/scrap_eclipse_jdt/scrap_eclipse_jdt/spiders/eclipse_jdt_spider.py*
+before following the above-mentioned steps.
+
+### Mozilla Firefox
+
+As mentioned in the section *Description of the different Python
+packages and Python modules of the **oss-automatic-bug-assignment**
+repository*, the file
+*src/mozilla_firefox/scrap_mozilla_firefox/brs.json* contains the bug
+reports of Mozilla Firefox used in this thesis (not sorted by their
+ids). If you want to scrape some additional bug reports from Bugzilla
+(the bug reports that have been fixed since the conduct of our
+experiments), you will have to follow the following steps:
+
+1. Verify that the XPath queries in the file
+   *src/mozilla_firefox/scrap_mozilla_firefox/scrap_mozilla_firefox/spiders/scrap_mozilla_firefox*
+   are still relevant : the interface of Bugzilla may have been
+   modified since the bug reports used in this thesis were scraped.
+
+2. Move to the Scrapy project's top level directory:
+
+   ```console
+   cd src/mozilla_firefox/scrap_mozilla_firefox/
+   ```
+
+3. Run the Mozilla Firefox spider and store the scraped data into a
+   JSON file:
+
+   ```console
+   scrapy crawl mozilla_firefox -o <json_file>
+   ```
+
+   "For historic reasons, Scrapy appends to a given file instead of
+   overwriting its contents. If you run this command twice without
+   removing the file before the second time, you'll end up with a
+   broken JSON file." ([Scrapy
+   documentation](https://doc.scrapy.org/en/latest/intro/tutorial.html)).
+   Therefore, verify that the <json_file> doesn't exist or is empty
+   before typing the command line above.
+
+4. Sort the <json_file> by its bug ids:
+
+   ```console
+   python mozilla_data_set_sorter.py
+   ```
+
+   Don't forget to modify the following line of the file
+   *src/mozilla_firefox/scrap_mozilla_firefox/mozilla_data_set_sorter.py*
+   based on your <json_file> and the JSON file where you want to store
+   the sorted bug reports in:
+
+   ```python
+       data_set_sorter = DataSetSorter("brs.json", "sorted_brs.json")
+   ```
+
+If you want to scrape some other bug reports of Mozilla Firefox, don't
+forget to modify the file
+*src/mozilla_firefox/scrap_mozilla_firefox/scrap_mozilla_firefox/spiders/mozilla_firefox_spider.py*
+before following the above-mentioned steps.
