@@ -861,6 +861,17 @@ Python packages and Python modules of the
 ![Simplified package
 diagram](./read_me_images/simplified_package_diagram.png)
 
+### Simplified class diagram of the *oss-automatic-bug-assignment* repository
+
+The figure below depicts a simplified class diagram of the *src*
+package of the *oss-automatic-bug-assignment* repository. A short
+description of the content of each module of the package is provided
+in the section *Description of the different Python packages and
+Python modules of the **oss-automatic-bug-assignment** repository*.
+
+![Simplified class
+diagram](./read_me_images/simplified_class_diagram.png)
+
 ## Organization
 
 Below, the organization of the repository is described:
