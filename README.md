@@ -843,6 +843,24 @@ Python packages and Python modules:
     * *utilities.py*: this module contains some general-purpose
       utility functions;
 
+## Architecture of the *oss-automatic-bug-assignment* repository
+
+This section describes the high-level architecture of the
+*oss-automatic-bug-assignment* repository
+
+### Simplified package diagram of the *oss-automatic-bug-assignment* repository
+
+The figure below shows a simplified package diagram of the *src*
+package of the *oss-automatic-bug-assignment* repository. For
+readability purposes, the relations between the different packages of
+the diagram have been omitted. A short description of the content of
+each package is provided in the section *Description of the different
+Python packages and Python modules of the
+**oss-automatic-bug-assignment** repository*.
+
+![Simplified package
+diagram](./read_me_images/simplified_package_diagram.png)
+
 ## Organization
 
 Below, the organization of the repository is described:
