@@ -15,7 +15,7 @@
 import abc
 import logging
 
-class ExperimentsLauncher(abc.ABC):
+class ExpsLauncher(abc.ABC):
     
     @abc.abstractmethod
     def __init__(self, \

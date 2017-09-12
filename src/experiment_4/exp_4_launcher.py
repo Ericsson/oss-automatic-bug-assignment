@@ -37,13 +37,13 @@ os.sys.path.insert(0, current_dir)
 from log_space_uniform import LogSpaceUniform
 parent_dir = os.path.dirname(current_dir)
 os.sys.path.insert(0, parent_dir)
-from experiment import Experiment
+from exp_launcher import ExpLauncher
 from utilities import print_log
 from scikit_learn._search import GridSearchCV, RandomizedSearchCV
 from scikit_learn.accuracy_mrr_scoring_object \
 import accuracy_mrr_scoring_object
 
-class Exp4Launcher(Experiment):
+class Exp4Launcher(ExpLauncher):
     
     @abc.abstractmethod
     def __init__(self, data_set_file, lowercase=False, use_idf=False, 

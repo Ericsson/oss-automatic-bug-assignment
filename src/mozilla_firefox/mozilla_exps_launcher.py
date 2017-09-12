@@ -22,9 +22,9 @@ from experiment_3.mozilla_exp_3_launcher import MozillaExp3Launcher
 from experiment_4.mozilla_exp_4_launcher import MozillaExp4Launcher
 parent_dir = os.path.dirname(current_dir)
 os.sys.path.insert(0, current_dir)
-from experiments_launcher import ExperimentsLauncher
+from exps_launcher import ExpsLauncher
 
-class MozillaExperimentsLauncher(ExperimentsLauncher):
+class MozillaExpsLauncher(ExpsLauncher):
     
     def __init__(self, \
                  raw_data_set_file_path, \
@@ -92,12 +92,12 @@ def main():
     "removal_with_numbers_removal.json"
     
     # Instantiation of the launcher of this module
-    mozilla_experiments_launcher = \
-    MozillaExperimentsLauncher(raw_data_set_file_path, \
-                               pre_processed_data_set_file_path)
+    mozilla_exps_launcher = \
+    MozillaExpsLauncher(raw_data_set_file_path, \
+                        pre_processed_data_set_file_path)
     
     # We launch all the experiments related to the aforementioned 
     # launcher
-    mozilla_experiments_launcher.conduct_experiments()
+    mozilla_exps_launcher.conduct_experiments()
 if __name__ == "__main__":
     main() # Call of the main function of this module

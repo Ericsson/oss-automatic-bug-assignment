@@ -17,7 +17,7 @@ import abc
 import json
 import os
 
-class Experiment(abc.ABC):
+class ExpLauncher(abc.ABC):
 
     @abc.abstractmethod
     def __init__(self, developers_dict_file=None, \
