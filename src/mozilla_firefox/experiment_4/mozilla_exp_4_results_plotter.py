@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-.. module:: eclipse_experiment_4_results_plotter
+.. module:: mozilla_experiment_4_results_plotter
    :platform: Unix, Windows
    :synopsis: This module contains a class used to plot the results 
               related to the last experiment of the thesis conducted 
-              on the bug reports of Eclipse JDT. The experiment 
+              on the bug reports of Mozilla Firefox. The experiment 
               consists mainly of tuning several classifiers and 
               selecting the best performing one.
 
@@ -22,24 +22,23 @@ parent_dir = os.path.dirname(current_dir)
 os.sys.path.insert(0,parent_dir)
 grand_parent_dir = os.path.dirname(parent_dir)
 os.sys.path.insert(0, grand_parent_dir)
-from tuning_individual_classifiers_experiments.experiment_4_results_plotter \
-import Experiment4ResultsPlotter
+from experiment_4.exp_4_results_plotter import Exp4ResultsPlotter
 
-class EclipseExperiment4ResultsPlotter(Experiment4ResultsPlotter):
+class MozillaExp4ResultsPlotter(Exp4ResultsPlotter):
     
     def __init__(self, cleaned_results_file_name):
         """Constructor"""
         self._current_dir = os.path.dirname(os.path.abspath( \
         inspect.getfile(inspect.currentframe())))
         super().__init__(cleaned_results_file_name)
-
+        
     def plot_results(self):
         """This method plots the results in chart(s)"""
         self.plot_parameters = [
             {
                 "key": "normal_avg",
-                "x_lim_min": [0.185, 0.3375],
-                "x_lim_max": [0.295, 0.467],
+                "x_lim_min": [0.04, 0.20],
+                "x_lim_max": [0.1555, 0.35],
                 "x_label": ["Accuracy", "MRR"],
                 "y_label": ["Configurations", "Configurations"],
                 "titles_font_size": [60, 60],
@@ -57,8 +56,8 @@ class EclipseExperiment4ResultsPlotter(Experiment4ResultsPlotter):
             },
             {
                 "key": "random_avg",
-                "x_lim_min": [0.1825, 0.335],
-                "x_lim_max": [0.293, 0.4635],
+                "x_lim_min": [0.04, 0.20],
+                "x_lim_max": [0.1565, 0.353],
                 "x_label": ["Accuracy", "MRR"],
                 "y_label": ["Configurations", "Configurations"],
                 "titles_font_size": [60, 60],
@@ -81,9 +80,9 @@ def main():
     """The main function of the script"""
     cleaned_results_file_name = "cleaned_tuning_individual_" + \
     "classifier_generic_experiment_results.json"
-    experiment_4_results_plotter = \
-    EclipseExperiment4ResultsPlotter(cleaned_results_file_name)
-    experiment_4_results_plotter.plot_results()
+    mozilla_exp_4_results_plotter = \
+    MozillaExp4ResultsPlotter(cleaned_results_file_name)
+    mozilla_exp_4_results_plotter.plot_results()
 
 if __name__ == "__main__":
     main()

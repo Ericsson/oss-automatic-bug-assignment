@@ -19,9 +19,7 @@ os.sys.path.insert(0, current_dir)
 from experiment_1.eclipse_exp_1_launcher import EclipseExp1Launcher
 from experiment_2.eclipse_exp_2_launcher import EclipseExp2Launcher
 from experiment_3.eclipse_exp_3_launcher import EclipseExp3Launcher
-from tuning_individual_classifiers_experiments \
-.eclipse_classify_k_folds_time_series_tuning import \
-EclipseTuningIndividualClassifierGenericExperiment
+from experiment_4.eclipse_exp_4_launcher import EclipseExp4Launcher
 parent_dir = os.path.dirname(current_dir)
 os.sys.path.insert(0, current_dir)
 from experiments_launcher import ExperimentsLauncher
@@ -71,8 +69,7 @@ class EclipseExperimentsLauncher(ExperimentsLauncher):
     def conduct_experiment_4(self):
         """This method runs the experiment 4"""
         # Instantiation of the class related to the forth experiment
-        self.experiment_4 = \
-        EclipseTuningIndividualClassifierGenericExperiment( \
+        self.experiment_4 = EclipseExp4Launcher( \
         data_set_file=self.pre_processed_data_set_file_path, \
         developers_dict_file=self.developers_dict_file_path, \
         developers_list_file=self.developers_list_file_path)

@@ -43,7 +43,7 @@ from scikit_learn._search import GridSearchCV, RandomizedSearchCV
 from scikit_learn.accuracy_mrr_scoring_object \
 import accuracy_mrr_scoring_object
 
-class TuningIndividualClassifierGenericExperiment(Experiment):
+class Exp4Launcher(Experiment):
     
     @abc.abstractmethod
     def __init__(self, data_set_file, lowercase=False, use_idf=False, 

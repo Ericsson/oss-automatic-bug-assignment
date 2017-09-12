@@ -21,10 +21,9 @@ inspect.getfile(inspect.currentframe())))
 parent_dir = os.path.dirname(current_dir)
 grand_parent_dir = os.path.dirname(parent_dir)
 os.sys.path.insert(0, grand_parent_dir)
-from tuning_individual_classifiers_experiments.classify_k_folds_time_series_tuning \
-import TuningIndividualClassifierGenericExperiment
+from experiment_4.exp_4_launcher import Exp4Launcher
 
-class EclipseTuningIndividualClassifierGenericExperiment(TuningIndividualClassifierGenericExperiment):
+class EclipseExp4Launcher(Exp4Launcher):
     def __init__(self, data_set_file, developers_dict_file, \
                  developers_list_file):
         self._current_dir = os.path.dirname(os.path.abspath( \
@@ -47,13 +46,11 @@ def main():
     # relevant distinct developers
     developers_list_file = None
     
-    tuning_individual_classifier_generic_experiment = \
-    EclipseTuningIndividualClassifierGenericExperiment( \
+    eclipse_exp_4_launcher = EclipseExp4Launcher( \
     data_set_file=data_set_file, \
     developers_dict_file=developers_dict_file, \
     developers_list_file=developers_list_file)
-    tuning_individual_classifier_generic_experiment \
-    .conduct_experiment()    
+    eclipse_exp_4_launcher.conduct_experiment()    
 
 if __name__ == "__main__":
     main()
