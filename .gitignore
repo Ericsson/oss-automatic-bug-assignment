@@ -5,8 +5,9 @@
 *.png
 doc/build/
 !read_me_images/*
-!src/final_results/*/*/*
 !src/eclipse_jdt/scrap_eclipse_jdt/brs.json
 !src/eclipse_jdt/scrap_eclipse_jdt/sorted_brs.json
 !src/mozilla_firefox/scrap_mozilla_firefox/brs.json
 !src/mozilla_firefox/scrap_mozilla_firefox/sorted_brs.json
+!src/eclipse_jdt/final_results/*/*
+!src/mozilla_firefox/final_results/*/*
