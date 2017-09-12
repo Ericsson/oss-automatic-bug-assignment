@@ -23,7 +23,7 @@ parent_dir = os.path.dirname(current_dir)
 os.sys.path.insert(0,parent_dir) 
 from results_plotter import ResultsPlotter
 
-class Experiment3ResultsPlotter(ResultsPlotter):
+class Exp3ResultsPlotter(ResultsPlotter):
     
     # Below, there is a dictionary which maps each key to a smaller 
     # one for readability purposes

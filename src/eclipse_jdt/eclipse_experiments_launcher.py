@@ -21,9 +21,8 @@ import EclipsePreProcessingExperiment
 from tr_representation_experiments \
 .eclipse_classify_k_folds_time_series_tr_representation import \
 EclipseTRRepresentationExperiment
-from feature_selection_experiments \
-.eclipse_classify_k_folds_time_series_feature_selection import \
-EclipseFeatureSelectionExperiment
+from experiment_3.eclipse_exp_3_launcher import \
+EclipseExp3Launcher
 from tuning_individual_classifiers_experiments \
 .eclipse_classify_k_folds_time_series_tuning import \
 EclipseTuningIndividualClassifierGenericExperiment
@@ -67,7 +66,7 @@ class EclipseExperimentsLauncher(ExperimentsLauncher):
     def conduct_experiment_3(self):
         """This method runs the experiment 3"""
         # Instantiation of the class related to the third experiment
-        self.experiment_3 = EclipseFeatureSelectionExperiment( \
+        self.experiment_3 = EclipseExp3Launcher( \
         data_set_file=self.pre_processed_data_set_file_path, \
         developers_dict_file=self.developers_dict_file_path, \
         developers_list_file=self.developers_list_file_path)
