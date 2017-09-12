@@ -30,7 +30,7 @@ parent_dir = os.path.dirname(current_dir)
 os.sys.path.insert(0, parent_dir)
 from utilities import print_log, load_data_set, build_data_frame
 
-class SizeOfDataExperiment(abc.ABC):
+class SubExpOfPreliminaryExpLauncher(abc.ABC):
 
     @abc.abstractmethod
     def __init__(self, data_set_file, developers_dict_file=None, \

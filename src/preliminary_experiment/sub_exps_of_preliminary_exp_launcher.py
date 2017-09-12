@@ -17,7 +17,7 @@ import abc
 import logging
 import os
 
-class SizeOfDataExperiments(abc.ABC):
+class SubExpsOfPreliminaryExpLauncher(abc.ABC):
     
     @abc.abstractmethod
     def __init__(self):       
@@ -31,5 +31,5 @@ class SizeOfDataExperiments(abc.ABC):
         
     def conduct_experiment(self):
         for k in self._K:
-            self.size_of_data_normal_experiment.plot_or_save_learning_curve(k)
-            self.size_of_data_incremental_experiment.plot_or_save_learning_curve(k)
+            self.sub_exp_1_of_preliminary_exp_launcher.plot_or_save_learning_curve(k)
+            self.sub_exp_2_of_preliminary_exp_launcher.plot_or_save_learning_curve(k)

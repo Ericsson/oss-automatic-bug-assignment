@@ -25,10 +25,10 @@ inspect.getfile(inspect.currentframe())))
 parent_dir = os.path.dirname(current_dir)
 grand_parent_dir = os.path.dirname(parent_dir)
 os.sys.path.insert(0, grand_parent_dir)
-from size_of_data_set_experiments.size_of_data_set_normal_experiment \
-import SizeOfDataNormalExperiment
+from preliminary_experiment.sub_exp_2_of_preliminary_exp_launcher \
+import SubExp2OfPreliminaryExpLauncher
 
-class EclipseSizeOfDataNormalExperiment(SizeOfDataNormalExperiment):
+class EclipseSubExp2OfPreliminaryExpLauncher(SubExp2OfPreliminaryExpLauncher):
     
     def __init__(self, data_set_file, developers_dict_file, \
                  developers_list_file):
@@ -56,11 +56,14 @@ def main():
     # relevant distinct developers
     developers_list_file = None
     
-    size_of_data_normal_experiment = EclipseSizeOfDataNormalExperiment( \
-    data_set_file, developers_dict_file, developers_list_file)
+    eclipse_sub_exp_2_of_preliminary_exp_launcher = \
+    EclipseSubExp2OfPreliminaryExpLauncher(data_set_file, \
+                                           developers_dict_file, \
+                                           developers_list_file)
     
     K = 4 # Number of folds
-    size_of_data_normal_experiment.plot_or_save_learning_curve(K)
+    eclipse_sub_exp_2_of_preliminary_exp_launcher \
+    .plot_or_save_learning_curve(K)
         
 if __name__ == "__main__":
     main()

@@ -25,15 +25,16 @@ inspect.getfile(inspect.currentframe())))
 parent_dir = os.path.dirname(current_dir)
 grand_parent_dir = os.path.dirname(parent_dir)
 os.sys.path.insert(0, grand_parent_dir)
-from size_of_data_set_experiments.size_of_data_set_incremental_experiment \
-import SizeOfDataIncrementalExperiment
+from preliminary_experiment.sub_exp_1_of_preliminary_exp_launcher \
+import SubExp1OfPreliminaryExpLauncher
 
-class EclipseSizeOfDataIncrementalExperiment(SizeOfDataIncrementalExperiment):
+class EclipseSubExp1OfPreliminaryExpLauncher(SubExp1OfPreliminaryExpLauncher):
     
     def __init__(self, data_set_file, developers_dict_file, developers_list_file):
         self._current_dir = os.path.dirname(os.path.abspath( \
         inspect.getfile(inspect.currentframe())))
-        super().__init__(data_set_file, developers_dict_file, developers_list_file)
+        super().__init__(data_set_file, developers_dict_file, \
+                         developers_list_file)
         
 def main():
     logging.basicConfig(filename="size_of_data_set_incremental_experiment.log", \
@@ -53,11 +54,14 @@ def main():
     # relevant distinct developers
     developers_list_file = None
     
-    size_of_data_incremental_experiment = EclipseSizeOfDataIncrementalExperiment( \
-    data_set_file, developers_dict_file, developers_list_file)
+    eclipse_sub_exp_1_of_preliminary_exp_launcher = \
+    EclipseSubExp1OfPreliminaryExpLauncher(data_set_file, \
+                                           developers_dict_file, \
+                                           developers_list_file)
     
     K = 4 # Number of folds
-    size_of_data_incremental_experiment.plot_or_save_learning_curve(K)  
+    eclipse_sub_exp_1_of_preliminary_exp_launcher \
+    .plot_or_save_learning_curve(K)  
         
 if __name__ == "__main__":
     main()

@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-.. module:: mozilla_size_of_data_set_experiments
+.. module:: eclipse_size_of_data_set_experiments
    :platform: Unix, Windows
    :synopsis: This module contains a class used to conduct both sub 
               experiments of the preliminary experiment of the thesis
-              on the bug reports of Mozilla Firefox. The experiment 
+              on the bug reports of Eclipse JDT. The experiment 
               consists mainly of trying to find the optimal number 
               of bug reports that should be used to train a 
               classifier.
@@ -23,24 +23,28 @@ os.sys.path.insert(0, current_dir)
 parent_dir = os.path.dirname(current_dir)
 grand_parent_dir = os.path.dirname(parent_dir)
 os.sys.path.insert(0, grand_parent_dir)
-from mozilla_size_of_data_set_normal_experiment \
-import MozillaSizeOfDataNormalExperiment
-from mozilla_size_of_data_set_incremental_experiment \
-import MozillaSizeOfDataIncrementalExperiment
-from size_of_data_set_experiments.size_of_data_set_experiments \
-import SizeOfDataExperiments
+from eclipse_sub_exp_1_of_preliminary_exp_launcher \
+import EclipseSubExp1OfPreliminaryExpLauncher
+from eclipse_sub_exp_2_of_preliminary_exp_launcher \
+import EclipseSubExp2OfPreliminaryExpLauncher
+from preliminary_experiment.sub_exps_of_preliminary_exp_launcher \
+import SubExpsOfPreliminaryExpLauncher
 
-class MozillaSizeOfDataExperiments(SizeOfDataExperiments):
+class EclipseSubExpsOfPreliminaryExpLauncher(SubExpsOfPreliminaryExpLauncher):
     
     def __init__(self, data_set_file, developers_dict_file=None, \
                  developers_list_file=None):
         self._current_dir = os.path.dirname(os.path.abspath( \
         inspect.getfile(inspect.currentframe())))
         super().__init__()
-        self.size_of_data_normal_experiment = MozillaSizeOfDataNormalExperiment( \
-        data_set_file, developers_dict_file, developers_list_file)
-        self.size_of_data_incremental_experiment = MozillaSizeOfDataIncrementalExperiment( \
-        data_set_file, developers_dict_file, developers_list_file)
+        self.sub_exp_1_of_preliminary_exp_launcher = \
+        EclipseSubExp1OfPreliminaryExpLauncher(data_set_file, \
+                                               developers_dict_file, \
+                                               developers_list_file)
+        self.sub_exp_2_of_preliminary_exp_launcher = \
+        EclipseSubExp2OfPreliminaryExpLauncher(data_set_file, \
+                                               developers_dict_file, \
+                                               developers_list_file)
 
 def main():
     data_set_file = "../pre_processing_experiments/output_" + \
@@ -57,9 +61,11 @@ def main():
     # relevant distinct developers
     developers_list_file = None
     
-    size_of_data_experiments = MozillaSizeOfDataExperiments( \
-    data_set_file, developers_dict_file, developers_list_file)
-    size_of_data_experiments.conduct_experiment()
+    eclipse_sub_exps_of_preliminary_exp_launcher = \
+    EclipseSubExpsOfPreliminaryExpLauncher(data_set_file, \
+                                           developers_dict_file, \
+                                           developers_list_file)
+    eclipse_sub_exps_of_preliminary_exp_launcher.conduct_experiment()
     
 if __name__ == "__main__":
-    main()  
+    main()
