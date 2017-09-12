@@ -22,10 +22,10 @@ inspect.getfile(inspect.currentframe())))
 parent_dir = os.path.dirname(current_dir)
 grand_parent_dir = os.path.dirname(parent_dir)
 os.sys.path.insert(0, grand_parent_dir)
-from tr_representation_experiments.classify_k_folds_time_series_tr_representation \
-import TRRepresentationExperiment
+from experiment_2.exp_2_launcher \
+import Exp2Launcher
 
-class MozillaTRRepresentationExperiment(TRRepresentationExperiment):
+class MozillaExp2Launcher(Exp2Launcher):
     def __init__(self, data_set_file, lowercase=False, \
                  developers_dict_file=None, \
                  developers_list_file=None):
@@ -47,7 +47,7 @@ def main():
     # relevant distinct developers
     developers_list_file = None
     
-    tr_representation_experiment = MozillaTRRepresentationExperiment( \
+    mozilla_exp_2_launcher = MozillaExp2Launcher( \
     data_set_file=data_set_file, \
     lowercase=True,
     developers_dict_file=developers_dict_file, \

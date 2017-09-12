@@ -17,9 +17,7 @@ current_dir = os.path.dirname(os.path.abspath( \
 inspect.getfile(inspect.currentframe())))
 os.sys.path.insert(0, current_dir)
 from experiment_1.eclipse_exp_1_launcher import EclipseExp1Launcher
-from tr_representation_experiments \
-.eclipse_classify_k_folds_time_series_tr_representation import \
-EclipseTRRepresentationExperiment
+from experiment_2.eclipse_exp_2_launcher import EclipseExp2Launcher
 from experiment_3.eclipse_exp_3_launcher import EclipseExp3Launcher
 from tuning_individual_classifiers_experiments \
 .eclipse_classify_k_folds_time_series_tuning import \
@@ -55,7 +53,7 @@ class EclipseExperimentsLauncher(ExperimentsLauncher):
     def conduct_experiment_2(self):
         """This method runs the experiment 2"""
         # Instantiation of the class related to the second experiment
-        self.experiment_2 = EclipseTRRepresentationExperiment( \
+        self.experiment_2 = EclipseExp2Launcher( \
         data_set_file=self.pre_processed_data_set_file_path, \
         developers_dict_file=self.developers_dict_file_path, \
         developers_list_file=self.developers_list_file_path)

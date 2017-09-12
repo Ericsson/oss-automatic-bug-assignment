@@ -40,7 +40,7 @@ from utilities import print_log
 from scikit_learn._search import GridSearchCV
 from scikit_learn.accuracy_mrr_scoring_object import accuracy_mrr_scoring_object
 
-class TRRepresentationExperiment(Experiment):
+class Exp2Launcher(Experiment):
 
     @abc.abstractmethod
     def __init__(self, data_set_file, lowercase=False, \
