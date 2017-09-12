@@ -828,8 +828,8 @@ Python packages and Python modules:
       random experiments on any of the data sets used in the thesis.
       These experiments should use cross-validation;
 
-    * *exp.py*: this module contains an abstract class used to
-      launch any of the experiments on any of the data sets used in
+    * *exp_launcher.py*: this module contains an abstract class used
+      to launch any of the experiments on any of the data sets used in
       the thesis;
 
     * *exps_launcher.py*: this module contains an abstract
