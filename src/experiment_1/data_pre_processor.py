@@ -2,10 +2,10 @@
 """
 .. module:: data_pre_processer
    :platform: Unix, Windows
-   :synopsis: This module contains an abstract class used to apply 
-              different combinations of pre-processing techniques on 
-              any data set used in the thesis (the data should have 
-              been scrapped via the Scrapy library, in a JSON file and 
+   :synopsis: This module contains an abstract class used to apply
+              different combinations of pre-processing techniques on
+              any data set used in the thesis (the data should have
+              been scrapped via the Scrapy library, in a JSON file and
               should have been sorted before).
 
 .. moduleauthor:: Daniel Artchounin <daniel.artchounin@ericsson.com>
@@ -31,35 +31,35 @@ import abc
 
 """Pre-process bug reports
 
-Pre-process the id, title, description and assigned-to fields of the 
+Pre-process the id, title, description and assigned-to fields of the
 bug reports.
 """
 
-class DataPreProcesser:
-    
+class DataPreProcessor:
+
     @abc.abstractmethod
     def __init__(self, data_file, clean_brs=True, use_stemmer=True, \
                  use_lemmatizer= False, stop_words_removal=True, \
                  punctuation_removal=True, numbers_removal=True):
         """Constructor"""
-        self.content = None # Will contain the content of the file 
+        self.content = None # Will contain the content of the file
         # with all the bug reports
-        self.html_parser = None # Will contain an instance of a HTML 
+        self.html_parser = None # Will contain an instance of a HTML
         # parser
-        self.stemmer = None # Will contain the stemmer which will be 
+        self.stemmer = None # Will contain the stemmer which will be
         # used
-        self.lemmatizer = None # Will contain the lemmatizer which 
+        self.lemmatizer = None # Will contain the lemmatizer which
         # will be used
         self.en_stop_words = None # Will contain an english stop word
         # list
-        self.output = [] # Will contain the pre-processed data to dump 
-        
-        # Will contain the name of the file which contains the bug 
+        self.output = [] # Will contain the pre-processed data to dump
+
+        # Will contain the name of the file which contains the bug
         # reports
         self.data_file = data_file
         if clean_brs:
             # Instantiation of a HTMLParser
-            self.html_parser = HTMLParser() 
+            self.html_parser = HTMLParser()
         if use_stemmer:
             # Instantiation of a Porter Stemmer
             self.stemmer = PorterStemmer()
@@ -68,10 +68,10 @@ class DataPreProcesser:
             self.lemmatizer = WordNetLemmatizer()
         if stop_words_removal:
             # Get an English stop word list
-            self.en_stop_words = stopwords.words('english') 
-        self.punctuation_removal = punctuation_removal # To know 
+            self.en_stop_words = stopwords.words('english')
+        self.punctuation_removal = punctuation_removal # To know
         # whether or not punctuation should be removed
-        self.numbers_removal = numbers_removal # To know whether or 
+        self.numbers_removal = numbers_removal # To know whether or
         # not numbers should be removed
 
     def _load_json_file(self):
@@ -87,9 +87,9 @@ class DataPreProcesser:
         It cleans the id, heading, observation and assignee fields.
         """
         print("BR number:") # Debug
-        i = 0  
+        i = 0
         # Below, we open the data file
-        self._load_json_file()        
+        self._load_json_file()
         for br in self.content:
             # print(row["W"]) # Debug
             i += 1
@@ -116,12 +116,12 @@ class DataPreProcesser:
     def write_data(self, data_file):
         """Method to write the data
 
-        It writes the data into a JSON file which path is given in 
+        It writes the data into a JSON file which path is given in
         parameter.
         """
         with open(data_file, 'w') as output_file:
             json.dump(self.output, output_file, indent=4)
-            
+
     def _clean_string(self, string_to_clean):
         """Method to clean a given string"""
         if string_to_clean is None:
@@ -169,7 +169,7 @@ class DataPreProcesser:
             tokens = [token for token in tokens if token.lower() \
             not in self.en_stop_words]
         if self.punctuation_removal:
-            # We should remove the punctuation characters        
+            # We should remove the punctuation characters
             tokens = [token for token in tokens \
             if not all(char in string.punctuation for char in token)]
         return tokens
@@ -223,9 +223,9 @@ class DataPreProcesser:
         """Method to remove any URL"""
         data = re \
         .sub(r'(https|http|file)?:\/\/\/?(\/|\w|\.|\?|\=|\&|\%|\-)*\b' \
-        , '', data)		
+        , '', data)
         return data
-        
+
     def get_wordnet_pos(self, treebank_pos):
         if treebank_pos.startswith('J'):
             return wordnet.ADJ

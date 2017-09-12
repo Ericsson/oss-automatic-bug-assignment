@@ -16,13 +16,11 @@ import inspect
 current_dir = os.path.dirname(os.path.abspath( \
 inspect.getfile(inspect.currentframe())))
 os.sys.path.insert(0, current_dir)
-from pre_processing_experiments.eclipse_pre_processing_experiment \
-import EclipsePreProcessingExperiment
+from experiment_1.eclipse_exp_1_launcher import EclipseExp1Launcher
 from tr_representation_experiments \
 .eclipse_classify_k_folds_time_series_tr_representation import \
 EclipseTRRepresentationExperiment
-from experiment_3.eclipse_exp_3_launcher import \
-EclipseExp3Launcher
+from experiment_3.eclipse_exp_3_launcher import EclipseExp3Launcher
 from tuning_individual_classifiers_experiments \
 .eclipse_classify_k_folds_time_series_tuning import \
 EclipseTuningIndividualClassifierGenericExperiment
@@ -47,7 +45,7 @@ class EclipseExperimentsLauncher(ExperimentsLauncher):
     def conduct_experiment_1(self):
         """This method runs the experiment 1"""
         # Instantiation of the class related to the first experiment
-        self.experiment_1 = EclipsePreProcessingExperiment( \
+        self.experiment_1 = EclipseExp1Launcher( \
         data_file=self.raw_data_set_file_path, \
         developers_dict_file=self.developers_dict_file_path, \
         developers_list_file=self.developers_list_file_path, \

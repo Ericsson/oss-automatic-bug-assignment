@@ -2,10 +2,10 @@
 """
 .. module:: mozilla_experiment_1_results_plotter
    :platform: Unix, Windows
-   :synopsis: This module contains a class used to plot the results 
+   :synopsis: This module contains a class used to plot the results
               related to the first experiment of the thesis conducted
-              on the bug reports of Mozilla Firefox. The experiment 
-              consists mainly of comparing several combinations of 
+              on the bug reports of Mozilla Firefox. The experiment
+              consists mainly of comparing several combinations of
               pre-processing techniques and selecting the best one.
 
 .. moduleauthor:: Daniel Artchounin <daniel.artchounin@ericsson.com>
@@ -22,11 +22,11 @@ parent_dir = os.path.dirname(current_dir)
 os.sys.path.insert(0,parent_dir)
 grand_parent_dir = os.path.dirname(parent_dir)
 os.sys.path.insert(0, grand_parent_dir)
-from pre_processing_experiments.experiment_1_results_plotter \
-import Experiment1ResultsPlotter
+from experiment_1.exp_1_results_plotter \
+import Exp1ResultsPlotter
 
-class MozillaExperiment1ResultsPlotter(Experiment1ResultsPlotter):
-    
+class MozillaExp1ResultsPlotter(Exp1ResultsPlotter):
+
     def __init__(self, cleaned_results_file_name):
         """Constructor"""
         self._current_dir = os.path.dirname(os.path.abspath( \
@@ -43,7 +43,7 @@ class MozillaExperiment1ResultsPlotter(Experiment1ResultsPlotter):
                 "x_label": "Accuracy",
                 "y_label": "Configurations",
                 "title_font_size": 50,
-                "labels_font_size": 45, 
+                "labels_font_size": 45,
                 "y_tick_labels_font_size": 40,
                 "title": "Accuracy of the different pre-processing " \
                 "configurations",
@@ -65,7 +65,7 @@ class MozillaExperiment1ResultsPlotter(Experiment1ResultsPlotter):
                 "file_name": "experiment_12.png",
                 "debug_title": "Average MRR",
                 "bars_labels_space": 0.0001,
-            }       
+            }
         ]
         super().plot_results()
 
@@ -74,9 +74,9 @@ def main():
     """The main function of the script"""
     cleaned_results_file_name = "cleaned_pre_processing_" + \
     "experiment_results.json"
-    experiment_1_results_plotter = \
-    MozillaExperiment1ResultsPlotter(cleaned_results_file_name)
-    experiment_1_results_plotter.plot_results()
+    mozilla_exp_1_results_plotter = \
+    MozillaExp1ResultsPlotter(cleaned_results_file_name)
+    mozilla_exp_1_results_plotter.plot_results()
 
 if __name__ == "__main__":
     main()
